@@ -1,0 +1,3610 @@
+
+
+Microchip MPLAB XC8 Assembler V2.36 build 20220127204148 
+                                                                                               Wed Mar 02 13:38:22 2022
+
+Microchip MPLAB XC8 C Compiler v2.36 (Free license) build 20220127204148 Og1 
+     1                           	processor	16F1788
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     7                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     8                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     9                           	psect	maintext,global,class=CODE,merge=1,split=1,delta=2
+    10                           	psect	text1,local,class=CODE,merge=1,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	text3,local,class=CODE,merge=1,delta=2
+    13                           	psect	text4,local,class=CODE,merge=1,delta=2
+    14                           	psect	text5,local,class=CODE,merge=1,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	text7,local,class=CODE,merge=1,delta=2
+    17                           	psect	text8,local,class=CODE,merge=1,delta=2
+    18                           	psect	text9,local,class=CODE,merge=1,delta=2
+    19                           	psect	text10,local,class=CODE,merge=1,delta=2
+    20                           	psect	intentry,global,class=CODE,delta=2
+    21                           	psect	text12,local,class=CODE,merge=1,delta=2
+    22                           	psect	text13,local,class=CODE,merge=1,delta=2
+    23                           	psect	text14,local,class=CODE,merge=1,delta=2
+    24                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    25                           	dabs	1,0x7E,2
+    26  0000                     
+    27                           ; Version 2.36
+    28                           ; Generated 28/01/2022 GMT
+    29                           ; 
+    30                           ; Copyright © 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    31                           ; All rights reserved.
+    32                           ; 
+    33                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    34                           ; 
+    35                           ; Redistribution and use in source and binary forms, with or without modification, are
+    36                           ; permitted provided that the following conditions are met:
+    37                           ; 
+    38                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    39                           ;        conditions and the following disclaimer.
+    40                           ; 
+    41                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    42                           ;        of conditions and the following disclaimer in the documentation and/or other
+    43                           ;        materials provided with the distribution. Publication is not required when
+    44                           ;        this file is used in an embedded application.
+    45                           ; 
+    46                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    47                           ;        software without specific prior written permission.
+    48                           ; 
+    49                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    50                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    51                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    52                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    53                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    54                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    55                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    56                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    57                           ; 
+    58                           ; 
+    59                           ; Code-generator required, PIC16F1788 Definitions
+    60                           ; 
+    61                           ; SFR Addresses
+    62  0000                     	;# 
+    63  0001                     	;# 
+    64  0002                     	;# 
+    65  0003                     	;# 
+    66  0004                     	;# 
+    67  0005                     	;# 
+    68  0006                     	;# 
+    69  0007                     	;# 
+    70  0008                     	;# 
+    71  0009                     	;# 
+    72  000A                     	;# 
+    73  000B                     	;# 
+    74  000C                     	;# 
+    75  000D                     	;# 
+    76  000E                     	;# 
+    77  0010                     	;# 
+    78  0011                     	;# 
+    79  0012                     	;# 
+    80  0013                     	;# 
+    81  0014                     	;# 
+    82  0015                     	;# 
+    83  0016                     	;# 
+    84  0016                     	;# 
+    85  0017                     	;# 
+    86  0018                     	;# 
+    87  0019                     	;# 
+    88  001A                     	;# 
+    89  001B                     	;# 
+    90  001C                     	;# 
+    91  008C                     	;# 
+    92  008D                     	;# 
+    93  008E                     	;# 
+    94  0090                     	;# 
+    95  0091                     	;# 
+    96  0092                     	;# 
+    97  0093                     	;# 
+    98  0094                     	;# 
+    99  0095                     	;# 
+   100  0096                     	;# 
+   101  0097                     	;# 
+   102  0098                     	;# 
+   103  0099                     	;# 
+   104  009A                     	;# 
+   105  009B                     	;# 
+   106  009B                     	;# 
+   107  009C                     	;# 
+   108  009D                     	;# 
+   109  009E                     	;# 
+   110  009F                     	;# 
+   111  010C                     	;# 
+   112  010D                     	;# 
+   113  010E                     	;# 
+   114  0111                     	;# 
+   115  0112                     	;# 
+   116  0113                     	;# 
+   117  0114                     	;# 
+   118  0115                     	;# 
+   119  0116                     	;# 
+   120  0117                     	;# 
+   121  0118                     	;# 
+   122  0119                     	;# 
+   123  011A                     	;# 
+   124  011B                     	;# 
+   125  011C                     	;# 
+   126  011D                     	;# 
+   127  011D                     	;# 
+   128  011D                     	;# 
+   129  011E                     	;# 
+   130  011F                     	;# 
+   131  018C                     	;# 
+   132  018D                     	;# 
+   133  018E                     	;# 
+   134  0191                     	;# 
+   135  0191                     	;# 
+   136  0192                     	;# 
+   137  0193                     	;# 
+   138  0193                     	;# 
+   139  0193                     	;# 
+   140  0194                     	;# 
+   141  0195                     	;# 
+   142  0196                     	;# 
+   143  0197                     	;# 
+   144  0199                     	;# 
+   145  0199                     	;# 
+   146  0199                     	;# 
+   147  019A                     	;# 
+   148  019A                     	;# 
+   149  019A                     	;# 
+   150  019B                     	;# 
+   151  019B                     	;# 
+   152  019B                     	;# 
+   153  019B                     	;# 
+   154  019B                     	;# 
+   155  019C                     	;# 
+   156  019C                     	;# 
+   157  019C                     	;# 
+   158  019D                     	;# 
+   159  019D                     	;# 
+   160  019D                     	;# 
+   161  019E                     	;# 
+   162  019E                     	;# 
+   163  019E                     	;# 
+   164  019F                     	;# 
+   165  019F                     	;# 
+   166  019F                     	;# 
+   167  019F                     	;# 
+   168  019F                     	;# 
+   169  020C                     	;# 
+   170  020D                     	;# 
+   171  020E                     	;# 
+   172  0210                     	;# 
+   173  0211                     	;# 
+   174  0211                     	;# 
+   175  0212                     	;# 
+   176  0212                     	;# 
+   177  0213                     	;# 
+   178  0213                     	;# 
+   179  0214                     	;# 
+   180  0214                     	;# 
+   181  0215                     	;# 
+   182  0215                     	;# 
+   183  0215                     	;# 
+   184  0215                     	;# 
+   185  0216                     	;# 
+   186  0216                     	;# 
+   187  0217                     	;# 
+   188  0217                     	;# 
+   189  028C                     	;# 
+   190  028D                     	;# 
+   191  028E                     	;# 
+   192  0291                     	;# 
+   193  0291                     	;# 
+   194  0292                     	;# 
+   195  0293                     	;# 
+   196  0298                     	;# 
+   197  0298                     	;# 
+   198  0299                     	;# 
+   199  029A                     	;# 
+   200  030C                     	;# 
+   201  030D                     	;# 
+   202  030E                     	;# 
+   203  0311                     	;# 
+   204  0311                     	;# 
+   205  0312                     	;# 
+   206  0313                     	;# 
+   207  038C                     	;# 
+   208  038D                     	;# 
+   209  038E                     	;# 
+   210  0390                     	;# 
+   211  0391                     	;# 
+   212  0392                     	;# 
+   213  0393                     	;# 
+   214  0394                     	;# 
+   215  0395                     	;# 
+   216  0396                     	;# 
+   217  0397                     	;# 
+   218  0398                     	;# 
+   219  0399                     	;# 
+   220  039D                     	;# 
+   221  039E                     	;# 
+   222  039F                     	;# 
+   223  0511                     	;# 
+   224  0513                     	;# 
+   225  051A                     	;# 
+   226  0591                     	;# 
+   227  0592                     	;# 
+   228  0592                     	;# 
+   229  0593                     	;# 
+   230  0594                     	;# 
+   231  0594                     	;# 
+   232  0595                     	;# 
+   233  0596                     	;# 
+   234  0596                     	;# 
+   235  0E91                     	;# 
+   236  0E92                     	;# 
+   237  0E93                     	;# 
+   238  0E94                     	;# 
+   239  0E95                     	;# 
+   240  0E96                     	;# 
+   241  0E97                     	;# 
+   242  0E98                     	;# 
+   243  0E99                     	;# 
+   244  0E9A                     	;# 
+   245  0E9B                     	;# 
+   246  0E9C                     	;# 
+   247  0E9D                     	;# 
+   248  0E9E                     	;# 
+   249  0E9F                     	;# 
+   250  0EA0                     	;# 
+   251  0EA1                     	;# 
+   252  0EA1                     	;# 
+   253  0EA2                     	;# 
+   254  0EA3                     	;# 
+   255  0EA3                     	;# 
+   256  0EA4                     	;# 
+   257  0EA5                     	;# 
+   258  0EA5                     	;# 
+   259  0EA6                     	;# 
+   260  0EA7                     	;# 
+   261  0EA7                     	;# 
+   262  0EA8                     	;# 
+   263  0EA9                     	;# 
+   264  0EAA                     	;# 
+   265  0EAB                     	;# 
+   266  0EAC                     	;# 
+   267  0EAD                     	;# 
+   268  0EAE                     	;# 
+   269  0EAF                     	;# 
+   270  0EB1                     	;# 
+   271  0EB2                     	;# 
+   272  0EB3                     	;# 
+   273  0EB4                     	;# 
+   274  0EB5                     	;# 
+   275  0EB6                     	;# 
+   276  0EB7                     	;# 
+   277  0EB8                     	;# 
+   278  0EB9                     	;# 
+   279  0EBA                     	;# 
+   280  0EBB                     	;# 
+   281  0EBC                     	;# 
+   282  0EBD                     	;# 
+   283  0EBE                     	;# 
+   284  0EBF                     	;# 
+   285  0EC0                     	;# 
+   286  0EC1                     	;# 
+   287  0EC1                     	;# 
+   288  0EC2                     	;# 
+   289  0EC3                     	;# 
+   290  0EC3                     	;# 
+   291  0EC4                     	;# 
+   292  0EC5                     	;# 
+   293  0EC5                     	;# 
+   294  0EC6                     	;# 
+   295  0EC7                     	;# 
+   296  0EC7                     	;# 
+   297  0EC8                     	;# 
+   298  0EC9                     	;# 
+   299  0ECA                     	;# 
+   300  0ECB                     	;# 
+   301  0ECC                     	;# 
+   302  0ECD                     	;# 
+   303  0ECE                     	;# 
+   304  0ECF                     	;# 
+   305  0ED1                     	;# 
+   306  0ED2                     	;# 
+   307  0ED3                     	;# 
+   308  0ED4                     	;# 
+   309  0ED5                     	;# 
+   310  0ED6                     	;# 
+   311  0ED7                     	;# 
+   312  0ED8                     	;# 
+   313  0ED9                     	;# 
+   314  0EDA                     	;# 
+   315  0EDB                     	;# 
+   316  0EDC                     	;# 
+   317  0EDD                     	;# 
+   318  0EDE                     	;# 
+   319  0EDF                     	;# 
+   320  0EE0                     	;# 
+   321  0EE1                     	;# 
+   322  0EE1                     	;# 
+   323  0EE2                     	;# 
+   324  0EE3                     	;# 
+   325  0EE3                     	;# 
+   326  0EE4                     	;# 
+   327  0EE5                     	;# 
+   328  0EE5                     	;# 
+   329  0EE6                     	;# 
+   330  0EE7                     	;# 
+   331  0EE7                     	;# 
+   332  0EE8                     	;# 
+   333  0EE9                     	;# 
+   334  0EEA                     	;# 
+   335  0EEB                     	;# 
+   336  0EEC                     	;# 
+   337  0EED                     	;# 
+   338  0EEE                     	;# 
+   339  0EEF                     	;# 
+   340  0F11                     	;# 
+   341  0F12                     	;# 
+   342  0F13                     	;# 
+   343  0F14                     	;# 
+   344  0F15                     	;# 
+   345  0F16                     	;# 
+   346  0F17                     	;# 
+   347  0F18                     	;# 
+   348  0F19                     	;# 
+   349  0F1A                     	;# 
+   350  0F1B                     	;# 
+   351  0F1C                     	;# 
+   352  0F1D                     	;# 
+   353  0F1E                     	;# 
+   354  0F1F                     	;# 
+   355  0F20                     	;# 
+   356  0F21                     	;# 
+   357  0F21                     	;# 
+   358  0F22                     	;# 
+   359  0F23                     	;# 
+   360  0F23                     	;# 
+   361  0F24                     	;# 
+   362  0F25                     	;# 
+   363  0F25                     	;# 
+   364  0F26                     	;# 
+   365  0F27                     	;# 
+   366  0F27                     	;# 
+   367  0F28                     	;# 
+   368  0F29                     	;# 
+   369  0F2A                     	;# 
+   370  0F2B                     	;# 
+   371  0F2C                     	;# 
+   372  0F2D                     	;# 
+   373  0F2E                     	;# 
+   374  0F2F                     	;# 
+   375  0FE4                     	;# 
+   376  0FE5                     	;# 
+   377  0FE6                     	;# 
+   378  0FE7                     	;# 
+   379  0FE8                     	;# 
+   380  0FE9                     	;# 
+   381  0FEA                     	;# 
+   382  0FEB                     	;# 
+   383  0FED                     	;# 
+   384  0FEE                     	;# 
+   385  0FEF                     	;# 
+   386  0000                     	;# 
+   387  0001                     	;# 
+   388  0002                     	;# 
+   389  0003                     	;# 
+   390  0004                     	;# 
+   391  0005                     	;# 
+   392  0006                     	;# 
+   393  0007                     	;# 
+   394  0008                     	;# 
+   395  0009                     	;# 
+   396  000A                     	;# 
+   397  000B                     	;# 
+   398  000C                     	;# 
+   399  000D                     	;# 
+   400  000E                     	;# 
+   401  0010                     	;# 
+   402  0011                     	;# 
+   403  0012                     	;# 
+   404  0013                     	;# 
+   405  0014                     	;# 
+   406  0015                     	;# 
+   407  0016                     	;# 
+   408  0016                     	;# 
+   409  0017                     	;# 
+   410  0018                     	;# 
+   411  0019                     	;# 
+   412  001A                     	;# 
+   413  001B                     	;# 
+   414  001C                     	;# 
+   415  008C                     	;# 
+   416  008D                     	;# 
+   417  008E                     	;# 
+   418  0090                     	;# 
+   419  0091                     	;# 
+   420  0092                     	;# 
+   421  0093                     	;# 
+   422  0094                     	;# 
+   423  0095                     	;# 
+   424  0096                     	;# 
+   425  0097                     	;# 
+   426  0098                     	;# 
+   427  0099                     	;# 
+   428  009A                     	;# 
+   429  009B                     	;# 
+   430  009B                     	;# 
+   431  009C                     	;# 
+   432  009D                     	;# 
+   433  009E                     	;# 
+   434  009F                     	;# 
+   435  010C                     	;# 
+   436  010D                     	;# 
+   437  010E                     	;# 
+   438  0111                     	;# 
+   439  0112                     	;# 
+   440  0113                     	;# 
+   441  0114                     	;# 
+   442  0115                     	;# 
+   443  0116                     	;# 
+   444  0117                     	;# 
+   445  0118                     	;# 
+   446  0119                     	;# 
+   447  011A                     	;# 
+   448  011B                     	;# 
+   449  011C                     	;# 
+   450  011D                     	;# 
+   451  011D                     	;# 
+   452  011D                     	;# 
+   453  011E                     	;# 
+   454  011F                     	;# 
+   455  018C                     	;# 
+   456  018D                     	;# 
+   457  018E                     	;# 
+   458  0191                     	;# 
+   459  0191                     	;# 
+   460  0192                     	;# 
+   461  0193                     	;# 
+   462  0193                     	;# 
+   463  0193                     	;# 
+   464  0194                     	;# 
+   465  0195                     	;# 
+   466  0196                     	;# 
+   467  0197                     	;# 
+   468  0199                     	;# 
+   469  0199                     	;# 
+   470  0199                     	;# 
+   471  019A                     	;# 
+   472  019A                     	;# 
+   473  019A                     	;# 
+   474  019B                     	;# 
+   475  019B                     	;# 
+   476  019B                     	;# 
+   477  019B                     	;# 
+   478  019B                     	;# 
+   479  019C                     	;# 
+   480  019C                     	;# 
+   481  019C                     	;# 
+   482  019D                     	;# 
+   483  019D                     	;# 
+   484  019D                     	;# 
+   485  019E                     	;# 
+   486  019E                     	;# 
+   487  019E                     	;# 
+   488  019F                     	;# 
+   489  019F                     	;# 
+   490  019F                     	;# 
+   491  019F                     	;# 
+   492  019F                     	;# 
+   493  020C                     	;# 
+   494  020D                     	;# 
+   495  020E                     	;# 
+   496  0210                     	;# 
+   497  0211                     	;# 
+   498  0211                     	;# 
+   499  0212                     	;# 
+   500  0212                     	;# 
+   501  0213                     	;# 
+   502  0213                     	;# 
+   503  0214                     	;# 
+   504  0214                     	;# 
+   505  0215                     	;# 
+   506  0215                     	;# 
+   507  0215                     	;# 
+   508  0215                     	;# 
+   509  0216                     	;# 
+   510  0216                     	;# 
+   511  0217                     	;# 
+   512  0217                     	;# 
+   513  028C                     	;# 
+   514  028D                     	;# 
+   515  028E                     	;# 
+   516  0291                     	;# 
+   517  0291                     	;# 
+   518  0292                     	;# 
+   519  0293                     	;# 
+   520  0298                     	;# 
+   521  0298                     	;# 
+   522  0299                     	;# 
+   523  029A                     	;# 
+   524  030C                     	;# 
+   525  030D                     	;# 
+   526  030E                     	;# 
+   527  0311                     	;# 
+   528  0311                     	;# 
+   529  0312                     	;# 
+   530  0313                     	;# 
+   531  038C                     	;# 
+   532  038D                     	;# 
+   533  038E                     	;# 
+   534  0390                     	;# 
+   535  0391                     	;# 
+   536  0392                     	;# 
+   537  0393                     	;# 
+   538  0394                     	;# 
+   539  0395                     	;# 
+   540  0396                     	;# 
+   541  0397                     	;# 
+   542  0398                     	;# 
+   543  0399                     	;# 
+   544  039D                     	;# 
+   545  039E                     	;# 
+   546  039F                     	;# 
+   547  0511                     	;# 
+   548  0513                     	;# 
+   549  051A                     	;# 
+   550  0591                     	;# 
+   551  0592                     	;# 
+   552  0592                     	;# 
+   553  0593                     	;# 
+   554  0594                     	;# 
+   555  0594                     	;# 
+   556  0595                     	;# 
+   557  0596                     	;# 
+   558  0596                     	;# 
+   559  0E91                     	;# 
+   560  0E92                     	;# 
+   561  0E93                     	;# 
+   562  0E94                     	;# 
+   563  0E95                     	;# 
+   564  0E96                     	;# 
+   565  0E97                     	;# 
+   566  0E98                     	;# 
+   567  0E99                     	;# 
+   568  0E9A                     	;# 
+   569  0E9B                     	;# 
+   570  0E9C                     	;# 
+   571  0E9D                     	;# 
+   572  0E9E                     	;# 
+   573  0E9F                     	;# 
+   574  0EA0                     	;# 
+   575  0EA1                     	;# 
+   576  0EA1                     	;# 
+   577  0EA2                     	;# 
+   578  0EA3                     	;# 
+   579  0EA3                     	;# 
+   580  0EA4                     	;# 
+   581  0EA5                     	;# 
+   582  0EA5                     	;# 
+   583  0EA6                     	;# 
+   584  0EA7                     	;# 
+   585  0EA7                     	;# 
+   586  0EA8                     	;# 
+   587  0EA9                     	;# 
+   588  0EAA                     	;# 
+   589  0EAB                     	;# 
+   590  0EAC                     	;# 
+   591  0EAD                     	;# 
+   592  0EAE                     	;# 
+   593  0EAF                     	;# 
+   594  0EB1                     	;# 
+   595  0EB2                     	;# 
+   596  0EB3                     	;# 
+   597  0EB4                     	;# 
+   598  0EB5                     	;# 
+   599  0EB6                     	;# 
+   600  0EB7                     	;# 
+   601  0EB8                     	;# 
+   602  0EB9                     	;# 
+   603  0EBA                     	;# 
+   604  0EBB                     	;# 
+   605  0EBC                     	;# 
+   606  0EBD                     	;# 
+   607  0EBE                     	;# 
+   608  0EBF                     	;# 
+   609  0EC0                     	;# 
+   610  0EC1                     	;# 
+   611  0EC1                     	;# 
+   612  0EC2                     	;# 
+   613  0EC3                     	;# 
+   614  0EC3                     	;# 
+   615  0EC4                     	;# 
+   616  0EC5                     	;# 
+   617  0EC5                     	;# 
+   618  0EC6                     	;# 
+   619  0EC7                     	;# 
+   620  0EC7                     	;# 
+   621  0EC8                     	;# 
+   622  0EC9                     	;# 
+   623  0ECA                     	;# 
+   624  0ECB                     	;# 
+   625  0ECC                     	;# 
+   626  0ECD                     	;# 
+   627  0ECE                     	;# 
+   628  0ECF                     	;# 
+   629  0ED1                     	;# 
+   630  0ED2                     	;# 
+   631  0ED3                     	;# 
+   632  0ED4                     	;# 
+   633  0ED5                     	;# 
+   634  0ED6                     	;# 
+   635  0ED7                     	;# 
+   636  0ED8                     	;# 
+   637  0ED9                     	;# 
+   638  0EDA                     	;# 
+   639  0EDB                     	;# 
+   640  0EDC                     	;# 
+   641  0EDD                     	;# 
+   642  0EDE                     	;# 
+   643  0EDF                     	;# 
+   644  0EE0                     	;# 
+   645  0EE1                     	;# 
+   646  0EE1                     	;# 
+   647  0EE2                     	;# 
+   648  0EE3                     	;# 
+   649  0EE3                     	;# 
+   650  0EE4                     	;# 
+   651  0EE5                     	;# 
+   652  0EE5                     	;# 
+   653  0EE6                     	;# 
+   654  0EE7                     	;# 
+   655  0EE7                     	;# 
+   656  0EE8                     	;# 
+   657  0EE9                     	;# 
+   658  0EEA                     	;# 
+   659  0EEB                     	;# 
+   660  0EEC                     	;# 
+   661  0EED                     	;# 
+   662  0EEE                     	;# 
+   663  0EEF                     	;# 
+   664  0F11                     	;# 
+   665  0F12                     	;# 
+   666  0F13                     	;# 
+   667  0F14                     	;# 
+   668  0F15                     	;# 
+   669  0F16                     	;# 
+   670  0F17                     	;# 
+   671  0F18                     	;# 
+   672  0F19                     	;# 
+   673  0F1A                     	;# 
+   674  0F1B                     	;# 
+   675  0F1C                     	;# 
+   676  0F1D                     	;# 
+   677  0F1E                     	;# 
+   678  0F1F                     	;# 
+   679  0F20                     	;# 
+   680  0F21                     	;# 
+   681  0F21                     	;# 
+   682  0F22                     	;# 
+   683  0F23                     	;# 
+   684  0F23                     	;# 
+   685  0F24                     	;# 
+   686  0F25                     	;# 
+   687  0F25                     	;# 
+   688  0F26                     	;# 
+   689  0F27                     	;# 
+   690  0F27                     	;# 
+   691  0F28                     	;# 
+   692  0F29                     	;# 
+   693  0F2A                     	;# 
+   694  0F2B                     	;# 
+   695  0F2C                     	;# 
+   696  0F2D                     	;# 
+   697  0F2E                     	;# 
+   698  0F2F                     	;# 
+   699  0FE4                     	;# 
+   700  0FE5                     	;# 
+   701  0FE6                     	;# 
+   702  0FE7                     	;# 
+   703  0FE8                     	;# 
+   704  0FE9                     	;# 
+   705  0FEA                     	;# 
+   706  0FEB                     	;# 
+   707  0FED                     	;# 
+   708  0FEE                     	;# 
+   709  0FEF                     	;# 
+   710  0016                     _TMR1	set	22
+   711  000B                     _INTCONbits	set	11
+   712  001B                     _PR2	set	27
+   713  001C                     _T2CONbits	set	28
+   714  0011                     _PIR1bits	set	17
+   715  0019                     _T1GCONbits	set	25
+   716  0018                     _T1CONbits	set	24
+   717  008E                     _TRISC	set	142
+   718  008D                     _TRISB	set	141
+   719  0091                     _PIE1bits	set	145
+   720  0099                     _OSCCONbits	set	153
+   721  011D                     _APFCON1bits	set	285
+   722  010E                     _LATC	set	270
+   723  010D                     _LATB	set	269
+   724  0199                     _RCREG	set	409
+   725  019B                     _SPBRG	set	411
+   726  019E                     _TXSTAbits	set	414
+   727  019D                     _RCSTAbits	set	413
+   728  019F                     _BAUDCONbits	set	415
+   729  018E                     _ANSELC	set	398
+   730  018D                     _ANSELB	set	397
+   731  0EC3                     _PSMC2DC	set	3779
+   732  0EC5                     _PSMC2PR	set	3781
+   733  0EE3                     _PSMC3DC	set	3811
+   734  0EE5                     _PSMC3PR	set	3813
+   735  0EA3                     _PSMC1DC	set	3747
+   736  0EA5                     _PSMC1PR	set	3749
+   737  0ED1                     _PSMC3CONbits	set	3793
+   738  0E91                     _PSMC1CONbits	set	3729
+   739  0EB1                     _PSMC2CONbits	set	3761
+   740  0EB1                     _PSMC2CON	set	3761
+   741  0EBB                     _PSMC2DCSbits	set	3771
+   742  0EBA                     _PSMC2PHSbits	set	3770
+   743  0EBC                     _PSMC2PRSbits	set	3772
+   744  0EB5                     _PSMC2OENbits	set	3765
+   745  0EB6                     _PSMC2POLbits	set	3766
+   746  0ECE                     _PSMC2STR0bits	set	3790
+   747  0EB4                     _PSMC2CLKbits	set	3764
+   748  0ED1                     _PSMC3CON	set	3793
+   749  0EDB                     _PSMC3DCSbits	set	3803
+   750  0EDA                     _PSMC3PHSbits	set	3802
+   751  0EDC                     _PSMC3PRSbits	set	3804
+   752  0ED5                     _PSMC3OENbits	set	3797
+   753  0ED6                     _PSMC3POLbits	set	3798
+   754  0EEE                     _PSMC3STR0bits	set	3822
+   755  0ED4                     _PSMC3CLKbits	set	3796
+   756  0E91                     _PSMC1CON	set	3729
+   757  0E9B                     _PSMC1DCSbits	set	3739
+   758  0E9A                     _PSMC1PHSbits	set	3738
+   759  0E9C                     _PSMC1PRSbits	set	3740
+   760  0E95                     _PSMC1OENbits	set	3733
+   761  0E96                     _PSMC1POLbits	set	3734
+   762  0EAE                     _PSMC1STR0bits	set	3758
+   763  0E94                     _PSMC1CLKbits	set	3732
+   764  0F23                     _PSMC4DC	set	3875
+   765  0F25                     _PSMC4PR	set	3877
+   766  0F11                     _PSMC4CONbits	set	3857
+   767  0F11                     _PSMC4CON	set	3857
+   768  0F1B                     _PSMC4DCSbits	set	3867
+   769  0F1A                     _PSMC4PHSbits	set	3866
+   770  0F1C                     _PSMC4PRSbits	set	3868
+   771  0F15                     _PSMC4OENbits	set	3861
+   772  0F16                     _PSMC4POLbits	set	3862
+   773  0F2E                     _PSMC4STR0bits	set	3886
+   774  0F14                     _PSMC4CLKbits	set	3860
+   775                           
+   776                           	psect	cinit
+   777  0022                     start_initialization:	
+   778                           ; #config settings
+   779                           
+   780  0022                     __initialization:
+   781                           
+   782                           ; Clear objects allocated to COMMON
+   783  0022  01FC               	clrf	__pbssCOMMON& (0+127)
+   784                           
+   785                           ; Clear objects allocated to BANK0
+   786  0023  0020               	movlb	0	; select bank0
+   787  0024  01A0               	clrf	__pbssBANK0& (0+127)
+   788  0025  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   789  0026  01A2               	clrf	(__pbssBANK0+2)& (0+127)
+   790  0027  01A3               	clrf	(__pbssBANK0+3)& (0+127)
+   791  0028  01A4               	clrf	(__pbssBANK0+4)& (0+127)
+   792  0029  01A5               	clrf	(__pbssBANK0+5)& (0+127)
+   793  002A  01A6               	clrf	(__pbssBANK0+6)& (0+127)
+   794  002B  01A7               	clrf	(__pbssBANK0+7)& (0+127)
+   795  002C  01A8               	clrf	(__pbssBANK0+8)& (0+127)
+   796  002D  01A9               	clrf	(__pbssBANK0+9)& (0+127)
+   797  002E  01AA               	clrf	(__pbssBANK0+10)& (0+127)
+   798  002F  01AB               	clrf	(__pbssBANK0+11)& (0+127)
+   799  0030                     end_of_initialization:	
+   800                           ;End of C runtime variable initialization code
+   801                           
+   802  0030                     __end_of__initialization:
+   803  0030  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+   804  0031  0020               	movlb	0
+   805  0032  3181  2985         	ljmp	_main	;jump to C main() function
+   806                           
+   807                           	psect	bssCOMMON
+   808  007C                     __pbssCOMMON:
+   809  007C                     _RCTemp:
+   810  007C                     	ds	1
+   811                           
+   812                           	psect	bssBANK0
+   813  0020                     __pbssBANK0:
+   814  0020                     _shootCount:
+   815  0020                     	ds	2
+   816  0022                     _shootPermission:
+   817  0022                     	ds	1
+   818  0023                     _XAxisReversed:
+   819  0023                     	ds	1
+   820  0024                     _YAxisReversed:
+   821  0024                     	ds	1
+   822  0025                     _YAxis:
+   823  0025                     	ds	1
+   824  0026                     _XAxis:
+   825  0026                     	ds	1
+   826  0027                     _Buttons2:
+   827  0027                     	ds	1
+   828  0028                     _Buttons1:
+   829  0028                     	ds	1
+   830  0029                     _RCIndex:
+   831  0029                     	ds	1
+   832  002A                     _homeSequence:
+   833  002A                     	ds	1
+   834  002B                     _pFlag:
+   835  002B                     	ds	1
+   836                           
+   837                           	psect	cstackCOMMON
+   838  0070                     __pcstackCOMMON:
+   839  0070                     ?_configOSC:
+   840  0070                     ?_configTMR1:	
+   841                           ; 1 bytes @ 0x0
+   842                           
+   843  0070                     ?_configTMR2:	
+   844                           ; 1 bytes @ 0x0
+   845                           
+   846  0070                     ?_configPorts:	
+   847                           ; 1 bytes @ 0x0
+   848                           
+   849  0070                     ?_configInterrupts:	
+   850                           ; 1 bytes @ 0x0
+   851                           
+   852  0070                     ?_configPWM:	
+   853                           ; 1 bytes @ 0x0
+   854                           
+   855  0070                     ?_configUART:	
+   856                           ; 1 bytes @ 0x0
+   857                           
+   858  0070                     ?_reverseBits:	
+   859                           ; 1 bytes @ 0x0
+   860                           
+   861  0070                     ?_ProcessUART:	
+   862                           ; 1 bytes @ 0x0
+   863                           
+   864  0070                     ?_DetermineAction:	
+   865                           ; 1 bytes @ 0x0
+   866                           
+   867  0070                     ?_TMR2ISR:	
+   868                           ; 1 bytes @ 0x0
+   869                           
+   870  0070                     ??_TMR2ISR:	
+   871                           ; 1 bytes @ 0x0
+   872                           
+   873  0070                     ?_RC1ISR:	
+   874                           ; 1 bytes @ 0x0
+   875                           
+   876  0070                     ??_RC1ISR:	
+   877                           ; 1 bytes @ 0x0
+   878                           
+   879  0070                     ?_TMR1ISR:	
+   880                           ; 1 bytes @ 0x0
+   881                           
+   882  0070                     ??_TMR1ISR:	
+   883                           ; 1 bytes @ 0x0
+   884                           
+   885  0070                     ?_ISR:	
+   886                           ; 1 bytes @ 0x0
+   887                           
+   888  0070                     ?_main:	
+   889                           ; 1 bytes @ 0x0
+   890                           
+   891                           
+   892                           ; 2 bytes @ 0x0
+   893  0070                     	ds	1
+   894  0071                     ??_configOSC:
+   895  0071                     ??_configTMR1:	
+   896                           ; 1 bytes @ 0x1
+   897                           
+   898  0071                     ??_configTMR2:	
+   899                           ; 1 bytes @ 0x1
+   900                           
+   901  0071                     ??_configPorts:	
+   902                           ; 1 bytes @ 0x1
+   903                           
+   904  0071                     ??_configInterrupts:	
+   905                           ; 1 bytes @ 0x1
+   906                           
+   907  0071                     ??_configPWM:	
+   908                           ; 1 bytes @ 0x1
+   909                           
+   910  0071                     ??_configUART:	
+   911                           ; 1 bytes @ 0x1
+   912                           
+   913  0071                     ??_reverseBits:	
+   914                           ; 1 bytes @ 0x1
+   915                           
+   916  0071                     ??_ProcessUART:	
+   917                           ; 1 bytes @ 0x1
+   918                           
+   919  0071                     ??_ISR:	
+   920                           ; 1 bytes @ 0x1
+   921                           
+   922                           
+   923                           ; 1 bytes @ 0x1
+   924  0071                     	ds	2
+   925  0073                     reverseBits@num:
+   926                           
+   927                           ; 1 bytes @ 0x3
+   928  0073                     	ds	1
+   929  0074                     reverseBits@temp:
+   930                           
+   931                           ; 1 bytes @ 0x4
+   932  0074                     	ds	1
+   933  0075                     reverseBits@reverse_num:
+   934                           
+   935                           ; 1 bytes @ 0x5
+   936  0075                     	ds	1
+   937  0076                     reverseBits@NO_OF_BITS:
+   938                           
+   939                           ; 1 bytes @ 0x6
+   940  0076                     	ds	1
+   941  0077                     reverseBits@i:
+   942                           
+   943                           ; 1 bytes @ 0x7
+   944  0077                     	ds	1
+   945  0078                     ??_DetermineAction:
+   946                           
+   947                           ; 1 bytes @ 0x8
+   948  0078                     	ds	4
+   949                           
+   950                           	psect	cstackBANK0
+   951  002C                     __pcstackBANK0:
+   952  002C                     ??_main:
+   953                           
+   954                           ; 1 bytes @ 0x0
+   955  002C                     	ds	1
+   956                           
+   957                           	psect	maintext
+   958  0185                     __pmaintext:	
+   959 ;;
+   960 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   961 ;;
+   962 ;; *************** function _main *****************
+   963 ;; Defined at:
+   964 ;;		line 405 in file "Nerf Turret Project.c"
+   965 ;; Parameters:    Size  Location     Type
+   966 ;;		None
+   967 ;; Auto vars:     Size  Location     Type
+   968 ;;		None
+   969 ;; Return value:  Size  Location     Type
+   970 ;;                  2  238[None  ] int 
+   971 ;; Registers used:
+   972 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   973 ;; Tracked objects:
+   974 ;;		On entry : B1F/0
+   975 ;;		On exit  : 0/0
+   976 ;;		Unchanged: 0/0
+   977 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+   978 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+   979 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+   980 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+   981 ;;      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+   982 ;;Total ram usage:        1 bytes
+   983 ;; Hardware stack levels required when called: 4
+   984 ;; This function calls:
+   985 ;;		_DetermineAction
+   986 ;;		_ProcessUART
+   987 ;;		_configInterrupts
+   988 ;;		_configOSC
+   989 ;;		_configPWM
+   990 ;;		_configPorts
+   991 ;;		_configTMR1
+   992 ;;		_configTMR2
+   993 ;;		_configUART
+   994 ;; This function is called by:
+   995 ;;		Startup code after reset
+   996 ;; This function uses a non-reentrant model
+   997 ;;
+   998                           
+   999  0185                     _main:	
+  1000                           ;psect for function _main
+  1001                           
+  1002  0185                     l1564:	
+  1003                           ;incstack = 0
+  1004                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1005                           
+  1006  0185  3183  230C  3181   	fcall	_configOSC
+  1007  0188                     l1566:
+  1008  0188  3182  22E6  3181   	fcall	_configPorts
+  1009  018B                     l1568:
+  1010  018B  3182  22B5  3181   	fcall	_configUART
+  1011  018E                     l1570:
+  1012  018E  3181  21F1  3181   	fcall	_configPWM
+  1013  0191                     l1572:
+  1014  0191  3182  22D8  3181   	fcall	_configTMR1
+  1015  0194                     l1574:
+  1016  0194  3182  22C7  3181   	fcall	_configTMR2
+  1017  0197                     l1576:
+  1018  0197  3183  2314  3181   	fcall	_configInterrupts
+  1019  019A                     l1578:
+  1020  019A  0020               	movlb	0	; select bank0
+  1021  019B  1C2B               	btfss	_pFlag,0
+  1022  019C  299E               	goto	u711
+  1023  019D  299F               	goto	u710
+  1024  019E                     u711:
+  1025  019E  29A7               	goto	l1584
+  1026  019F                     u710:
+  1027  019F                     l1580:
+  1028  019F  3182  2245  3181   	fcall	_ProcessUART
+  1029  01A2                     l1582:
+  1030  01A2  3001               	movlw	1
+  1031  01A3  0020               	movlb	0	; select bank0
+  1032  01A4  00AC               	movwf	??_main
+  1033  01A5  082C               	movf	??_main,w
+  1034  01A6  06AB               	xorwf	_pFlag,f
+  1035  01A7                     l1584:
+  1036  01A7  1CAB               	btfss	_pFlag,1
+  1037  01A8  29AA               	goto	u721
+  1038  01A9  29AB               	goto	u720
+  1039  01AA                     u721:
+  1040  01AA  29B8               	goto	l1592
+  1041  01AB                     u720:
+  1042  01AB                     l1586:
+  1043  01AB  082A               	movf	_homeSequence,w
+  1044  01AC  1D03               	btfss	3,2
+  1045  01AD  29AF               	goto	u731
+  1046  01AE  29B0               	goto	u730
+  1047  01AF                     u731:
+  1048  01AF  29B8               	goto	l1592
+  1049  01B0                     u730:
+  1050  01B0                     l1588:
+  1051  01B0  3180  2034  3181   	fcall	_DetermineAction
+  1052  01B3                     l1590:
+  1053  01B3  3002               	movlw	2
+  1054  01B4  0020               	movlb	0	; select bank0
+  1055  01B5  00AC               	movwf	??_main
+  1056  01B6  082C               	movf	??_main,w
+  1057  01B7  06AB               	xorwf	_pFlag,f
+  1058  01B8                     l1592:
+  1059  01B8  0821               	movf	_shootCount+1,w
+  1060  01B9  3A80               	xorlw	128
+  1061  01BA  00AC               	movwf	??_main
+  1062  01BB  3080               	movlw	128
+  1063  01BC  022C               	subwf	??_main,w
+  1064  01BD  1D03               	skipz
+  1065  01BE  29C1               	goto	u745
+  1066  01BF  3001               	movlw	1
+  1067  01C0  0220               	subwf	_shootCount,w
+  1068  01C1                     u745:
+  1069  01C1  1C03               	skipc
+  1070  01C2  29C4               	goto	u741
+  1071  01C3  29C5               	goto	u740
+  1072  01C4                     u741:
+  1073  01C4  29CC               	goto	l242
+  1074  01C5                     u740:
+  1075  01C5                     l1594:
+  1076  01C5  300F               	movlw	15
+  1077  01C6  003D               	movlb	29	; select bank29
+  1078  01C7  00E4               	movwf	100	;volatile
+  1079  01C8  303C               	movlw	60
+  1080  01C9  00E3               	movwf	99	;volatile
+  1081  01CA  1751               	bsf	81,6	;volatile
+  1082  01CB  29D2               	goto	l1596
+  1083  01CC                     l242:
+  1084  01CC  300B               	movlw	11
+  1085  01CD  003D               	movlb	29	; select bank29
+  1086  01CE  00E4               	movwf	100	;volatile
+  1087  01CF  30B8               	movlw	184
+  1088  01D0  00E3               	movwf	99	;volatile
+  1089  01D1  1751               	bsf	81,6	;volatile
+  1090  01D2                     l1596:
+  1091  01D2  0020               	movlb	0	; select bank0
+  1092  01D3  0821               	movf	_shootCount+1,w
+  1093  01D4  3A80               	xorlw	128
+  1094  01D5  00AC               	movwf	??_main
+  1095  01D6  3081               	movlw	129
+  1096  01D7  022C               	subwf	??_main,w
+  1097  01D8  1D03               	skipz
+  1098  01D9  29DC               	goto	u755
+  1099  01DA  3091               	movlw	145
+  1100  01DB  0220               	subwf	_shootCount,w
+  1101  01DC                     u755:
+  1102  01DC  1C03               	skipc
+  1103  01DD  29DF               	goto	u751
+  1104  01DE  29E0               	goto	u750
+  1105  01DF                     u751:
+  1106  01DF  29E6               	goto	l1600
+  1107  01E0                     u750:
+  1108  01E0                     l1598:
+  1109  01E0  30FF               	movlw	255
+  1110  01E1  0020               	movlb	0	; select bank0
+  1111  01E2  00AC               	movwf	??_main
+  1112  01E3  082C               	movf	??_main,w
+  1113  01E4  00A2               	movwf	_shootPermission
+  1114  01E5  299A               	goto	l1578
+  1115  01E6                     l1600:
+  1116  01E6  0020               	movlb	0	; select bank0
+  1117  01E7  01A2               	clrf	_shootPermission
+  1118  01E8                     l1602:
+  1119  01E8  300B               	movlw	11
+  1120  01E9  003D               	movlb	29	; select bank29
+  1121  01EA  00C4               	movwf	68	;volatile
+  1122  01EB  30B8               	movlw	184
+  1123  01EC  00C3               	movwf	67	;volatile
+  1124  01ED                     l1604:
+  1125  01ED  1731               	bsf	49,6	;volatile
+  1126  01EE  299A               	goto	l1578
+  1127  01EF  3180  2820         	ljmp	start
+  1128  01F1                     __end_of_main:
+  1129                           
+  1130                           	psect	text1
+  1131  02B5                     __ptext1:	
+  1132 ;; *************** function _configUART *****************
+  1133 ;; Defined at:
+  1134 ;;		line 207 in file "Nerf Turret Project.c"
+  1135 ;; Parameters:    Size  Location     Type
+  1136 ;;		None
+  1137 ;; Auto vars:     Size  Location     Type
+  1138 ;;		None
+  1139 ;; Return value:  Size  Location     Type
+  1140 ;;                  1    wreg      void 
+  1141 ;; Registers used:
+  1142 ;;		wreg
+  1143 ;; Tracked objects:
+  1144 ;;		On entry : 0/0
+  1145 ;;		On exit  : 0/0
+  1146 ;;		Unchanged: 0/0
+  1147 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1148 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1149 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1150 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1151 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1152 ;;Total ram usage:        0 bytes
+  1153 ;; Hardware stack levels used: 1
+  1154 ;; Hardware stack levels required when called: 2
+  1155 ;; This function calls:
+  1156 ;;		Nothing
+  1157 ;; This function is called by:
+  1158 ;;		_main
+  1159 ;; This function uses a non-reentrant model
+  1160 ;;
+  1161                           
+  1162  02B5                     _configUART:	
+  1163                           ;psect for function _configUART
+  1164                           
+  1165  02B5                     l1336:	
+  1166                           ;incstack = 0
+  1167                           ; Regs used in _configUART: [wreg]
+  1168                           
+  1169                           
+  1170                           ;Nerf Turret Project.c: 209:     {
+  1171  02B5  0022               	movlb	2	; select bank2
+  1172  02B6  151D               	bsf	29,2	;volatile
+  1173                           
+  1174                           ;Nerf Turret Project.c: 210:         if(shootCount != 65535) {shootCount++;}
+  1175  02B7  149D               	bsf	29,1	;volatile
+  1176                           
+  1177                           ;Nerf Turret Project.c: 212:     else
+  1178  02B8  0023               	movlb	3	; select bank3
+  1179  02B9  121F               	bcf	31,4	;volatile
+  1180                           
+  1181                           ;Nerf Turret Project.c: 213:     {
+  1182  02BA  159F               	bsf	31,3	;volatile
+  1183                           
+  1184                           ;Nerf Turret Project.c: 215:     }
+  1185  02BB  179D               	bsf	29,7	;volatile
+  1186                           
+  1187                           ;Nerf Turret Project.c: 216: 
+  1188  02BC  161D               	bsf	29,4	;volatile
+  1189                           
+  1190                           ;Nerf Turret Project.c: 218:     {
+  1191  02BD  129E               	bcf	30,5	;volatile
+  1192                           
+  1193                           ;Nerf Turret Project.c: 219:         PSMC2DC = 3900;
+  1194  02BE  121E               	bcf	30,4	;volatile
+  1195                           
+  1196                           ;Nerf Turret Project.c: 220:         PSMC2CONbits.PSMC2LD = 1;
+  1197  02BF  151E               	bsf	30,2	;volatile
+  1198  02C0                     l1338:
+  1199                           
+  1200                           ;Nerf Turret Project.c: 222:     else
+  1201  02C0  3022               	movlw	34
+  1202  02C1  009B               	movwf	27	;volatile
+  1203  02C2                     l1340:
+  1204                           
+  1205                           ;Nerf Turret Project.c: 224:         PSMC2DC = 3000;
+  1206  02C2  0021               	movlb	1	; select bank1
+  1207  02C3  1691               	bsf	17,5	;volatile
+  1208  02C4                     l1342:
+  1209                           
+  1210                           ;Nerf Turret Project.c: 225:         PSMC2CONbits.PSMC2LD = 1;
+  1211  02C4  0020               	movlb	0	; select bank0
+  1212  02C5  1291               	bcf	17,5	;volatile
+  1213  02C6                     l175:
+  1214  02C6  0008               	return
+  1215  02C7                     __end_of_configUART:
+  1216                           
+  1217                           	psect	text2
+  1218  02C7                     __ptext2:	
+  1219 ;; *************** function _configTMR2 *****************
+  1220 ;; Defined at:
+  1221 ;;		line 118 in file "Nerf Turret Project.c"
+  1222 ;; Parameters:    Size  Location     Type
+  1223 ;;		None
+  1224 ;; Auto vars:     Size  Location     Type
+  1225 ;;		None
+  1226 ;; Return value:  Size  Location     Type
+  1227 ;;                  1    wreg      void 
+  1228 ;; Registers used:
+  1229 ;;		wreg, status,2, status,0
+  1230 ;; Tracked objects:
+  1231 ;;		On entry : 0/0
+  1232 ;;		On exit  : 0/0
+  1233 ;;		Unchanged: 0/0
+  1234 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1235 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1236 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1237 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1238 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1239 ;;Total ram usage:        0 bytes
+  1240 ;; Hardware stack levels used: 1
+  1241 ;; Hardware stack levels required when called: 2
+  1242 ;; This function calls:
+  1243 ;;		Nothing
+  1244 ;; This function is called by:
+  1245 ;;		_main
+  1246 ;; This function uses a non-reentrant model
+  1247 ;;
+  1248                           
+  1249  02C7                     _configTMR2:	
+  1250                           ;psect for function _configTMR2
+  1251                           
+  1252  02C7                     l1232:	
+  1253                           ;incstack = 0
+  1254                           ; Regs used in _configTMR2: [wreg+status,2+status,0]
+  1255                           
+  1256                           
+  1257                           ;Nerf Turret Project.c: 121:     PSMC2CLKbits.P2CSRC = 0b00;
+  1258  02C7  0020               	movlb	0	; select bank0
+  1259  02C8  081C               	movf	28,w	;volatile
+  1260  02C9  3987               	andlw	-121
+  1261  02CA  3848               	iorlw	72
+  1262  02CB  009C               	movwf	28	;volatile
+  1263                           
+  1264                           ;Nerf Turret Project.c: 122:     PSMC2CLKbits.P2CPRE = 0b11;
+  1265  02CC  081C               	movf	28,w	;volatile
+  1266  02CD  39FC               	andlw	-4
+  1267  02CE  3802               	iorlw	2
+  1268  02CF  009C               	movwf	28	;volatile
+  1269  02D0                     l1234:
+  1270                           
+  1271                           ;Nerf Turret Project.c: 123:     PSMC2PR = 40000;
+  1272  02D0  30FA               	movlw	250
+  1273  02D1  009B               	movwf	27	;volatile
+  1274  02D2                     l1236:
+  1275                           
+  1276                           ;Nerf Turret Project.c: 125:     PSMC2STR0bits.P2STRA = 1;
+  1277  02D2  1091               	bcf	17,1	;volatile
+  1278  02D3                     l1238:
+  1279                           
+  1280                           ;Nerf Turret Project.c: 126:     PSMC2POLbits.P2POLA = 0;
+  1281  02D3  0021               	movlb	1	; select bank1
+  1282  02D4  1491               	bsf	17,1	;volatile
+  1283  02D5                     l1240:
+  1284                           
+  1285                           ;Nerf Turret Project.c: 128:     PSMC2PRSbits.P2PRST = 1;
+  1286  02D5  0020               	movlb	0	; select bank0
+  1287  02D6  111C               	bcf	28,2	;volatile
+  1288  02D7                     l163:
+  1289  02D7  0008               	return
+  1290  02D8                     __end_of_configTMR2:
+  1291                           
+  1292                           	psect	text3
+  1293  02D8                     __ptext3:	
+  1294 ;; *************** function _configTMR1 *****************
+  1295 ;; Defined at:
+  1296 ;;		line 105 in file "Nerf Turret Project.c"
+  1297 ;; Parameters:    Size  Location     Type
+  1298 ;;		None
+  1299 ;; Auto vars:     Size  Location     Type
+  1300 ;;		None
+  1301 ;; Return value:  Size  Location     Type
+  1302 ;;                  1    wreg      void 
+  1303 ;; Registers used:
+  1304 ;;		wreg, status,2, status,0
+  1305 ;; Tracked objects:
+  1306 ;;		On entry : 0/0
+  1307 ;;		On exit  : 0/0
+  1308 ;;		Unchanged: 0/0
+  1309 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1310 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1311 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1312 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1313 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1314 ;;Total ram usage:        0 bytes
+  1315 ;; Hardware stack levels used: 1
+  1316 ;; Hardware stack levels required when called: 2
+  1317 ;; This function calls:
+  1318 ;;		Nothing
+  1319 ;; This function is called by:
+  1320 ;;		_main
+  1321 ;; This function uses a non-reentrant model
+  1322 ;;
+  1323                           
+  1324  02D8                     _configTMR1:	
+  1325                           ;psect for function _configTMR1
+  1326                           
+  1327  02D8                     l1222:	
+  1328                           ;incstack = 0
+  1329                           ; Regs used in _configTMR1: [wreg+status,2+status,0]
+  1330                           
+  1331                           
+  1332                           ;Nerf Turret Project.c: 108:     PSMC3CLKbits.P3CSRC = 0b00;
+  1333  02D8  303F               	movlw	-193
+  1334  02D9  0020               	movlb	0	; select bank0
+  1335  02DA  0598               	andwf	24,f	;volatile
+  1336                           
+  1337                           ;Nerf Turret Project.c: 109:     PSMC3CLKbits.P3CPRE = 0b11;
+  1338  02DB  0818               	movf	24,w	;volatile
+  1339  02DC  39CF               	andlw	-49
+  1340  02DD  3810               	iorlw	16
+  1341  02DE  0098               	movwf	24	;volatile
+  1342  02DF                     l1224:
+  1343                           
+  1344                           ;Nerf Turret Project.c: 110:     PSMC3PR = 40000;
+  1345  02DF  1399               	bcf	25,7	;volatile
+  1346  02E0                     l1226:
+  1347                           
+  1348                           ;Nerf Turret Project.c: 112:     PSMC3STR0bits.P3STRA = 1;
+  1349  02E0  0021               	movlb	1	; select bank1
+  1350  02E1  1411               	bsf	17,0	;volatile
+  1351  02E2                     l1228:
+  1352                           
+  1353                           ;Nerf Turret Project.c: 113:     PSMC3POLbits.P3POLA = 0;
+  1354  02E2  0020               	movlb	0	; select bank0
+  1355  02E3  1011               	bcf	17,0	;volatile
+  1356  02E4                     l1230:
+  1357                           
+  1358                           ;Nerf Turret Project.c: 115:     PSMC3PRSbits.P3PRST = 1;
+  1359  02E4  1418               	bsf	24,0	;volatile
+  1360  02E5                     l160:
+  1361  02E5  0008               	return
+  1362  02E6                     __end_of_configTMR1:
+  1363                           
+  1364                           	psect	text4
+  1365  02E6                     __ptext4:	
+  1366 ;; *************** function _configPorts *****************
+  1367 ;; Defined at:
+  1368 ;;		line 131 in file "Nerf Turret Project.c"
+  1369 ;; Parameters:    Size  Location     Type
+  1370 ;;		None
+  1371 ;; Auto vars:     Size  Location     Type
+  1372 ;;		None
+  1373 ;; Return value:  Size  Location     Type
+  1374 ;;                  1    wreg      void 
+  1375 ;; Registers used:
+  1376 ;;		wreg, status,2
+  1377 ;; Tracked objects:
+  1378 ;;		On entry : 0/0
+  1379 ;;		On exit  : 0/0
+  1380 ;;		Unchanged: 0/0
+  1381 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1382 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1383 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1384 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1385 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1386 ;;Total ram usage:        0 bytes
+  1387 ;; Hardware stack levels used: 1
+  1388 ;; Hardware stack levels required when called: 2
+  1389 ;; This function calls:
+  1390 ;;		Nothing
+  1391 ;; This function is called by:
+  1392 ;;		_main
+  1393 ;; This function uses a non-reentrant model
+  1394 ;;
+  1395                           
+  1396  02E6                     _configPorts:	
+  1397                           ;psect for function _configPorts
+  1398                           
+  1399  02E6                     l1242:	
+  1400                           ;incstack = 0
+  1401                           ; Regs used in _configPorts: [wreg+status,2]
+  1402                           
+  1403                           
+  1404                           ;Nerf Turret Project.c: 133: 
+  1405  02E6  0022               	movlb	2	; select bank2
+  1406  02E7  018D               	clrf	13	;volatile
+  1407                           
+  1408                           ;Nerf Turret Project.c: 134: void configUART(void)
+  1409  02E8  018E               	clrf	14	;volatile
+  1410  02E9                     l1244:
+  1411                           
+  1412                           ;Nerf Turret Project.c: 136:     APFCON1bits.TXSEL = 1;
+  1413  02E9  30C0               	movlw	192
+  1414  02EA  0021               	movlb	1	; select bank1
+  1415  02EB  008D               	movwf	13	;volatile
+  1416  02EC                     l1246:
+  1417                           
+  1418                           ;Nerf Turret Project.c: 137:     APFCON1bits.RXSEL = 1;
+  1419  02EC  0023               	movlb	3	; select bank3
+  1420  02ED  018D               	clrf	13	;volatile
+  1421  02EE                     l1248:
+  1422                           
+  1423                           ;Nerf Turret Project.c: 138: 
+  1424  02EE  0021               	movlb	1	; select bank1
+  1425  02EF  018E               	clrf	14	;volatile
+  1426  02F0                     l1250:
+  1427                           
+  1428                           ;Nerf Turret Project.c: 139:     BAUDCONbits.SCKP = 0;
+  1429  02F0  0023               	movlb	3	; select bank3
+  1430  02F1  018E               	clrf	14	;volatile
+  1431  02F2                     l166:
+  1432  02F2  0008               	return
+  1433  02F3                     __end_of_configPorts:
+  1434                           
+  1435                           	psect	text5
+  1436  01F1                     __ptext5:	
+  1437 ;; *************** function _configPWM *****************
+  1438 ;; Defined at:
+  1439 ;;		line 148 in file "Nerf Turret Project.c"
+  1440 ;; Parameters:    Size  Location     Type
+  1441 ;;		None
+  1442 ;; Auto vars:     Size  Location     Type
+  1443 ;;		None
+  1444 ;; Return value:  Size  Location     Type
+  1445 ;;                  1    wreg      void 
+  1446 ;; Registers used:
+  1447 ;;		wreg, status,2, status,0
+  1448 ;; Tracked objects:
+  1449 ;;		On entry : 0/0
+  1450 ;;		On exit  : 0/0
+  1451 ;;		Unchanged: 0/0
+  1452 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1453 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1454 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1455 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1456 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1457 ;;Total ram usage:        0 bytes
+  1458 ;; Hardware stack levels used: 1
+  1459 ;; Hardware stack levels required when called: 2
+  1460 ;; This function calls:
+  1461 ;;		Nothing
+  1462 ;; This function is called by:
+  1463 ;;		_main
+  1464 ;; This function uses a non-reentrant model
+  1465 ;;
+  1466                           
+  1467  01F1                     _configPWM:	
+  1468                           ;psect for function _configPWM
+  1469                           
+  1470  01F1                     l1254:	
+  1471                           ;incstack = 0
+  1472                           ; Regs used in _configPWM: [wreg+status,2+status,0]
+  1473                           
+  1474                           
+  1475                           ;Nerf Turret Project.c: 155: 
+  1476  01F1  30FC               	movlw	-4
+  1477  01F2  003D               	movlb	29	; select bank29
+  1478  01F3  0594               	andwf	20,f	;volatile
+  1479                           
+  1480                           ;Nerf Turret Project.c: 156: 
+  1481  01F4  3030               	movlw	48
+  1482  01F5  0494               	iorwf	20,f	;volatile
+  1483  01F6                     l1256:
+  1484                           
+  1485                           ;Nerf Turret Project.c: 157: 
+  1486  01F6  309C               	movlw	156
+  1487  01F7  00A6               	movwf	38	;volatile
+  1488  01F8  3040               	movlw	64
+  1489  01F9  00A5               	movwf	37	;volatile
+  1490  01FA                     l1258:
+  1491                           
+  1492                           ;Nerf Turret Project.c: 158: 
+  1493  01FA  300B               	movlw	11
+  1494  01FB  00A4               	movwf	36	;volatile
+  1495  01FC  30B8               	movlw	184
+  1496  01FD  00A3               	movwf	35	;volatile
+  1497  01FE                     l1260:
+  1498                           
+  1499                           ;Nerf Turret Project.c: 159: 
+  1500  01FE  142E               	bsf	46,0	;volatile
+  1501  01FF                     l1262:
+  1502                           
+  1503                           ;Nerf Turret Project.c: 160: 
+  1504  01FF  1016               	bcf	22,0	;volatile
+  1505  0200                     l1264:
+  1506                           
+  1507                           ;Nerf Turret Project.c: 161: unsigned char reverseBits(unsigned char num)
+  1508  0200  1415               	bsf	21,0	;volatile
+  1509  0201                     l1266:
+  1510                           
+  1511                           ;Nerf Turret Project.c: 162: {
+  1512  0201  141C               	bsf	28,0	;volatile
+  1513  0202                     l1268:
+  1514                           
+  1515                           ;Nerf Turret Project.c: 163:     unsigned char NO_OF_BITS = sizeof(num) * 8;
+  1516  0202  141A               	bsf	26,0	;volatile
+  1517  0203                     l1270:
+  1518                           
+  1519                           ;Nerf Turret Project.c: 164:     unsigned char reverse_num = 0, i, temp;
+  1520  0203  141B               	bsf	27,0	;volatile
+  1521  0204                     l1272:
+  1522                           
+  1523                           ;Nerf Turret Project.c: 165: 
+  1524  0204  30C0               	movlw	192
+  1525  0205  0091               	movwf	17	;volatile
+  1526  0206                     l1274:
+  1527                           
+  1528                           ;Nerf Turret Project.c: 168:         temp = (num & (1 << i));
+  1529  0206  30FC               	movlw	-4
+  1530  0207  003E               	movlb	30	; select bank30
+  1531  0208  0594               	andwf	20,f	;volatile
+  1532  0209                     l1276:
+  1533                           
+  1534                           ;Nerf Turret Project.c: 169:         if(temp)
+  1535  0209  3030               	movlw	48
+  1536  020A  0494               	iorwf	20,f	;volatile
+  1537  020B                     l1278:
+  1538                           
+  1539                           ;Nerf Turret Project.c: 170:             reverse_num |= (1 << ((NO_OF_BITS - 1) - i));
+  1540  020B  309C               	movlw	156
+  1541  020C  00A6               	movwf	38	;volatile
+  1542  020D  3040               	movlw	64
+  1543  020E  00A5               	movwf	37	;volatile
+  1544  020F                     l1280:
+  1545                           
+  1546                           ;Nerf Turret Project.c: 171:     }
+  1547  020F  300B               	movlw	11
+  1548  0210  00A4               	movwf	36	;volatile
+  1549  0211  30B8               	movlw	184
+  1550  0212  00A3               	movwf	35	;volatile
+  1551  0213                     l1282:
+  1552                           
+  1553                           ;Nerf Turret Project.c: 172: 
+  1554  0213  142E               	bsf	46,0	;volatile
+  1555  0214                     l1284:
+  1556                           
+  1557                           ;Nerf Turret Project.c: 173:     return reverse_num;
+  1558  0214  1016               	bcf	22,0	;volatile
+  1559  0215                     l1286:
+  1560                           
+  1561                           ;Nerf Turret Project.c: 174: }
+  1562  0215  1415               	bsf	21,0	;volatile
+  1563  0216                     l1288:
+  1564                           
+  1565                           ;Nerf Turret Project.c: 175: 
+  1566  0216  141C               	bsf	28,0	;volatile
+  1567  0217                     l1290:
+  1568                           
+  1569                           ;Nerf Turret Project.c: 176: void ProcessUART(void)
+  1570  0217  141A               	bsf	26,0	;volatile
+  1571  0218                     l1292:
+  1572                           
+  1573                           ;Nerf Turret Project.c: 177: {
+  1574  0218  141B               	bsf	27,0	;volatile
+  1575  0219                     l1294:
+  1576                           
+  1577                           ;Nerf Turret Project.c: 178:     switch (RCIndex)
+  1578  0219  30C0               	movlw	192
+  1579  021A  0091               	movwf	17	;volatile
+  1580                           
+  1581                           ;Nerf Turret Project.c: 181:             if(RCTemp == 0xFE) {RCIndex++;}
+  1582  021B  30FC               	movlw	-4
+  1583  021C  003D               	movlb	29	; select bank29
+  1584  021D  05D4               	andwf	84,f	;volatile
+  1585                           
+  1586                           ;Nerf Turret Project.c: 182:             break;
+  1587  021E  3030               	movlw	48
+  1588  021F  04D4               	iorwf	84,f	;volatile
+  1589  0220                     l1296:
+  1590                           
+  1591                           ;Nerf Turret Project.c: 183:         case 1:
+  1592  0220  309C               	movlw	156
+  1593  0221  00E6               	movwf	102	;volatile
+  1594  0222  3040               	movlw	64
+  1595  0223  00E5               	movwf	101	;volatile
+  1596  0224                     l1298:
+  1597                           
+  1598                           ;Nerf Turret Project.c: 184:             Buttons1 = RCTemp;
+  1599  0224  300B               	movlw	11
+  1600  0225  00E4               	movwf	100	;volatile
+  1601  0226  30B8               	movlw	184
+  1602  0227  00E3               	movwf	99	;volatile
+  1603  0228                     l1300:
+  1604                           
+  1605                           ;Nerf Turret Project.c: 185:             RCIndex++;
+  1606  0228  146E               	bsf	110,0	;volatile
+  1607  0229                     l1302:
+  1608                           
+  1609                           ;Nerf Turret Project.c: 186:             break;
+  1610  0229  1056               	bcf	86,0	;volatile
+  1611  022A                     l1304:
+  1612                           
+  1613                           ;Nerf Turret Project.c: 187:         case 2:
+  1614  022A  1455               	bsf	85,0	;volatile
+  1615  022B                     l1306:
+  1616                           
+  1617                           ;Nerf Turret Project.c: 188:             Buttons2 = RCTemp;
+  1618  022B  145C               	bsf	92,0	;volatile
+  1619  022C                     l1308:
+  1620                           
+  1621                           ;Nerf Turret Project.c: 189:             RCIndex++;
+  1622  022C  145A               	bsf	90,0	;volatile
+  1623  022D                     l1310:
+  1624                           
+  1625                           ;Nerf Turret Project.c: 190:             break;
+  1626  022D  145B               	bsf	91,0	;volatile
+  1627  022E                     l1312:
+  1628                           
+  1629                           ;Nerf Turret Project.c: 191:         case 3:
+  1630  022E  30C0               	movlw	192
+  1631  022F  00D1               	movwf	81	;volatile
+  1632  0230                     l1314:
+  1633                           
+  1634                           ;Nerf Turret Project.c: 194:             break;
+  1635  0230  30FC               	movlw	-4
+  1636  0231  05B4               	andwf	52,f	;volatile
+  1637  0232                     l1316:
+  1638                           
+  1639                           ;Nerf Turret Project.c: 195:         case 4:
+  1640  0232  3030               	movlw	48
+  1641  0233  04B4               	iorwf	52,f	;volatile
+  1642  0234                     l1318:
+  1643                           
+  1644                           ;Nerf Turret Project.c: 196:             YAxis = RCTemp;
+  1645  0234  309C               	movlw	156
+  1646  0235  00C6               	movwf	70	;volatile
+  1647  0236  3040               	movlw	64
+  1648  0237  00C5               	movwf	69	;volatile
+  1649  0238                     l1320:
+  1650                           
+  1651                           ;Nerf Turret Project.c: 197:             RCIndex = 0;
+  1652  0238  300B               	movlw	11
+  1653  0239  00C4               	movwf	68	;volatile
+  1654  023A  30B8               	movlw	184
+  1655  023B  00C3               	movwf	67	;volatile
+  1656  023C                     l1322:
+  1657                           
+  1658                           ;Nerf Turret Project.c: 198:             pFlag |= 0b00000010;
+  1659  023C  144E               	bsf	78,0	;volatile
+  1660  023D                     l1324:
+  1661                           
+  1662                           ;Nerf Turret Project.c: 199:             break;
+  1663  023D  1036               	bcf	54,0	;volatile
+  1664  023E                     l1326:
+  1665                           
+  1666                           ;Nerf Turret Project.c: 200:     }
+  1667  023E  1435               	bsf	53,0	;volatile
+  1668  023F                     l1328:
+  1669                           
+  1670                           ;Nerf Turret Project.c: 201: }
+  1671  023F  143C               	bsf	60,0	;volatile
+  1672  0240                     l1330:
+  1673                           
+  1674                           ;Nerf Turret Project.c: 202: 
+  1675  0240  143A               	bsf	58,0	;volatile
+  1676  0241                     l1332:
+  1677                           
+  1678                           ;Nerf Turret Project.c: 203: void DetermineAction(void)
+  1679  0241  143B               	bsf	59,0	;volatile
+  1680  0242                     l1334:
+  1681                           
+  1682                           ;Nerf Turret Project.c: 204: {
+  1683  0242  30C0               	movlw	192
+  1684  0243  00B1               	movwf	49	;volatile
+  1685  0244                     l172:
+  1686  0244  0008               	return
+  1687  0245                     __end_of_configPWM:
+  1688                           
+  1689                           	psect	text6
+  1690  030C                     __ptext6:	
+  1691 ;; *************** function _configOSC *****************
+  1692 ;; Defined at:
+  1693 ;;		line 92 in file "Nerf Turret Project.c"
+  1694 ;; Parameters:    Size  Location     Type
+  1695 ;;		None
+  1696 ;; Auto vars:     Size  Location     Type
+  1697 ;;		None
+  1698 ;; Return value:  Size  Location     Type
+  1699 ;;                  1    wreg      void 
+  1700 ;; Registers used:
+  1701 ;;		None
+  1702 ;; Tracked objects:
+  1703 ;;		On entry : 0/0
+  1704 ;;		On exit  : 0/0
+  1705 ;;		Unchanged: 0/0
+  1706 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1707 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1708 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1709 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1710 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1711 ;;Total ram usage:        0 bytes
+  1712 ;; Hardware stack levels used: 1
+  1713 ;; Hardware stack levels required when called: 2
+  1714 ;; This function calls:
+  1715 ;;		Nothing
+  1716 ;; This function is called by:
+  1717 ;;		_main
+  1718 ;; This function uses a non-reentrant model
+  1719 ;;
+  1720                           
+  1721  030C                     _configOSC:	
+  1722                           ;psect for function _configOSC
+  1723                           
+  1724  030C                     l1220:	
+  1725                           ;incstack = 0
+  1726                           ; Regs used in _configOSC: []
+  1727                           
+  1728                           
+  1729                           ;Nerf Turret Project.c: 96:     PSMC4CLKbits.P4CPRE = 0b11;
+  1730  030C  0021               	movlb	1	; select bank1
+  1731  030D  1599               	bsf	25,3	;volatile
+  1732                           
+  1733                           ;Nerf Turret Project.c: 97:     PSMC4PR = 40000;
+  1734  030E  1619               	bsf	25,4	;volatile
+  1735                           
+  1736                           ;Nerf Turret Project.c: 98:     PSMC4DC = 3000;
+  1737  030F  1699               	bsf	25,5	;volatile
+  1738                           
+  1739                           ;Nerf Turret Project.c: 99:     PSMC4STR0bits.P4STRA = 1;
+  1740  0310  1719               	bsf	25,6	;volatile
+  1741                           
+  1742                           ;Nerf Turret Project.c: 101:     PSMC4OENbits.P4OEA = 1;
+  1743  0311  1019               	bcf	25,0	;volatile
+  1744                           
+  1745                           ;Nerf Turret Project.c: 102:     PSMC4PRSbits.P4PRST = 1;
+  1746  0312  1099               	bcf	25,1	;volatile
+  1747  0313                     l157:
+  1748  0313  0008               	return
+  1749  0314                     __end_of_configOSC:
+  1750                           
+  1751                           	psect	text7
+  1752  0314                     __ptext7:	
+  1753 ;; *************** function _configInterrupts *****************
+  1754 ;; Defined at:
+  1755 ;;		line 142 in file "Nerf Turret Project.c"
+  1756 ;; Parameters:    Size  Location     Type
+  1757 ;;		None
+  1758 ;; Auto vars:     Size  Location     Type
+  1759 ;;		None
+  1760 ;; Return value:  Size  Location     Type
+  1761 ;;                  1    wreg      void 
+  1762 ;; Registers used:
+  1763 ;;		None
+  1764 ;; Tracked objects:
+  1765 ;;		On entry : 0/0
+  1766 ;;		On exit  : 0/0
+  1767 ;;		Unchanged: 0/0
+  1768 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1769 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1770 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1771 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1772 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1773 ;;Total ram usage:        0 bytes
+  1774 ;; Hardware stack levels used: 1
+  1775 ;; Hardware stack levels required when called: 2
+  1776 ;; This function calls:
+  1777 ;;		Nothing
+  1778 ;; This function is called by:
+  1779 ;;		_main
+  1780 ;; This function uses a non-reentrant model
+  1781 ;;
+  1782                           
+  1783  0314                     _configInterrupts:	
+  1784                           ;psect for function _configInterrupts
+  1785                           
+  1786  0314                     l1252:	
+  1787                           ;incstack = 0
+  1788                           ; Regs used in _configInterrupts: []
+  1789                           
+  1790                           
+  1791                           ;Nerf Turret Project.c: 144: 
+  1792  0314  170B               	bsf	11,6	;volatile
+  1793                           
+  1794                           ;Nerf Turret Project.c: 145:     TXSTAbits.TXEN = 0;
+  1795  0315  178B               	bsf	11,7	;volatile
+  1796  0316                     l169:
+  1797  0316  0008               	return
+  1798  0317                     __end_of_configInterrupts:
+  1799                           
+  1800                           	psect	text8
+  1801  0245                     __ptext8:	
+  1802 ;; *************** function _ProcessUART *****************
+  1803 ;; Defined at:
+  1804 ;;		line 249 in file "Nerf Turret Project.c"
+  1805 ;; Parameters:    Size  Location     Type
+  1806 ;;		None
+  1807 ;; Auto vars:     Size  Location     Type
+  1808 ;;		None
+  1809 ;; Return value:  Size  Location     Type
+  1810 ;;                  1    wreg      void 
+  1811 ;; Registers used:
+  1812 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1813 ;; Tracked objects:
+  1814 ;;		On entry : 0/0
+  1815 ;;		On exit  : 0/0
+  1816 ;;		Unchanged: 0/0
+  1817 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1818 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1819 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1820 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1821 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1822 ;;Total ram usage:        2 bytes
+  1823 ;; Hardware stack levels used: 1
+  1824 ;; Hardware stack levels required when called: 2
+  1825 ;; This function calls:
+  1826 ;;		Nothing
+  1827 ;; This function is called by:
+  1828 ;;		_main
+  1829 ;; This function uses a non-reentrant model
+  1830 ;;
+  1831                           
+  1832  0245                     _ProcessUART:	
+  1833                           ;psect for function _ProcessUART
+  1834                           
+  1835  0245                     l1344:	
+  1836                           ;incstack = 0
+  1837                           ; Regs used in _ProcessUART: [wreg-fsr0h+status,2+status,0]
+  1838                           
+  1839                           
+  1840                           ;Nerf Turret Project.c: 251:     YAxisReversed = reverseBits(YAxis) >> 4;
+  1841  0245  2A67               	goto	l1370
+  1842  0246                     l1346:
+  1843                           
+  1844                           ;Nerf Turret Project.c: 254: 
+  1845  0246  30FE               	movlw	254
+  1846  0247  067C               	xorwf	_RCTemp,w
+  1847  0248  1D03               	btfss	3,2
+  1848  0249  2A4B               	goto	u401
+  1849  024A  2A4C               	goto	u400
+  1850  024B                     u401:
+  1851  024B  2A81               	goto	l193
+  1852  024C                     u400:
+  1853  024C                     l1348:
+  1854  024C  3001               	movlw	1
+  1855  024D  00F1               	movwf	??_ProcessUART
+  1856  024E  0871               	movf	??_ProcessUART,w
+  1857  024F  07A9               	addwf	_RCIndex,f
+  1858  0250  2A81               	goto	l193
+  1859  0251                     l1350:
+  1860                           
+  1861                           ;Nerf Turret Project.c: 257:     }
+  1862  0251  087C               	movf	_RCTemp,w
+  1863  0252  00F1               	movwf	??_ProcessUART
+  1864  0253  0871               	movf	??_ProcessUART,w
+  1865  0254  00A8               	movwf	_Buttons1
+  1866  0255  2A4C               	goto	l1348
+  1867  0256                     l1354:
+  1868                           
+  1869                           ;Nerf Turret Project.c: 261: 
+  1870  0256  087C               	movf	_RCTemp,w
+  1871  0257  00F1               	movwf	??_ProcessUART
+  1872  0258  0871               	movf	??_ProcessUART,w
+  1873  0259  00A7               	movwf	_Buttons2
+  1874  025A  2A4C               	goto	l1348
+  1875  025B                     l1358:
+  1876                           
+  1877                           ;Nerf Turret Project.c: 265: 
+  1878  025B  087C               	movf	_RCTemp,w
+  1879  025C  00F1               	movwf	??_ProcessUART
+  1880  025D  0871               	movf	??_ProcessUART,w
+  1881  025E  00A6               	movwf	_XAxis
+  1882  025F  2A4C               	goto	l1348
+  1883  0260                     l1362:
+  1884                           
+  1885                           ;Nerf Turret Project.c: 269:     PSMC4CONbits.PSMC4LD = 1;
+  1886  0260  087C               	movf	_RCTemp,w
+  1887  0261  00F1               	movwf	??_ProcessUART
+  1888  0262  0871               	movf	??_ProcessUART,w
+  1889  0263  00A5               	movwf	_YAxis
+  1890  0264                     l1364:
+  1891                           
+  1892                           ;Nerf Turret Project.c: 270: 
+  1893  0264  01A9               	clrf	_RCIndex
+  1894  0265                     l1366:
+  1895                           
+  1896                           ;Nerf Turret Project.c: 271: 
+  1897  0265  14AB               	bsf	_pFlag,1
+  1898                           
+  1899                           ;Nerf Turret Project.c: 272:     if(Buttons1 & 0b00001000)
+  1900  0266  2A81               	goto	l193
+  1901  0267                     l1370:
+  1902  0267  0020               	movlb	0	; select bank0
+  1903  0268  0829               	movf	_RCIndex,w
+  1904  0269  00F1               	movwf	??_ProcessUART
+  1905  026A  01F2               	clrf	??_ProcessUART+1
+  1906                           
+  1907                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1908                           ; Switch size 1, requested type "simple"
+  1909                           ; Number of cases is 1, Range of values is 0 to 0
+  1910                           ; switch strategies available:
+  1911                           ; Name         Instructions Cycles
+  1912                           ; simple_byte            4     3 (average)
+  1913                           ; direct_byte            8     6 (fixed)
+  1914                           ; jumptable            260     6 (fixed)
+  1915                           ;	Chosen strategy is simple_byte
+  1916  026B  0872               	movf	??_ProcessUART+1,w
+  1917  026C  3A00               	xorlw	0	; case 0
+  1918  026D  1903               	skipnz
+  1919  026E  2A70               	goto	l1636
+  1920  026F  2A81               	goto	l193
+  1921  0270                     l1636:
+  1922                           
+  1923                           ; Switch size 1, requested type "simple"
+  1924                           ; Number of cases is 5, Range of values is 0 to 4
+  1925                           ; switch strategies available:
+  1926                           ; Name         Instructions Cycles
+  1927                           ; direct_byte           16     6 (fixed)
+  1928                           ; simple_byte           16     9 (average)
+  1929                           ; jumptable            260     6 (fixed)
+  1930                           ;	Chosen strategy is simple_byte
+  1931  0270  0871               	movf	??_ProcessUART,w
+  1932  0271  3A00               	xorlw	0	; case 0
+  1933  0272  1903               	skipnz
+  1934  0273  2A46               	goto	l1346
+  1935  0274  3A01               	xorlw	1	; case 1
+  1936  0275  1903               	skipnz
+  1937  0276  2A51               	goto	l1350
+  1938  0277  3A03               	xorlw	3	; case 2
+  1939  0278  1903               	skipnz
+  1940  0279  2A56               	goto	l1354
+  1941  027A  3A01               	xorlw	1	; case 3
+  1942  027B  1903               	skipnz
+  1943  027C  2A5B               	goto	l1358
+  1944  027D  3A07               	xorlw	7	; case 4
+  1945  027E  1903               	skipnz
+  1946  027F  2A60               	goto	l1362
+  1947  0280  2A81               	goto	l193
+  1948  0281                     l193:
+  1949  0281  0008               	return
+  1950  0282                     __end_of_ProcessUART:
+  1951                           
+  1952                           	psect	text9
+  1953  0034                     __ptext9:	
+  1954 ;; *************** function _DetermineAction *****************
+  1955 ;; Defined at:
+  1956 ;;		line 276 in file "Nerf Turret Project.c"
+  1957 ;; Parameters:    Size  Location     Type
+  1958 ;;		None
+  1959 ;; Auto vars:     Size  Location     Type
+  1960 ;;		None
+  1961 ;; Return value:  Size  Location     Type
+  1962 ;;                  1    wreg      void 
+  1963 ;; Registers used:
+  1964 ;;		wreg, status,2, status,0, pclath, cstack
+  1965 ;; Tracked objects:
+  1966 ;;		On entry : 0/0
+  1967 ;;		On exit  : 0/0
+  1968 ;;		Unchanged: 0/0
+  1969 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  1970 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1971 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1972 ;;      Temps:          4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1973 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  1974 ;;Total ram usage:        4 bytes
+  1975 ;; Hardware stack levels used: 1
+  1976 ;; Hardware stack levels required when called: 3
+  1977 ;; This function calls:
+  1978 ;;		_reverseBits
+  1979 ;; This function is called by:
+  1980 ;;		_main
+  1981 ;; This function uses a non-reentrant model
+  1982 ;;
+  1983                           
+  1984  0034                     _DetermineAction:	
+  1985                           ;psect for function _DetermineAction
+  1986                           
+  1987  0034                     l1378:	
+  1988                           ;incstack = 0
+  1989                           ; Regs used in _DetermineAction: [wreg+status,2+status,0+pclath+cstack]
+  1990                           
+  1991                           
+  1992                           ;Nerf Turret Project.c: 282: void TMR2ISR(void);Nerf Turret Project.c: 283: {
+  1993  0034  0020               	movlb	0	; select bank0
+  1994  0035  1D28               	btfss	_Buttons1,2
+  1995  0036  2838               	goto	u411
+  1996  0037  2839               	goto	u410
+  1997  0038                     u411:
+  1998  0038  283E               	goto	l1382
+  1999  0039                     u410:
+  2000  0039                     l1380:
+  2001  0039  3001               	movlw	1
+  2002  003A  07A0               	addwf	_shootCount,f
+  2003  003B  3000               	movlw	0
+  2004  003C  3DA1               	addwfc	_shootCount+1,f
+  2005  003D  2840               	goto	l1384
+  2006  003E                     l1382:
+  2007                           
+  2008                           ;Nerf Turret Project.c: 286:     if(PSMC1DC < 3000) {PSMC1DC += 10;};Nerf Turret Project
+      +                          .c: 287:     if(PSMC4DC > 3000) {PSMC4DC -= 10;}
+  2009  003E  01A0               	clrf	_shootCount
+  2010  003F  01A1               	clrf	_shootCount+1
+  2011  0040                     l1384:
+  2012                           
+  2013                           ;Nerf Turret Project.c: 290: 
+  2014  0040  0A22               	incf	_shootPermission,w
+  2015  0041  1D03               	btfss	3,2
+  2016  0042  2844               	goto	u421
+  2017  0043  2845               	goto	u420
+  2018  0044                     u421:
+  2019  0044  2850               	goto	l199
+  2020  0045                     u420:
+  2021  0045                     l1386:
+  2022  0045  1C28               	btfss	_Buttons1,0
+  2023  0046  2848               	goto	u431
+  2024  0047  2849               	goto	u430
+  2025  0048                     u431:
+  2026  0048  2850               	goto	l199
+  2027  0049                     u430:
+  2028  0049                     l1388:
+  2029                           
+  2030                           ;Nerf Turret Project.c: 291:     if(PSMC1DC > 2990 && PSMC1DC < 3010) {PSMC1DC = 3000;};
+      +                          Nerf Turret Project.c: 292:     if(PSMC4DC > 2990 && PSMC4DC < 3010) {PSMC4DC = 3000;}
+  2031  0049  300F               	movlw	15
+  2032  004A  003D               	movlb	29	; select bank29
+  2033  004B  00C4               	movwf	68	;volatile
+  2034  004C  303C               	movlw	60
+  2035  004D  00C3               	movwf	67	;volatile
+  2036                           
+  2037                           ;Nerf Turret Project.c: 293: 
+  2038  004E  1731               	bsf	49,6	;volatile
+  2039                           
+  2040                           ;Nerf Turret Project.c: 294:     PSMC1CONbits.PSMC1LD = 1;
+  2041  004F  2856               	goto	l1390
+  2042  0050                     l199:	
+  2043                           ;Nerf Turret Project.c: 295:     PSMC4CONbits.PSMC4LD = 1;
+  2044                           
+  2045                           
+  2046                           ;Nerf Turret Project.c: 296: ;Nerf Turret Project.c: 297: 
+  2047  0050  300B               	movlw	11
+  2048  0051  003D               	movlb	29	; select bank29
+  2049  0052  00C4               	movwf	68	;volatile
+  2050  0053  30B8               	movlw	184
+  2051  0054  00C3               	movwf	67	;volatile
+  2052                           
+  2053                           ;Nerf Turret Project.c: 298:     if(PSMC1DC == 3000 && PSMC4DC == 3000) {homeSequence = 
+      +                          0x00; T2CONbits.TMR2ON = 0;}
+  2054  0055  1731               	bsf	49,6	;volatile
+  2055  0056                     l1390:
+  2056                           
+  2057                           ;Nerf Turret Project.c: 302: 
+  2058  0056  0020               	movlb	0	; select bank0
+  2059  0057  0826               	movf	_XAxis,w
+  2060  0058  3182  2282  3180   	fcall	_reverseBits
+  2061  005B  00F8               	movwf	??_DetermineAction
+  2062  005C  3004               	movlw	4
+  2063  005D                     u445:
+  2064  005D  36F8               	lsrf	??_DetermineAction,f
+  2065  005E  0B89               	decfsz	9,f
+  2066  005F  285D               	goto	u445
+  2067  0060  0878               	movf	??_DetermineAction,w
+  2068  0061  00F9               	movwf	??_DetermineAction+1
+  2069  0062  0879               	movf	??_DetermineAction+1,w
+  2070  0063  0020               	movlb	0	; select bank0
+  2071  0064  00A3               	movwf	_XAxisReversed
+  2072  0065                     l1392:
+  2073                           
+  2074                           ;Nerf Turret Project.c: 304: {
+  2075  0065  1DA3               	btfss	_XAxisReversed,3
+  2076  0066  2868               	goto	u451
+  2077  0067  2869               	goto	u450
+  2078  0068                     u451:
+  2079  0068  287B               	goto	l1396
+  2080  0069                     u450:
+  2081  0069                     l1394:
+  2082                           
+  2083                           ;Nerf Turret Project.c: 305:     RCTemp = RCREG;;Nerf Turret Project.c: 308:     LATB = 
+      +                          0x00;
+  2084  0069  0923               	comf	_XAxisReversed,w
+  2085  006A  3907               	andlw	7
+  2086  006B  00F8               	movwf	??_DetermineAction
+  2087  006C  01F9               	clrf	??_DetermineAction+1
+  2088  006D  35F8               	lslf	??_DetermineAction,f
+  2089  006E  0DF9               	rlf	??_DetermineAction+1,f
+  2090  006F  003D               	movlb	29	; select bank29
+  2091  0070  0823               	movf	35,w	;volatile
+  2092  0071  0778               	addwf	??_DetermineAction,w
+  2093  0072  00FA               	movwf	??_DetermineAction+2
+  2094  0073  0824               	movf	36,w	;volatile
+  2095  0074  3D79               	addwfc	??_DetermineAction+1,w
+  2096  0075  00FB               	movwf	??_DetermineAction+3
+  2097  0076  087A               	movf	??_DetermineAction+2,w
+  2098  0077  00A3               	movwf	35	;volatile
+  2099  0078  087B               	movf	??_DetermineAction+3,w
+  2100  0079  00A4               	movwf	36	;volatile
+  2101                           
+  2102                           ;Nerf Turret Project.c: 309: }
+  2103  007A  288B               	goto	l1398
+  2104  007B                     l1396:
+  2105                           
+  2106                           ;Nerf Turret Project.c: 311: void TMR1ISR(void);Nerf Turret Project.c: 314:     LATB = 0
+      +                          xFF;
+  2107  007B  0823               	movf	_XAxisReversed,w
+  2108  007C  00F8               	movwf	??_DetermineAction
+  2109  007D  01F9               	clrf	??_DetermineAction+1
+  2110  007E  35F8               	lslf	??_DetermineAction,f
+  2111  007F  0DF9               	rlf	??_DetermineAction+1,f
+  2112  0080  0878               	movf	??_DetermineAction,w
+  2113  0081  003D               	movlb	29	; select bank29
+  2114  0082  0223               	subwf	35,w	;volatile
+  2115  0083  00FA               	movwf	??_DetermineAction+2
+  2116  0084  0879               	movf	??_DetermineAction+1,w
+  2117  0085  3B24               	subwfb	36,w	;volatile
+  2118  0086  00FB               	movwf	??_DetermineAction+3
+  2119  0087  087A               	movf	??_DetermineAction+2,w
+  2120  0088  00A3               	movwf	35	;volatile
+  2121  0089  087B               	movf	??_DetermineAction+3,w
+  2122  008A  00A4               	movwf	36	;volatile
+  2123  008B                     l1398:
+  2124                           
+  2125                           ;Nerf Turret Project.c: 318:     Buttons1 = 0;
+  2126  008B  300F               	movlw	15
+  2127  008C  0224               	subwf	36,w	;volatile
+  2128  008D  30A1               	movlw	161
+  2129  008E  1903               	skipnz
+  2130  008F  0223               	subwf	35,w	;volatile
+  2131  0090  1C03               	skipc
+  2132  0091  2893               	goto	u461
+  2133  0092  2894               	goto	u460
+  2134  0093                     u461:
+  2135  0093  2898               	goto	l1402
+  2136  0094                     u460:
+  2137  0094                     l1400:
+  2138  0094  300F               	movlw	15
+  2139  0095  00A4               	movwf	36	;volatile
+  2140  0096  30A0               	movlw	160
+  2141  0097  00A3               	movwf	35	;volatile
+  2142  0098                     l1402:
+  2143                           
+  2144                           ;Nerf Turret Project.c: 319:     Buttons2 = 0;
+  2145  0098  3007               	movlw	7
+  2146  0099  0224               	subwf	36,w	;volatile
+  2147  009A  30D0               	movlw	208
+  2148  009B  1903               	skipnz
+  2149  009C  0223               	subwf	35,w	;volatile
+  2150  009D  1803               	skipnc
+  2151  009E  28A0               	goto	u471
+  2152  009F  28A1               	goto	u470
+  2153  00A0                     u471:
+  2154  00A0  28A5               	goto	l204
+  2155  00A1                     u470:
+  2156  00A1                     l1404:
+  2157  00A1  3007               	movlw	7
+  2158  00A2  00A4               	movwf	36	;volatile
+  2159  00A3  30D0               	movlw	208
+  2160  00A4  00A3               	movwf	35	;volatile
+  2161  00A5                     l204:
+  2162                           
+  2163                           ;Nerf Turret Project.c: 321:     YAxis = 0;
+  2164  00A5  1711               	bsf	17,6	;volatile
+  2165  00A6                     l1406:
+  2166                           
+  2167                           ;Nerf Turret Project.c: 324: void __attribute__((picinterrupt(("")))) ISR(void)
+  2168  00A6  0020               	movlb	0	; select bank0
+  2169  00A7  0825               	movf	_YAxis,w
+  2170  00A8  3182  2282  3180   	fcall	_reverseBits
+  2171  00AB  00F8               	movwf	??_DetermineAction
+  2172  00AC  3004               	movlw	4
+  2173  00AD                     u485:
+  2174  00AD  36F8               	lsrf	??_DetermineAction,f
+  2175  00AE  0B89               	decfsz	9,f
+  2176  00AF  28AD               	goto	u485
+  2177  00B0  0878               	movf	??_DetermineAction,w
+  2178  00B1  00F9               	movwf	??_DetermineAction+1
+  2179  00B2  0879               	movf	??_DetermineAction+1,w
+  2180  00B3  0020               	movlb	0	; select bank0
+  2181  00B4  00A4               	movwf	_YAxisReversed
+  2182  00B5                     l1408:
+  2183                           
+  2184                           ;Nerf Turret Project.c: 325: {
+  2185  00B5  1DA4               	btfss	_YAxisReversed,3
+  2186  00B6  28B8               	goto	u491
+  2187  00B7  28B9               	goto	u490
+  2188  00B8                     u491:
+  2189  00B8  28CB               	goto	l1412
+  2190  00B9                     u490:
+  2191  00B9                     l1410:
+  2192                           
+  2193                           ;Nerf Turret Project.c: 326:     if(PIR1bits.TMR2IF == 1) {TMR2ISR();};Nerf Turret Proje
+      +                          ct.c: 329: }
+  2194  00B9  0924               	comf	_YAxisReversed,w
+  2195  00BA  3907               	andlw	7
+  2196  00BB  00F8               	movwf	??_DetermineAction
+  2197  00BC  01F9               	clrf	??_DetermineAction+1
+  2198  00BD  35F8               	lslf	??_DetermineAction,f
+  2199  00BE  0DF9               	rlf	??_DetermineAction+1,f
+  2200  00BF  003E               	movlb	30	; select bank30
+  2201  00C0  0823               	movf	35,w	;volatile
+  2202  00C1  0778               	addwf	??_DetermineAction,w
+  2203  00C2  00FA               	movwf	??_DetermineAction+2
+  2204  00C3  0824               	movf	36,w	;volatile
+  2205  00C4  3D79               	addwfc	??_DetermineAction+1,w
+  2206  00C5  00FB               	movwf	??_DetermineAction+3
+  2207  00C6  087A               	movf	??_DetermineAction+2,w
+  2208  00C7  00A3               	movwf	35	;volatile
+  2209  00C8  087B               	movf	??_DetermineAction+3,w
+  2210  00C9  00A4               	movwf	36	;volatile
+  2211                           
+  2212                           ;Nerf Turret Project.c: 330: 
+  2213  00CA  28DB               	goto	l1414
+  2214  00CB                     l1412:
+  2215                           
+  2216                           ;Nerf Turret Project.c: 332: int main(void);Nerf Turret Project.c: 335:     configOSC();
+  2217  00CB  0824               	movf	_YAxisReversed,w
+  2218  00CC  00F8               	movwf	??_DetermineAction
+  2219  00CD  01F9               	clrf	??_DetermineAction+1
+  2220  00CE  35F8               	lslf	??_DetermineAction,f
+  2221  00CF  0DF9               	rlf	??_DetermineAction+1,f
+  2222  00D0  0878               	movf	??_DetermineAction,w
+  2223  00D1  003E               	movlb	30	; select bank30
+  2224  00D2  0223               	subwf	35,w	;volatile
+  2225  00D3  00FA               	movwf	??_DetermineAction+2
+  2226  00D4  0879               	movf	??_DetermineAction+1,w
+  2227  00D5  3B24               	subwfb	36,w	;volatile
+  2228  00D6  00FB               	movwf	??_DetermineAction+3
+  2229  00D7  087A               	movf	??_DetermineAction+2,w
+  2230  00D8  00A3               	movwf	35	;volatile
+  2231  00D9  087B               	movf	??_DetermineAction+3,w
+  2232  00DA  00A4               	movwf	36	;volatile
+  2233  00DB                     l1414:
+  2234                           
+  2235                           ;Nerf Turret Project.c: 339:     configTMR1();
+  2236  00DB  300F               	movlw	15
+  2237  00DC  0224               	subwf	36,w	;volatile
+  2238  00DD  30A1               	movlw	161
+  2239  00DE  1903               	skipnz
+  2240  00DF  0223               	subwf	35,w	;volatile
+  2241  00E0  1C03               	skipc
+  2242  00E1  28E3               	goto	u501
+  2243  00E2  28E4               	goto	u500
+  2244  00E3                     u501:
+  2245  00E3  28E8               	goto	l1418
+  2246  00E4                     u500:
+  2247  00E4                     l1416:
+  2248  00E4  300F               	movlw	15
+  2249  00E5  00A4               	movwf	36	;volatile
+  2250  00E6  30A0               	movlw	160
+  2251  00E7  00A3               	movwf	35	;volatile
+  2252  00E8                     l1418:
+  2253                           
+  2254                           ;Nerf Turret Project.c: 340:     configTMR2();
+  2255  00E8  3007               	movlw	7
+  2256  00E9  0224               	subwf	36,w	;volatile
+  2257  00EA  30D0               	movlw	208
+  2258  00EB  1903               	skipnz
+  2259  00EC  0223               	subwf	35,w	;volatile
+  2260  00ED  1803               	skipnc
+  2261  00EE  28F0               	goto	u511
+  2262  00EF  28F1               	goto	u510
+  2263  00F0                     u511:
+  2264  00F0  28F5               	goto	l208
+  2265  00F1                     u510:
+  2266  00F1                     l1420:
+  2267  00F1  3007               	movlw	7
+  2268  00F2  00A4               	movwf	36	;volatile
+  2269  00F3  30D0               	movlw	208
+  2270  00F4  00A3               	movwf	35	;volatile
+  2271  00F5                     l208:
+  2272                           
+  2273                           ;Nerf Turret Project.c: 342: 
+  2274  00F5  1711               	bsf	17,6	;volatile
+  2275                           
+  2276                           ;Nerf Turret Project.c: 345:         if(pFlag & 0b00000001)
+  2277  00F6  0020               	movlb	0	; select bank0
+  2278  00F7  1DA8               	btfss	_Buttons1,3
+  2279  00F8  28FA               	goto	u521
+  2280  00F9  28FB               	goto	u520
+  2281  00FA                     u521:
+  2282  00FA  2902               	goto	l210
+  2283  00FB                     u520:
+  2284  00FB                     l1422:
+  2285                           
+  2286                           ;Nerf Turret Project.c: 346:         {;Nerf Turret Project.c: 347:             ProcessUA
+      +                          RT();
+  2287  00FB  30FF               	movlw	255
+  2288  00FC  00F8               	movwf	??_DetermineAction
+  2289  00FD  0878               	movf	??_DetermineAction,w
+  2290  00FE  00AA               	movwf	_homeSequence
+  2291  00FF                     l1424:
+  2292                           
+  2293                           ;Nerf Turret Project.c: 348:             pFlag ^= 0b00000001;
+  2294  00FF  151C               	bsf	28,2	;volatile
+  2295  0100                     l1426:
+  2296                           
+  2297                           ;Nerf Turret Project.c: 349:         }
+  2298  0100  01A0               	clrf	_shootCount
+  2299  0101  01A1               	clrf	_shootCount+1
+  2300  0102                     l210:
+  2301  0102  0008               	return
+  2302  0103                     __end_of_DetermineAction:
+  2303                           
+  2304                           	psect	text10
+  2305  0282                     __ptext10:	
+  2306 ;; *************** function _reverseBits *****************
+  2307 ;; Defined at:
+  2308 ;;		line 234 in file "Nerf Turret Project.c"
+  2309 ;; Parameters:    Size  Location     Type
+  2310 ;;  num             1    wreg     unsigned char 
+  2311 ;; Auto vars:     Size  Location     Type
+  2312 ;;  num             1    3[COMMON] unsigned char 
+  2313 ;;  i               1    7[COMMON] unsigned char 
+  2314 ;;  NO_OF_BITS      1    6[COMMON] unsigned char 
+  2315 ;;  reverse_num     1    5[COMMON] unsigned char 
+  2316 ;;  temp            1    4[COMMON] unsigned char 
+  2317 ;; Return value:  Size  Location     Type
+  2318 ;;                  1    wreg      unsigned char 
+  2319 ;; Registers used:
+  2320 ;;		wreg, status,2, status,0
+  2321 ;; Tracked objects:
+  2322 ;;		On entry : 0/0
+  2323 ;;		On exit  : 0/0
+  2324 ;;		Unchanged: 0/0
+  2325 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2326 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2327 ;;      Locals:         5       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2328 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2329 ;;      Totals:         7       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2330 ;;Total ram usage:        7 bytes
+  2331 ;; Hardware stack levels used: 1
+  2332 ;; Hardware stack levels required when called: 2
+  2333 ;; This function calls:
+  2334 ;;		Nothing
+  2335 ;; This function is called by:
+  2336 ;;		_DetermineAction
+  2337 ;; This function uses a non-reentrant model
+  2338 ;;
+  2339                           
+  2340  0282                     _reverseBits:	
+  2341                           ;psect for function _reverseBits
+  2342                           
+  2343                           
+  2344                           ;incstack = 0
+  2345                           ; Regs used in _reverseBits: [wreg+status,2+status,0]
+  2346                           ;reverseBits@num stored from wreg
+  2347  0282  00F3               	movwf	reverseBits@num
+  2348  0283                     l1204:
+  2349                           
+  2350                           ;Nerf Turret Project.c: 234: ;Nerf Turret Project.c: 235:         PSMC1DC = PSMC1DC + ((
+      +                          (~XAxisReversed) & 0b00000111) << 1);;Nerf Turret Project.c: 236:     }
+  2351  0283  3008               	movlw	8
+  2352  0284  00F1               	movwf	??_reverseBits
+  2353  0285  0871               	movf	??_reverseBits,w
+  2354  0286  00F6               	movwf	reverseBits@NO_OF_BITS
+  2355  0287                     l1206:
+  2356                           
+  2357                           ;Nerf Turret Project.c: 237:     else
+  2358  0287  01F5               	clrf	reverseBits@reverse_num
+  2359  0288                     l1208:
+  2360                           
+  2361                           ;Nerf Turret Project.c: 239: 
+  2362  0288  01F7               	clrf	reverseBits@i
+  2363  0289  2AAD               	goto	l1214
+  2364  028A                     l1210:
+  2365                           
+  2366                           ;Nerf Turret Project.c: 240: ;Nerf Turret Project.c: 241:         PSMC1DC = PSMC1DC - (X
+      +                          AxisReversed << 1);
+  2367  028A  3001               	movlw	1
+  2368  028B  00F1               	movwf	??_reverseBits
+  2369  028C  0A77               	incf	reverseBits@i,w
+  2370  028D  2A8F               	goto	u364
+  2371  028E                     u365:
+  2372  028E  35F1               	lslf	??_reverseBits,f
+  2373  028F                     u364:
+  2374  028F  0B89               	decfsz	9,f
+  2375  0290  2A8E               	goto	u365
+  2376  0291  0871               	movf	??_reverseBits,w
+  2377  0292  0573               	andwf	reverseBits@num,w
+  2378  0293  00F2               	movwf	??_reverseBits+1
+  2379  0294  0872               	movf	??_reverseBits+1,w
+  2380  0295  00F4               	movwf	reverseBits@temp
+  2381                           
+  2382                           ;Nerf Turret Project.c: 242:     }
+  2383  0296  0874               	movf	reverseBits@temp,w
+  2384  0297  1903               	btfsc	3,2
+  2385  0298  2A9A               	goto	u371
+  2386  0299  2A9B               	goto	u370
+  2387  029A                     u371:
+  2388  029A  2AA9               	goto	l180
+  2389  029B                     u370:
+  2390  029B                     l1212:
+  2391                           
+  2392                           ;Nerf Turret Project.c: 243: 
+  2393  029B  3001               	movlw	1
+  2394  029C  00F1               	movwf	??_reverseBits
+  2395  029D  0877               	movf	reverseBits@i,w
+  2396  029E  0276               	subwf	reverseBits@NO_OF_BITS,w
+  2397  029F  3EFF               	addlw	-1
+  2398  02A0  0A89               	incf	9,f
+  2399  02A1  2AA3               	goto	u384
+  2400  02A2                     u385:
+  2401  02A2  35F1               	lslf	??_reverseBits,f
+  2402  02A3                     u384:
+  2403  02A3  0B89               	decfsz	9,f
+  2404  02A4  2AA2               	goto	u385
+  2405  02A5  0871               	movf	??_reverseBits,w
+  2406  02A6  00F2               	movwf	??_reverseBits+1
+  2407  02A7  0872               	movf	??_reverseBits+1,w
+  2408  02A8  04F5               	iorwf	reverseBits@reverse_num,f
+  2409  02A9                     l180:
+  2410                           
+  2411                           ;Nerf Turret Project.c: 244: 
+  2412  02A9  3001               	movlw	1
+  2413  02AA  00F1               	movwf	??_reverseBits
+  2414  02AB  0871               	movf	??_reverseBits,w
+  2415  02AC  07F7               	addwf	reverseBits@i,f
+  2416  02AD                     l1214:
+  2417  02AD  0876               	movf	reverseBits@NO_OF_BITS,w
+  2418  02AE  0277               	subwf	reverseBits@i,w
+  2419  02AF  1C03               	skipc
+  2420  02B0  2AB2               	goto	u391
+  2421  02B1  2AB3               	goto	u390
+  2422  02B2                     u391:
+  2423  02B2  2A8A               	goto	l1210
+  2424  02B3                     u390:
+  2425  02B3                     l1216:
+  2426                           
+  2427                           ;Nerf Turret Project.c: 246:     if(PSMC1DC < 2000) {PSMC1DC = 2000;}
+  2428  02B3  0875               	movf	reverseBits@reverse_num,w
+  2429  02B4                     l182:
+  2430  02B4  0008               	return
+  2431  02B5                     __end_of_reverseBits:
+  2432                           
+  2433                           	psect	intentry
+  2434  0004                     __pintentry:	
+  2435 ;; *************** function _ISR *****************
+  2436 ;; Defined at:
+  2437 ;;		line 397 in file "Nerf Turret Project.c"
+  2438 ;; Parameters:    Size  Location     Type
+  2439 ;;		None
+  2440 ;; Auto vars:     Size  Location     Type
+  2441 ;;		None
+  2442 ;; Return value:  Size  Location     Type
+  2443 ;;                  1    wreg      void 
+  2444 ;; Registers used:
+  2445 ;;		wreg, status,2, status,0, pclath, cstack
+  2446 ;; Tracked objects:
+  2447 ;;		On entry : 0/0
+  2448 ;;		On exit  : 0/0
+  2449 ;;		Unchanged: 0/0
+  2450 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2451 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2452 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2453 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2454 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2455 ;;Total ram usage:        0 bytes
+  2456 ;; Hardware stack levels used: 1
+  2457 ;; Hardware stack levels required when called: 1
+  2458 ;; This function calls:
+  2459 ;;		_RC1ISR
+  2460 ;;		_TMR1ISR
+  2461 ;;		_TMR2ISR
+  2462 ;; This function is called by:
+  2463 ;;		Interrupt level 1
+  2464 ;; This function uses a non-reentrant model
+  2465 ;;
+  2466                           
+  2467  0004                     _ISR:
+  2468                           
+  2469                           ;incstack = 0
+  2470  0004  147E               	bsf	int$flags,0	;set compiler interrupt flag (level 1)
+  2471                           
+  2472                           ; Regs used in _ISR: [wreg+status,2+status,0+pclath+cstack]
+  2473  0005  3180               	pagesel	$
+  2474  0006                     i1l1480:
+  2475  0006  0020               	movlb	0	; select bank0
+  2476  0007  1C91               	btfss	17,1	;volatile
+  2477  0008  280A               	goto	u63_21
+  2478  0009  280B               	goto	u63_20
+  2479  000A                     u63_21:
+  2480  000A  280E               	goto	i1l1484
+  2481  000B                     u63_20:
+  2482  000B                     i1l1482:
+  2483  000B  3181  2103  3180   	fcall	_TMR2ISR
+  2484  000E                     i1l1484:
+  2485  000E  0020               	movlb	0	; select bank0
+  2486  000F  1E91               	btfss	17,5	;volatile
+  2487  0010  2812               	goto	u64_21
+  2488  0011  2813               	goto	u64_20
+  2489  0012                     u64_21:
+  2490  0012  2816               	goto	i1l1488
+  2491  0013                     u64_20:
+  2492  0013                     i1l1486:
+  2493  0013  3183  2300  3180   	fcall	_RC1ISR
+  2494  0016                     i1l1488:
+  2495  0016  0020               	movlb	0	; select bank0
+  2496  0017  1C11               	btfss	17,0	;volatile
+  2497  0018  281A               	goto	u65_21
+  2498  0019  281B               	goto	u65_20
+  2499  001A                     u65_21:
+  2500  001A  281E               	goto	i1l234
+  2501  001B                     u65_20:
+  2502  001B                     i1l1490:
+  2503  001B  3182  22F3  3180   	fcall	_TMR1ISR
+  2504  001E                     i1l234:
+  2505  001E  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+  2506  001F  0009               	retfie
+  2507  0020                     __end_of_ISR:
+  2508                           
+  2509                           	psect	text12
+  2510  0103                     __ptext12:	
+  2511 ;; *************** function _TMR2ISR *****************
+  2512 ;; Defined at:
+  2513 ;;		line 355 in file "Nerf Turret Project.c"
+  2514 ;; Parameters:    Size  Location     Type
+  2515 ;;		None
+  2516 ;; Auto vars:     Size  Location     Type
+  2517 ;;		None
+  2518 ;; Return value:  Size  Location     Type
+  2519 ;;                  1    wreg      void 
+  2520 ;; Registers used:
+  2521 ;;		wreg, status,2, status,0
+  2522 ;; Tracked objects:
+  2523 ;;		On entry : 0/0
+  2524 ;;		On exit  : 0/0
+  2525 ;;		Unchanged: 0/0
+  2526 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2527 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2528 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2529 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2530 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2531 ;;Total ram usage:        0 bytes
+  2532 ;; Hardware stack levels used: 1
+  2533 ;; This function calls:
+  2534 ;;		Nothing
+  2535 ;; This function is called by:
+  2536 ;;		_ISR
+  2537 ;; This function uses a non-reentrant model
+  2538 ;;
+  2539                           
+  2540  0103                     _TMR2ISR:	
+  2541                           ;psect for function _TMR2ISR
+  2542                           
+  2543  0103                     i1l1428:	
+  2544                           ;incstack = 0
+  2545                           ; Regs used in _TMR2ISR: [wreg+status,2+status,0]
+  2546                           
+  2547                           
+  2548                           ;Nerf Turret Project.c: 358: 
+  2549  0103  300B               	movlw	11
+  2550  0104  003D               	movlb	29	; select bank29
+  2551  0105  0224               	subwf	36,w	;volatile
+  2552  0106  30B9               	movlw	185
+  2553  0107  1903               	skipnz
+  2554  0108  0223               	subwf	35,w	;volatile
+  2555  0109  1C03               	skipc
+  2556  010A  290C               	goto	u53_21
+  2557  010B  290D               	goto	u53_20
+  2558  010C                     u53_21:
+  2559  010C  2911               	goto	i1l213
+  2560  010D                     u53_20:
+  2561  010D                     i1l1430:
+  2562  010D  300A               	movlw	10
+  2563  010E  02A3               	subwf	35,f	;volatile
+  2564  010F  3000               	movlw	0
+  2565  0110  3BA4               	subwfb	36,f	;volatile
+  2566  0111                     i1l213:
+  2567                           
+  2568                           ;Nerf Turret Project.c: 359: 
+  2569  0111  300B               	movlw	11
+  2570  0112  0224               	subwf	36,w	;volatile
+  2571  0113  30B8               	movlw	184
+  2572  0114  1903               	skipnz
+  2573  0115  0223               	subwf	35,w	;volatile
+  2574  0116  1803               	skipnc
+  2575  0117  2919               	goto	u54_21
+  2576  0118  291A               	goto	u54_20
+  2577  0119                     u54_21:
+  2578  0119  291E               	goto	i1l214
+  2579  011A                     u54_20:
+  2580  011A                     i1l1432:
+  2581  011A  300A               	movlw	10
+  2582  011B  07A3               	addwf	35,f	;volatile
+  2583  011C  3000               	movlw	0
+  2584  011D  3DA4               	addwfc	36,f	;volatile
+  2585  011E                     i1l214:
+  2586                           
+  2587                           ;Nerf Turret Project.c: 360: 
+  2588  011E  300B               	movlw	11
+  2589  011F  003E               	movlb	30	; select bank30
+  2590  0120  0224               	subwf	36,w	;volatile
+  2591  0121  30B9               	movlw	185
+  2592  0122  1903               	skipnz
+  2593  0123  0223               	subwf	35,w	;volatile
+  2594  0124  1C03               	skipc
+  2595  0125  2927               	goto	u55_21
+  2596  0126  2928               	goto	u55_20
+  2597  0127                     u55_21:
+  2598  0127  292C               	goto	i1l215
+  2599  0128                     u55_20:
+  2600  0128                     i1l1434:
+  2601  0128  300A               	movlw	10
+  2602  0129  02A3               	subwf	35,f	;volatile
+  2603  012A  3000               	movlw	0
+  2604  012B  3BA4               	subwfb	36,f	;volatile
+  2605  012C                     i1l215:
+  2606                           
+  2607                           ;Nerf Turret Project.c: 361: 
+  2608  012C  300B               	movlw	11
+  2609  012D  0224               	subwf	36,w	;volatile
+  2610  012E  30B8               	movlw	184
+  2611  012F  1903               	skipnz
+  2612  0130  0223               	subwf	35,w	;volatile
+  2613  0131  1803               	skipnc
+  2614  0132  2934               	goto	u56_21
+  2615  0133  2935               	goto	u56_20
+  2616  0134                     u56_21:
+  2617  0134  2939               	goto	i1l216
+  2618  0135                     u56_20:
+  2619  0135                     i1l1436:
+  2620  0135  300A               	movlw	10
+  2621  0136  07A3               	addwf	35,f	;volatile
+  2622  0137  3000               	movlw	0
+  2623  0138  3DA4               	addwfc	36,f	;volatile
+  2624  0139                     i1l216:
+  2625                           
+  2626                           ;Nerf Turret Project.c: 364:         else {PSMC3DC = 3000; PSMC3CONbits.PSMC3LD = 1;}
+  2627  0139  300B               	movlw	11
+  2628  013A  003D               	movlb	29	; select bank29
+  2629  013B  0224               	subwf	36,w	;volatile
+  2630  013C  30AF               	movlw	175
+  2631  013D  1903               	skipnz
+  2632  013E  0223               	subwf	35,w	;volatile
+  2633  013F  1C03               	skipc
+  2634  0140  2942               	goto	u57_21
+  2635  0141  2943               	goto	u57_20
+  2636  0142                     u57_21:
+  2637  0142  2950               	goto	i1l1442
+  2638  0143                     u57_20:
+  2639  0143                     i1l1438:
+  2640  0143  300B               	movlw	11
+  2641  0144  0224               	subwf	36,w	;volatile
+  2642  0145  30C2               	movlw	194
+  2643  0146  1903               	skipnz
+  2644  0147  0223               	subwf	35,w	;volatile
+  2645  0148  1803               	skipnc
+  2646  0149  294B               	goto	u58_21
+  2647  014A  294C               	goto	u58_20
+  2648  014B                     u58_21:
+  2649  014B  2950               	goto	i1l1442
+  2650  014C                     u58_20:
+  2651  014C                     i1l1440:
+  2652  014C  300B               	movlw	11
+  2653  014D  00A4               	movwf	36	;volatile
+  2654  014E  30B8               	movlw	184
+  2655  014F  00A3               	movwf	35	;volatile
+  2656  0150                     i1l1442:
+  2657                           
+  2658                           ;Nerf Turret Project.c: 365: 
+  2659  0150  300B               	movlw	11
+  2660  0151  003E               	movlb	30	; select bank30
+  2661  0152  0224               	subwf	36,w	;volatile
+  2662  0153  30AF               	movlw	175
+  2663  0154  1903               	skipnz
+  2664  0155  0223               	subwf	35,w	;volatile
+  2665  0156  1C03               	skipc
+  2666  0157  2959               	goto	u59_21
+  2667  0158  295A               	goto	u59_20
+  2668  0159                     u59_21:
+  2669  0159  2967               	goto	i1l218
+  2670  015A                     u59_20:
+  2671  015A                     i1l1444:
+  2672  015A  300B               	movlw	11
+  2673  015B  0224               	subwf	36,w	;volatile
+  2674  015C  30C2               	movlw	194
+  2675  015D  1903               	skipnz
+  2676  015E  0223               	subwf	35,w	;volatile
+  2677  015F  1803               	skipnc
+  2678  0160  2962               	goto	u60_21
+  2679  0161  2963               	goto	u60_20
+  2680  0162                     u60_21:
+  2681  0162  2967               	goto	i1l218
+  2682  0163                     u60_20:
+  2683  0163                     i1l1446:
+  2684  0163  300B               	movlw	11
+  2685  0164  00A4               	movwf	36	;volatile
+  2686  0165  30B8               	movlw	184
+  2687  0166  00A3               	movwf	35	;volatile
+  2688  0167                     i1l218:
+  2689                           
+  2690                           ;Nerf Turret Project.c: 367:         if(shootCount > 400) {shootPermission = 0xFF;}
+  2691  0167  003D               	movlb	29	; select bank29
+  2692  0168  1711               	bsf	17,6	;volatile
+  2693                           
+  2694                           ;Nerf Turret Project.c: 368:         else {shootPermission = 0x00; PSMC2DC = 3000; PSMC2
+      +                          CONbits.PSMC2LD = 1;}
+  2695  0169  003E               	movlb	30	; select bank30
+  2696  016A  1711               	bsf	17,6	;volatile
+  2697  016B                     i1l1448:
+  2698  016B  30B8               	movlw	184
+  2699  016C  003D               	movlb	29	; select bank29
+  2700  016D  0623               	xorwf	35,w	;volatile
+  2701  016E  300B               	movlw	11
+  2702  016F  1903               	skipnz
+  2703  0170  0624               	xorwf	36,w	;volatile
+  2704  0171  1D03               	btfss	3,2
+  2705  0172  2974               	goto	u61_21
+  2706  0173  2975               	goto	u61_20
+  2707  0174                     u61_21:
+  2708  0174  2982               	goto	i1l1456
+  2709  0175                     u61_20:
+  2710  0175                     i1l1450:
+  2711  0175  30B8               	movlw	184
+  2712  0176  003E               	movlb	30	; select bank30
+  2713  0177  0623               	xorwf	35,w	;volatile
+  2714  0178  300B               	movlw	11
+  2715  0179  1903               	skipnz
+  2716  017A  0624               	xorwf	36,w	;volatile
+  2717  017B  1D03               	btfss	3,2
+  2718  017C  297E               	goto	u62_21
+  2719  017D  297F               	goto	u62_20
+  2720  017E                     u62_21:
+  2721  017E  2982               	goto	i1l1456
+  2722  017F                     u62_20:
+  2723  017F                     i1l1452:
+  2724  017F  0020               	movlb	0	; select bank0
+  2725  0180  01AA               	clrf	_homeSequence
+  2726  0181                     i1l1454:
+  2727  0181  111C               	bcf	28,2	;volatile
+  2728  0182                     i1l1456:
+  2729  0182  0020               	movlb	0	; select bank0
+  2730  0183  1091               	bcf	17,1	;volatile
+  2731  0184                     i1l220:
+  2732  0184  0008               	return
+  2733  0185                     __end_of_TMR2ISR:
+  2734                           
+  2735                           	psect	text13
+  2736  02F3                     __ptext13:	
+  2737 ;; *************** function _TMR1ISR *****************
+  2738 ;; Defined at:
+  2739 ;;		line 384 in file "Nerf Turret Project.c"
+  2740 ;; Parameters:    Size  Location     Type
+  2741 ;;		None
+  2742 ;; Auto vars:     Size  Location     Type
+  2743 ;;		None
+  2744 ;; Return value:  Size  Location     Type
+  2745 ;;                  1    wreg      void 
+  2746 ;; Registers used:
+  2747 ;;		wreg, status,2
+  2748 ;; Tracked objects:
+  2749 ;;		On entry : 0/0
+  2750 ;;		On exit  : 0/0
+  2751 ;;		Unchanged: 0/0
+  2752 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2753 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2754 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2755 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2756 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2757 ;;Total ram usage:        0 bytes
+  2758 ;; Hardware stack levels used: 1
+  2759 ;; This function calls:
+  2760 ;;		Nothing
+  2761 ;; This function is called by:
+  2762 ;;		_ISR
+  2763 ;; This function uses a non-reentrant model
+  2764 ;;
+  2765                           
+  2766  02F3                     _TMR1ISR:	
+  2767                           ;psect for function _TMR1ISR
+  2768                           
+  2769  02F3                     i1l1466:	
+  2770                           ;incstack = 0
+  2771                           ; Regs used in _TMR1ISR: [wreg+status,2]
+  2772                           
+  2773  02F3  0020               	movlb	0	; select bank0
+  2774  02F4  1011               	bcf	17,0	;volatile
+  2775  02F5                     i1l1468:
+  2776  02F5  30FF               	movlw	255
+  2777  02F6  0022               	movlb	2	; select bank2
+  2778  02F7  008D               	movwf	13	;volatile
+  2779  02F8                     i1l1470:
+  2780  02F8  0020               	movlb	0	; select bank0
+  2781  02F9  01A0               	clrf	_shootCount
+  2782  02FA  01A1               	clrf	_shootCount+1
+  2783  02FB                     i1l1472:
+  2784  02FB  01A8               	clrf	_Buttons1
+  2785  02FC                     i1l1474:
+  2786  02FC  01A7               	clrf	_Buttons2
+  2787  02FD                     i1l1476:
+  2788  02FD  01A6               	clrf	_XAxis
+  2789  02FE                     i1l1478:
+  2790  02FE  01A5               	clrf	_YAxis
+  2791  02FF                     i1l226:
+  2792  02FF  0008               	return
+  2793  0300                     __end_of_TMR1ISR:
+  2794                           
+  2795                           	psect	text14
+  2796  0300                     __ptext14:	
+  2797 ;; *************** function _RC1ISR *****************
+  2798 ;; Defined at:
+  2799 ;;		line 376 in file "Nerf Turret Project.c"
+  2800 ;; Parameters:    Size  Location     Type
+  2801 ;;		None
+  2802 ;; Auto vars:     Size  Location     Type
+  2803 ;;		None
+  2804 ;; Return value:  Size  Location     Type
+  2805 ;;                  1    wreg      void 
+  2806 ;; Registers used:
+  2807 ;;		wreg, status,2
+  2808 ;; Tracked objects:
+  2809 ;;		On entry : 0/0
+  2810 ;;		On exit  : 0/0
+  2811 ;;		Unchanged: 0/0
+  2812 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+      +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
+  2813 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2814 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2815 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2816 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+      +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+  2817 ;;Total ram usage:        1 bytes
+  2818 ;; Hardware stack levels used: 1
+  2819 ;; This function calls:
+  2820 ;;		Nothing
+  2821 ;; This function is called by:
+  2822 ;;		_ISR
+  2823 ;; This function uses a non-reentrant model
+  2824 ;;
+  2825                           
+  2826  0300                     _RC1ISR:	
+  2827                           ;psect for function _RC1ISR
+  2828                           
+  2829  0300                     i1l1458:	
+  2830                           ;incstack = 0
+  2831                           ; Regs used in _RC1ISR: [wreg+status,2]
+  2832                           
+  2833  0300  0023               	movlb	3	; select bank3
+  2834  0301  0819               	movf	25,w	;volatile
+  2835  0302  00F0               	movwf	??_RC1ISR
+  2836  0303  0870               	movf	??_RC1ISR,w
+  2837  0304  00FC               	movwf	_RCTemp
+  2838  0305                     i1l1460:
+  2839  0305  0020               	movlb	0	; select bank0
+  2840  0306  142B               	bsf	_pFlag,0
+  2841  0307                     i1l1462:
+  2842  0307  0196               	clrf	22	;volatile
+  2843  0308  0197               	clrf	23	;volatile
+  2844  0309                     i1l1464:
+  2845  0309  0022               	movlb	2	; select bank2
+  2846  030A  018D               	clrf	13	;volatile
+  2847  030B                     i1l223:
+  2848  030B  0008               	return
+  2849  030C                     __end_of_RC1ISR:
+  2850  007E                     btemp	set	126	;btemp
+  2851  007E                     int$flags	set	126
+  2852  007E                     wtemp0	set	126
+  2853                           
+  2854                           	psect	config
+  2855                           
+  2856                           ;Config register CONFIG1 @ 0x8007
+  2857                           ;	Oscillator Selection
+  2858                           ;	FOSC = INTOSC, INTOSC oscillator: I/O function on CLKIN pin
+  2859                           ;	Watchdog Timer Enable
+  2860                           ;	WDTE = OFF, WDT disabled
+  2861                           ;	Power-up Timer Enable
+  2862                           ;	PWRTE = OFF, PWRT disabled
+  2863                           ;	MCLR Pin Function Select
+  2864                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
+  2865                           ;	Flash Program Memory Code Protection
+  2866                           ;	CP = OFF, Program memory code protection is disabled
+  2867                           ;	Data Memory Code Protection
+  2868                           ;	CPD = OFF, Data memory code protection is disabled
+  2869                           ;	Brown-out Reset Enable
+  2870                           ;	BOREN = OFF, Brown-out Reset disabled
+  2871                           ;	Clock Out Enable
+  2872                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
+      +                          pin
+  2873                           ;	Internal/External Switchover
+  2874                           ;	IESO = ON, Internal/External Switchover mode is enabled
+  2875                           ;	Fail-Safe Clock Monitor Enable
+  2876                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  2877  8007                     	org	32775
+  2878  8007  19E4               	dw	6628
+  2879                           
+  2880                           ;Config register CONFIG2 @ 0x8008
+  2881                           ;	Flash Memory Self-Write Protection
+  2882                           ;	WRT = OFF, Write protection off
+  2883                           ;	Voltage Regulator Capacitor Enable bit
+  2884                           ;	VCAPEN = OFF, Vcap functionality is disabled on RA6.
+  2885                           ;	PLL Enable
+  2886                           ;	PLLEN = OFF, 4x PLL disabled
+  2887                           ;	Stack Overflow/Underflow Reset Enable
+  2888                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
+  2889                           ;	Brown-out Reset Voltage Selection
+  2890                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+  2891                           ;	Low Power Brown-Out Reset Enable Bit
+  2892                           ;	LPBOR = OFF, Low power brown-out is disabled
+  2893                           ;	Low-Voltage Programming Enable
+  2894                           ;	LVP = ON, Low-voltage programming enabled
+  2895  8008                     	org	32776
+  2896  8008  3EFF               	dw	16127
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         13
+    Persistent  32
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     12      13
+    BANK0            80      1      13
+    BANK1            80      0       0
+    BANK2            80      0       0
+    BANK3            80      0       0
+    BANK4            80      0       0
+    BANK5            80      0       0
+    BANK6            80      0       0
+    BANK7            80      0       0
+    BANK8            80      0       0
+    BANK9            80      0       0
+    BANK10           80      0       0
+    BANK11           80      0       0
+    BANK12           80      0       0
+    BANK13           80      0       0
+    BANK14           80      0       0
+    BANK15           80      0       0
+    BANK16           80      0       0
+    BANK17           80      0       0
+    BANK18           80      0       0
+    BANK19           80      0       0
+    BANK20           80      0       0
+    BANK21           80      0       0
+    BANK22           80      0       0
+    BANK23           80      0       0
+    BANK24           80      0       0
+    BANK25           32      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_DetermineAction
+    _DetermineAction->_reverseBits
+
+Critical Paths under _ISR in COMMON
+
+    _ISR->_RC1ISR
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _ISR in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _ISR in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _ISR in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _ISR in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _ISR in BANK7
+
+    None.
+
+Critical Paths under _main in BANK8
+
+    None.
+
+Critical Paths under _ISR in BANK8
+
+    None.
+
+Critical Paths under _main in BANK9
+
+    None.
+
+Critical Paths under _ISR in BANK9
+
+    None.
+
+Critical Paths under _main in BANK10
+
+    None.
+
+Critical Paths under _ISR in BANK10
+
+    None.
+
+Critical Paths under _main in BANK11
+
+    None.
+
+Critical Paths under _ISR in BANK11
+
+    None.
+
+Critical Paths under _main in BANK12
+
+    None.
+
+Critical Paths under _ISR in BANK12
+
+    None.
+
+Critical Paths under _main in BANK13
+
+    None.
+
+Critical Paths under _ISR in BANK13
+
+    None.
+
+Critical Paths under _main in BANK14
+
+    None.
+
+Critical Paths under _ISR in BANK14
+
+    None.
+
+Critical Paths under _main in BANK15
+
+    None.
+
+Critical Paths under _ISR in BANK15
+
+    None.
+
+Critical Paths under _main in BANK16
+
+    None.
+
+Critical Paths under _ISR in BANK16
+
+    None.
+
+Critical Paths under _main in BANK17
+
+    None.
+
+Critical Paths under _ISR in BANK17
+
+    None.
+
+Critical Paths under _main in BANK18
+
+    None.
+
+Critical Paths under _ISR in BANK18
+
+    None.
+
+Critical Paths under _main in BANK19
+
+    None.
+
+Critical Paths under _ISR in BANK19
+
+    None.
+
+Critical Paths under _main in BANK20
+
+    None.
+
+Critical Paths under _ISR in BANK20
+
+    None.
+
+Critical Paths under _main in BANK21
+
+    None.
+
+Critical Paths under _ISR in BANK21
+
+    None.
+
+Critical Paths under _main in BANK22
+
+    None.
+
+Critical Paths under _ISR in BANK22
+
+    None.
+
+Critical Paths under _main in BANK23
+
+    None.
+
+Critical Paths under _ISR in BANK23
+
+    None.
+
+Critical Paths under _main in BANK24
+
+    None.
+
+Critical Paths under _ISR in BANK24
+
+    None.
+
+Critical Paths under _main in BANK25
+
+    None.
+
+Critical Paths under _ISR in BANK25
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0     182
+                                              0 BANK0      1     1      0
+                    _DetermineAction
+                        _ProcessUART
+                   _configInterrupts
+                          _configOSC
+                          _configPWM
+                        _configPorts
+                         _configTMR1
+                         _configTMR2
+                         _configUART
+ ---------------------------------------------------------------------------------
+ (1) _configUART                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configTMR2                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configTMR1                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configPorts                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configPWM                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configOSC                                            0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configInterrupts                                     0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _ProcessUART                                          2     2      0       0
+                                              1 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (1) _DetermineAction                                      4     4      0     182
+                                              8 COMMON     4     4      0
+                        _reverseBits
+ ---------------------------------------------------------------------------------
+ (2) _reverseBits                                          7     7      0     182
+                                              1 COMMON     7     7      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _ISR                                                  0     0      0       0
+                             _RC1ISR
+                            _TMR1ISR
+                            _TMR2ISR
+ ---------------------------------------------------------------------------------
+ (4) _TMR2ISR                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _TMR1ISR                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ (4) _RC1ISR                                               1     1      0       0
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _DetermineAction
+     _reverseBits
+   _ProcessUART
+   _configInterrupts
+   _configOSC
+   _configPWM
+   _configPorts
+   _configTMR1
+   _configTMR2
+   _configUART
+
+ _ISR (ROOT)
+   _RC1ISR
+   _TMR1ISR
+   _TMR2ISR
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             7F0      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITCOMMON            E      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               E      C       D       2       92.9%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR2              0      0       0       3        0.0%
+SFR2                 0      0       0       3        0.0%
+STACK                0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      1       D       5       16.2%
+BITSFR4              0      0       0       5        0.0%
+SFR4                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BITSFR5              0      0       0       6        0.0%
+SFR5                 0      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITSFR6              0      0       0       7        0.0%
+SFR6                 0      0       0       7        0.0%
+BITBANK2            50      0       0       8        0.0%
+BITSFR7              0      0       0       8        0.0%
+SFR7                 0      0       0       8        0.0%
+BANK2               50      0       0       9        0.0%
+BITSFR8              0      0       0       9        0.0%
+SFR8                 0      0       0       9        0.0%
+BITBANK3            50      0       0      10        0.0%
+BITSFR9              0      0       0      10        0.0%
+SFR9                 0      0       0      10        0.0%
+BANK3               50      0       0      11        0.0%
+BITSFR10             0      0       0      11        0.0%
+SFR10                0      0       0      11        0.0%
+BITBANK4            50      0       0      12        0.0%
+BITSFR11             0      0       0      12        0.0%
+SFR11                0      0       0      12        0.0%
+BANK4               50      0       0      13        0.0%
+BITSFR12             0      0       0      13        0.0%
+SFR12                0      0       0      13        0.0%
+BITSFR13             0      0       0      14        0.0%
+SFR13                0      0       0      14        0.0%
+ABS                  0      0      1A      14        0.0%
+BITBANK5            50      0       0      15        0.0%
+BITSFR14             0      0       0      15        0.0%
+SFR14                0      0       0      15        0.0%
+BANK5               50      0       0      16        0.0%
+BITSFR15             0      0       0      16        0.0%
+SFR15                0      0       0      16        0.0%
+BITBANK6            50      0       0      17        0.0%
+BITSFR16             0      0       0      17        0.0%
+SFR16                0      0       0      17        0.0%
+BANK6               50      0       0      18        0.0%
+BITSFR17             0      0       0      18        0.0%
+SFR17                0      0       0      18        0.0%
+BITBANK7            50      0       0      19        0.0%
+BITSFR18             0      0       0      19        0.0%
+SFR18                0      0       0      19        0.0%
+BANK7               50      0       0      20        0.0%
+BITSFR19             0      0       0      20        0.0%
+SFR19                0      0       0      20        0.0%
+BITBANK8            50      0       0      21        0.0%
+BITSFR20             0      0       0      21        0.0%
+SFR20                0      0       0      21        0.0%
+BANK8               50      0       0      22        0.0%
+BITSFR21             0      0       0      22        0.0%
+SFR21                0      0       0      22        0.0%
+BITBANK9            50      0       0      23        0.0%
+BITSFR22             0      0       0      23        0.0%
+SFR22                0      0       0      23        0.0%
+BANK9               50      0       0      24        0.0%
+BITSFR23             0      0       0      24        0.0%
+SFR23                0      0       0      24        0.0%
+BITBANK10           50      0       0      25        0.0%
+BITSFR24             0      0       0      25        0.0%
+SFR24                0      0       0      25        0.0%
+BANK10              50      0       0      26        0.0%
+BITSFR25             0      0       0      26        0.0%
+SFR25                0      0       0      26        0.0%
+BITBANK11           50      0       0      27        0.0%
+BITSFR26             0      0       0      27        0.0%
+SFR26                0      0       0      27        0.0%
+BITSFR27             0      0       0      28        0.0%
+SFR27                0      0       0      28        0.0%
+DATA                 0      0      1A      28        0.0%
+BANK11              50      0       0      29        0.0%
+BITSFR28             0      0       0      29        0.0%
+SFR28                0      0       0      29        0.0%
+BITBANK12           50      0       0      30        0.0%
+BITSFR29             0      0       0      30        0.0%
+SFR29                0      0       0      30        0.0%
+BANK12              50      0       0      31        0.0%
+BITSFR30             0      0       0      31        0.0%
+SFR30                0      0       0      31        0.0%
+BITBANK13           50      0       0      32        0.0%
+BITSFR31             0      0       0      32        0.0%
+SFR31                0      0       0      32        0.0%
+BANK13              50      0       0      33        0.0%
+BITBANK14           50      0       0      34        0.0%
+BANK14              50      0       0      35        0.0%
+BITBANK15           50      0       0      36        0.0%
+BANK15              50      0       0      37        0.0%
+BITBANK16           50      0       0      38        0.0%
+BANK16              50      0       0      39        0.0%
+BITBANK17           50      0       0      40        0.0%
+BANK17              50      0       0      41        0.0%
+BITBANK18           50      0       0      42        0.0%
+BANK18              50      0       0      43        0.0%
+BITBANK19           50      0       0      44        0.0%
+BANK19              50      0       0      45        0.0%
+BITBANK20           50      0       0      46        0.0%
+BANK20              50      0       0      47        0.0%
+BITBANK21           50      0       0      48        0.0%
+BANK21              50      0       0      49        0.0%
+BITBANK22           50      0       0      50        0.0%
+BANK22              50      0       0      51        0.0%
+BITBANK23           50      0       0      52        0.0%
+BANK23              50      0       0      53        0.0%
+BITBANK24           50      0       0      54        0.0%
+BANK24              50      0       0      55        0.0%
+BITBANK25           20      0       0      56        0.0%
+BANK25              20      0       0      57        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.36 build 20220127204148 
+Symbol Table                                                                                   Wed Mar 02 13:38:22 2022
+
+                     l210 0102                       l204 00A5                       l208 00F5  
+                     l160 02E5                       l242 01CC                       l163 02D7  
+                     l180 02A9                       l172 0244                       l157 0313  
+                     l182 02B4                       l166 02F2                       l175 02C6  
+                     l193 0281                       l169 0316                       l199 0050  
+                     u400 024C                       u401 024B                       u410 0039  
+                     u411 0038                       u500 00E4                       u420 0045  
+                     u501 00E3                       u421 0044                       u510 00F1  
+                     u430 0049                       _PR2 001B                       u511 00F0  
+                     u431 0048                       u520 00FB                       u521 00FA  
+                     u370 029B                       u450 0069                       u371 029A  
+                     u451 0068                       u364 028F                       u460 0094  
+                     _ISR 0004                       u365 028E                       u461 0093  
+                     u445 005D                       u390 02B3                       u470 00A1  
+                     u710 019F                       u391 02B2                       u471 00A0  
+                     u711 019E                       u384 02A3                       u720 01AB  
+                     u385 02A2                       u721 01AA                       u490 00B9  
+                     u730 01B0                       u491 00B8                       u731 01AF  
+                     u740 01C5                       u485 00AD                       u741 01C4  
+                     u750 01E0                       u751 01DF                       u745 01C1  
+                     u755 01DC                       wreg 0009                      ?_ISR 0070  
+                    l1210 028A                      l1212 029B                      l1204 0283  
+                    l1220 030C                      l1300 0228                      l1214 02AD  
+                    l1206 0287                      l1310 022D                      l1302 0229  
+                    l1230 02E4                      l1222 02D8                      l1216 02B3  
+                    l1208 0288                      l1400 0094                      l1320 0238  
+                    l1312 022E                      l1304 022A                      l1224 02DF  
+                    l1240 02D5                      l1232 02C7                      l1410 00B9  
+                    l1402 0098                      l1330 0240                      l1322 023C  
+                    l1314 0230                      l1306 022B                      l1250 02F0  
+                    l1242 02E6                      l1226 02E0                      l1234 02D0  
+                    l1420 00F1                      l1412 00CB                      l1404 00A1  
+                    l1252 0314                      l1332 0241                      l1324 023D  
+                    l1316 0232                      l1308 022C                      l1260 01FE  
+                    l1244 02E9                      l1228 02E2                      l1236 02D2  
+                    l1340 02C2                      l1422 00FB                      l1414 00DB  
+                    l1406 00A6                      l1350 0251                      l1334 0242  
+                    l1326 023E                      l1318 0234                      l1270 0203  
+                    l1262 01FF                      l1254 01F1                      l1246 02EC  
+                    l1238 02D3                      l1342 02C4                      l1424 00FF  
+                    l1416 00E4                      l1408 00B5                      l1344 0245  
+                    l1328 023F                      l1280 020F                      l1272 0204  
+                    l1264 0200                      l1256 01F6                      l1248 02EE  
+                    l1336 02B5                      l1600 01E6                      l1426 0100  
+                    l1418 00E8                      l1362 0260                      l1354 0256  
+                    l1346 0246                      l1370 0267                      l1290 0217  
+                    l1282 0213                      l1274 0206                      l1266 0201  
+                    l1258 01FA                      l1338 02C0                      l1602 01E8  
+                    l1380 0039                      l1364 0264                      l1348 024C  
+                    l1292 0218                      l1284 0214                      l1276 0209  
+                    l1268 0202                      l1604 01ED                      l1390 0056  
+                    l1382 003E                      l1366 0265                      l1358 025B  
+                    l1294 0219                      l1286 0215                      l1278 020B  
+                    l1392 0065                      l1384 0040                      l1296 0220  
+                    l1288 0216                      l1394 0069                      l1386 0045  
+                    l1378 0034                      l1298 0224                      l1570 018E  
+                    l1396 007B                      l1388 0049                      l1636 0270  
+                    l1580 019F                      l1572 0191                      l1564 0185  
+                    l1398 008B                      l1590 01B3                      l1582 01A2  
+                    l1574 0194                      l1566 0188                      l1592 01B8  
+                    l1584 01A7                      l1576 0197                      l1568 018B  
+                    l1594 01C5                      l1586 01AB                      l1578 019A  
+                    l1596 01D2                      l1588 01B0                      l1598 01E0  
+                    _LATB 010D                      _LATC 010E                      _TMR1 0016  
+         __end_of_TMR1ISR 0300           __end_of_TMR2ISR 0185                      _main 0185  
+                    btemp 007E                      start 0020                     ??_ISR 0071  
+                   ?_main 0070                     i1l220 0184                     i1l213 0111  
+                   i1l214 011E                     i1l223 030B                     i1l215 012C  
+                   i1l216 0139                     i1l226 02FF                     i1l218 0167  
+                   i1l234 001E                     _RCREG 0199                     _SPBRG 019B  
+                   u60_20 0163                     u60_21 0162                     u61_20 0175  
+                   u53_20 010D                     u61_21 0174                     u53_21 010C  
+                   u62_20 017F                     u54_20 011A                     u62_21 017E  
+                   u54_21 0119                     u55_20 0128                     u63_20 000B  
+                   u55_21 0127                     u63_21 000A                     u56_20 0135  
+                   u64_20 0013                     u56_21 0134                     u64_21 0012  
+                   u57_20 0143                     u65_20 001B                     u57_21 0142  
+                   u65_21 001A                     _TRISB 008D                     _TRISC 008E  
+                   u58_20 014C                     u58_21 014B                     u59_20 015A  
+                   u59_21 0159                     _XAxis 0026                     _YAxis 0025  
+                   _pFlag 002B                     status 0003                     wtemp0 007E  
+         __initialization 0022              __end_of_main 01F1                    ??_main 002C  
+               ??_TMR1ISR 0070                 ??_TMR2ISR 0070                    _ANSELB 018D  
+                  _ANSELC 018E                    _RC1ISR 0300                    i1l1430 010D  
+                  i1l1440 014C                    i1l1432 011A                    i1l1450 0175  
+                  i1l1442 0150                    i1l1434 0128                    i1l1460 0305  
+                  i1l1452 017F                    i1l1444 015A                    i1l1436 0135  
+                  i1l1428 0103                    i1l1462 0307                    i1l1470 02F8  
+                  i1l1454 0181                    i1l1446 0163                    i1l1438 0143  
+                  i1l1464 0309                    i1l1472 02FB                    i1l1456 0182  
+                  i1l1448 016B                    i1l1480 0006                    i1l1458 0300  
+                  i1l1474 02FC                    i1l1466 02F3                    i1l1490 001B  
+                  i1l1482 000B                    i1l1476 02FD                    i1l1468 02F5  
+                  i1l1484 000E                    i1l1478 02FE                    i1l1486 0013  
+                  i1l1488 0016                    _RCTemp 007C              ?_reverseBits 0070  
+           ??_ProcessUART 0071   __end_of__initialization 0030          _configInterrupts 0314  
+          __pcstackCOMMON 0070         ??_DetermineAction 0078                   ?_RC1ISR 0070  
+              __pbssBANK0 0020       __end_of_ProcessUART 0282           reverseBits@temp 0074  
+              __pmaintext 0185                __pintentry 0004                _configUART 02B5  
+              _configTMR1 02D8                _configTMR2 02C7                   _PSMC1DC 0EA3  
+                 _PSMC2DC 0EC3                   _PSMC3DC 0EE3                   _PSMC4DC 0F23  
+                 _PSMC1PR 0EA5                   _PSMC2PR 0EC5                   _PSMC3PR 0EE5  
+                 _PSMC4PR 0F25                   _TMR1ISR 02F3                   _TMR2ISR 0103  
+                 _RCIndex 0029         __end_of_configOSC 0314         __end_of_configPWM 0245  
+                 __ptext1 02B5                   __ptext2 02C7                   __ptext3 02D8  
+                 __ptext4 02E6                   __ptext5 01F1                   __ptext6 030C  
+                 __ptext7 0314                   __ptext8 0245                   __ptext9 0034  
+               _T1CONbits 0018                 _T2CONbits 001C               _ProcessUART 0245  
+    end_of_initialization 0030                 _RCSTAbits 019D                _shootCount 0020  
+             ?_configUART 0070               ?_configTMR1 0070               ?_configTMR2 0070  
+__end_of_configInterrupts 0317           _shootPermission 0022             _PSMC1STR0bits 0EAE  
+          __end_of_RC1ISR 030C             _PSMC2STR0bits 0ECE                 _TXSTAbits 019E  
+           _PSMC3STR0bits 0EEE             ??_configPorts 0071             _PSMC4STR0bits 0F2E  
+             _BAUDCONbits 019F           _DetermineAction 0034       start_initialization 0022  
+             __end_of_ISR 0020                  ??_RC1ISR 0070              _homeSequence 002A  
+             _APFCON1bits 011D       __end_of_configPorts 02F3    reverseBits@reverse_num 0075  
+             __pbssCOMMON 007C                 ___latbits 0003             __pcstackBANK0 002C  
+                ?_TMR1ISR 0070                  ?_TMR2ISR 0070            reverseBits@num 0073  
+ __end_of_DetermineAction 0103                 _configOSC 030C                 _configPWM 01F1  
+            ?_ProcessUART 0070                  _PIE1bits 0091               _configPorts 02E6  
+                _PIR1bits 0011                  _PSMC1CON 0E91                  _PSMC2CON 0EB1  
+                _PSMC3CON 0ED1                  _PSMC4CON 0F11              _PSMC1DCSbits 0E9B  
+           ??_reverseBits 0071              _PSMC1CLKbits 0E94              _PSMC2DCSbits 0EBB  
+            _PSMC2CLKbits 0EB4              _PSMC1CONbits 0E91              _PSMC3DCSbits 0EDB  
+              ?_configOSC 0070                ?_configPWM 0070              _PSMC3CLKbits 0ED4  
+            _PSMC2CONbits 0EB1              _PSMC4DCSbits 0F1B              _PSMC4CLKbits 0F14  
+            _PSMC3CONbits 0ED1              _PSMC4CONbits 0F11              _PSMC1OENbits 0E95  
+            _PSMC2OENbits 0EB5              _PSMC1PHSbits 0E9A              _PSMC3OENbits 0ED5  
+            _PSMC1POLbits 0E96              _PSMC2PHSbits 0EBA              ??_configUART 0071  
+            _PSMC4OENbits 0F15              ??_configTMR1 0071              ??_configTMR2 0071  
+            _PSMC2POLbits 0EB6              _PSMC3PHSbits 0EDA              _PSMC1PRSbits 0E9C  
+            _PSMC3POLbits 0ED6              _PSMC4PHSbits 0F1A              _PSMC2PRSbits 0EBC  
+            _PSMC4POLbits 0F16              _PSMC3PRSbits 0EDC              _PSMC4PRSbits 0F1C  
+       ?_configInterrupts 0070        ??_configInterrupts 0071                  _Buttons1 0028  
+                _Buttons2 0027     reverseBits@NO_OF_BITS 0076        __end_of_configUART 02C7  
+      __end_of_configTMR1 02E6        __end_of_configTMR2 02D8          ?_DetermineAction 0070  
+     __end_of_reverseBits 02B5             _XAxisReversed 0023                  __ptext10 0282  
+                __ptext12 0103                  __ptext13 02F3                _T1GCONbits 0019  
+                __ptext14 0300                  int$flags 007E               ??_configOSC 0071  
+             ??_configPWM 0071                _INTCONbits 000B             _YAxisReversed 0024  
+                intlevel1 0000              reverseBits@i 0077                _OSCCONbits 0099  
+             _reverseBits 0282              ?_configPorts 0070  

@@ -1,0 +1,2062 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1914 C:\Program Files\Microchip\xc8\v2.36\pic\include\proc/pic16f1788.h
+[s S105 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S105 . SCS0 SCS1 . IRCF0 IRCF1 IRCF2 IRCF3 SPLLEN ]
+"1924
+[s S106 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S106 . SCS . IRCF ]
+"1913
+[u S104 `S105 1 `S106 1 ]
+[n S104 . . . ]
+"1930
+[v _OSCCONbits `VS104 ~T0 @X0 0 e@153 ]
+"949
+[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S60 . TMR1ON . nT1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
+"959
+[s S61 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S61 . . T1CKPS TMR1CS ]
+"948
+[u S59 `S60 1 `S61 1 ]
+[n S59 . . . ]
+"965
+[v _T1CONbits `VS59 ~T0 @X0 0 e@24 ]
+"1021
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . T1GSS0 T1GSS1 T1GVAL T1GGO T1GSPM T1GTM T1GPOL TMR1GE ]
+"1031
+[s S64 :2 `uc 1 ]
+[n S64 . T1GSS ]
+"1020
+[u S62 `S63 1 `S64 1 ]
+[n S62 . . . ]
+"1035
+[v _T1GCONbits `VS62 ~T0 @X0 0 e@25 ]
+"1441
+[s S85 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S85 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
+"1440
+[u S84 `S85 1 ]
+[n S84 . . ]
+"1452
+[v _PIE1bits `VS84 ~T0 @X0 0 e@145 ]
+"675
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
+"674
+[u S45 `S46 1 ]
+[n S45 . . ]
+"686
+[v _PIR1bits `VS45 ~T0 @X0 0 e@17 ]
+"1131
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S70 . T2CKPS0 T2CKPS1 TMR2ON T2OUTPS0 T2OUTPS1 T2OUTPS2 T2OUTPS3 ]
+"1140
+[s S71 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S71 . T2CKPS . T2OUTPS ]
+"1130
+[u S69 `S70 1 `S71 1 ]
+[n S69 . . . ]
+"1146
+[v _T2CONbits `VS69 ~T0 @X0 0 e@28 ]
+"1105
+[v _PR2 `Vuc ~T0 @X0 0 e@27 ]
+"2402
+[v _LATB `Vuc ~T0 @X0 0 e@269 ]
+"2472
+[v _LATC `Vuc ~T0 @X0 0 e@270 ]
+"1266
+[v _TRISB `Vuc ~T0 @X0 0 e@141 ]
+"3742
+[v _ANSELB `Vuc ~T0 @X0 0 e@397 ]
+"1336
+[v _TRISC `Vuc ~T0 @X0 0 e@142 ]
+"3806
+[v _ANSELC `Vuc ~T0 @X0 0 e@398 ]
+"358
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"368
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"357
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"375
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
+"8940
+[s S439 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S439 . P1CSRC0 P1CSRC1 . P1CPRE0 P1CPRE1 ]
+"8947
+[s S440 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S440 . P1CSRC . P1CPRE ]
+"8939
+[u S438 `S439 1 `S440 1 ]
+[n S438 . . . ]
+"8953
+[v _PSMC1CLKbits `VS438 ~T0 @X0 0 e@3732 ]
+"9852
+[v _PSMC1PR `Vus ~T0 @X0 0 e@3749 ]
+"9721
+[v _PSMC1DC `Vus ~T0 @X0 0 e@3747 ]
+"10406
+[s S493 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S493 . P1STRA P1STRB P1STRC P1STRD P1STRE P1STRF ]
+"10405
+[u S492 `S493 1 ]
+[n S492 . . ]
+"10415
+[v _PSMC1STR0bits `VS492 ~T0 @X0 0 e@3758 ]
+"9044
+[s S444 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S444 . P1POLA P1POLB P1POLC P1POLD P1POLE P1POLF P1INPOL ]
+"9043
+[u S443 `S444 1 ]
+[n S443 . . ]
+"9054
+[v _PSMC1POLbits `VS443 ~T0 @X0 0 e@3734 ]
+"8994
+[s S442 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S442 . P1OEA P1OEB P1OEC P1OED P1OEE P1OEF ]
+"8993
+[u S441 `S442 1 ]
+[n S441 . . ]
+"9003
+[v _PSMC1OENbits `VS441 ~T0 @X0 0 e@3733 ]
+"9348
+[s S457 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S457 . P1PRST P1PRSC1 P1PRSC2 P1PRSC3 P1PRSC4 . P1PRSIN ]
+"9347
+[u S456 `S457 1 ]
+[n S456 . . ]
+"9358
+[v _PSMC1PRSbits `VS456 ~T0 @X0 0 e@3740 ]
+"9246
+[s S453 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S453 . P1PHST P1PHSC1 P1PHSC2 P1PHSC3 P1PHSC4 . P1PHSIN ]
+"9245
+[u S452 `S453 1 ]
+[n S452 . . ]
+"9256
+[v _PSMC1PHSbits `VS452 ~T0 @X0 0 e@3738 ]
+"9297
+[s S455 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S455 . P1DCST P1DCSC1 P1DCSC2 P1DCSC3 P1DCSC4 . P1DCSIN ]
+"9296
+[u S454 `S455 1 ]
+[n S454 . . ]
+"9307
+[v _PSMC1DCSbits `VS454 ~T0 @X0 0 e@3739 ]
+"8748
+[v _PSMC1CON `Vuc ~T0 @X0 0 e@3729 ]
+"13955
+[s S637 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S637 . P4CSRC0 P4CSRC1 . P4CPRE0 P4CPRE1 ]
+"13962
+[s S638 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S638 . P4CSRC . P4CPRE ]
+"13954
+[u S636 `S637 1 `S638 1 ]
+[n S636 . . . ]
+"13968
+[v _PSMC4CLKbits `VS636 ~T0 @X0 0 e@3860 ]
+"14796
+[v _PSMC4PR `Vus ~T0 @X0 0 e@3877 ]
+"14665
+[v _PSMC4DC `Vus ~T0 @X0 0 e@3875 ]
+"15350
+[s S691 :1 `uc 1 :1 `uc 1 ]
+[n S691 . P4STRA P4STRB ]
+"15349
+[u S690 `S691 1 ]
+[n S690 . . ]
+"15355
+[v _PSMC4STR0bits `VS690 ~T0 @X0 0 e@3886 ]
+"14035
+[s S642 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S642 . P4POLA P4POLB . P4INPOL ]
+"14034
+[u S641 `S642 1 ]
+[n S641 . . ]
+"14042
+[v _PSMC4POLbits `VS641 ~T0 @X0 0 e@3862 ]
+"14009
+[s S640 :1 `uc 1 :1 `uc 1 ]
+[n S640 . P4OEA P4OEB ]
+"14008
+[u S639 `S640 1 ]
+[n S639 . . ]
+"14014
+[v _PSMC4OENbits `VS639 ~T0 @X0 0 e@3861 ]
+"14316
+[s S655 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S655 . P4PRST P4PRSC1 P4PRSC2 P4PRSC3 P4PRSC4 . P4PRSIN ]
+"14315
+[u S654 `S655 1 ]
+[n S654 . . ]
+"14326
+[v _PSMC4PRSbits `VS654 ~T0 @X0 0 e@3868 ]
+"14214
+[s S651 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S651 . P4PHST P4PHSC1 P4PHSC2 P4PHSC3 P4PHSC4 . P4PHSIN ]
+"14213
+[u S650 `S651 1 ]
+[n S650 . . ]
+"14224
+[v _PSMC4PHSbits `VS650 ~T0 @X0 0 e@3866 ]
+"14265
+[s S653 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S653 . P4DCST P4DCSC1 P4DCSC2 P4DCSC3 P4DCSC4 . P4DCSIN ]
+"14264
+[u S652 `S653 1 ]
+[n S652 . . ]
+"14275
+[v _PSMC4DCSbits `VS652 ~T0 @X0 0 e@3867 ]
+"13763
+[v _PSMC4CON `Vuc ~T0 @X0 0 e@3857 ]
+"12315
+[s S571 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S571 . P3CSRC0 P3CSRC1 . P3CPRE0 P3CPRE1 ]
+"12322
+[s S572 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S572 . P3CSRC . P3CPRE ]
+"12314
+[u S570 `S571 1 `S572 1 ]
+[n S570 . . . ]
+"12328
+[v _PSMC3CLKbits `VS570 ~T0 @X0 0 e@3796 ]
+"13156
+[v _PSMC3PR `Vus ~T0 @X0 0 e@3813 ]
+"13025
+[v _PSMC3DC `Vus ~T0 @X0 0 e@3811 ]
+"13710
+[s S625 :1 `uc 1 :1 `uc 1 ]
+[n S625 . P3STRA P3STRB ]
+"13709
+[u S624 `S625 1 ]
+[n S624 . . ]
+"13715
+[v _PSMC3STR0bits `VS624 ~T0 @X0 0 e@3822 ]
+"12395
+[s S576 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S576 . P3POLA P3POLB . P3INPOL ]
+"12394
+[u S575 `S576 1 ]
+[n S575 . . ]
+"12402
+[v _PSMC3POLbits `VS575 ~T0 @X0 0 e@3798 ]
+"12369
+[s S574 :1 `uc 1 :1 `uc 1 ]
+[n S574 . P3OEA P3OEB ]
+"12368
+[u S573 `S574 1 ]
+[n S573 . . ]
+"12374
+[v _PSMC3OENbits `VS573 ~T0 @X0 0 e@3797 ]
+"12676
+[s S589 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S589 . P3PRST P3PRSC1 P3PRSC2 P3PRSC3 P3PRSC4 . P3PRSIN ]
+"12675
+[u S588 `S589 1 ]
+[n S588 . . ]
+"12686
+[v _PSMC3PRSbits `VS588 ~T0 @X0 0 e@3804 ]
+"12574
+[s S585 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S585 . P3PHST P3PHSC1 P3PHSC2 P3PHSC3 P3PHSC4 . P3PHSIN ]
+"12573
+[u S584 `S585 1 ]
+[n S584 . . ]
+"12584
+[v _PSMC3PHSbits `VS584 ~T0 @X0 0 e@3802 ]
+"12625
+[s S587 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S587 . P3DCST P3DCSC1 P3DCSC2 P3DCSC3 P3DCSC4 . P3DCSIN ]
+"12624
+[u S586 `S587 1 ]
+[n S586 . . ]
+"12635
+[v _PSMC3DCSbits `VS586 ~T0 @X0 0 e@3803 ]
+"12123
+[v _PSMC3CON `Vuc ~T0 @X0 0 e@3793 ]
+"10675
+[s S505 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S505 . P2CSRC0 P2CSRC1 . P2CPRE0 P2CPRE1 ]
+"10682
+[s S506 :2 `uc 1 :2 `uc 1 :2 `uc 1 ]
+[n S506 . P2CSRC . P2CPRE ]
+"10674
+[u S504 `S505 1 `S506 1 ]
+[n S504 . . . ]
+"10688
+[v _PSMC2CLKbits `VS504 ~T0 @X0 0 e@3764 ]
+"11516
+[v _PSMC2PR `Vus ~T0 @X0 0 e@3781 ]
+"11385
+[v _PSMC2DC `Vus ~T0 @X0 0 e@3779 ]
+"12070
+[s S559 :1 `uc 1 :1 `uc 1 ]
+[n S559 . P2STRA P2STRB ]
+"12069
+[u S558 `S559 1 ]
+[n S558 . . ]
+"12075
+[v _PSMC2STR0bits `VS558 ~T0 @X0 0 e@3790 ]
+"10755
+[s S510 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
+[n S510 . P2POLA P2POLB . P2INPOL ]
+"10754
+[u S509 `S510 1 ]
+[n S509 . . ]
+"10762
+[v _PSMC2POLbits `VS509 ~T0 @X0 0 e@3766 ]
+"10729
+[s S508 :1 `uc 1 :1 `uc 1 ]
+[n S508 . P2OEA P2OEB ]
+"10728
+[u S507 `S508 1 ]
+[n S507 . . ]
+"10734
+[v _PSMC2OENbits `VS507 ~T0 @X0 0 e@3765 ]
+"11036
+[s S523 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S523 . P2PRST P2PRSC1 P2PRSC2 P2PRSC3 P2PRSC4 . P2PRSIN ]
+"11035
+[u S522 `S523 1 ]
+[n S522 . . ]
+"11046
+[v _PSMC2PRSbits `VS522 ~T0 @X0 0 e@3772 ]
+"10934
+[s S519 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S519 . P2PHST P2PHSC1 P2PHSC2 P2PHSC3 P2PHSC4 . P2PHSIN ]
+"10933
+[u S518 `S519 1 ]
+[n S518 . . ]
+"10944
+[v _PSMC2PHSbits `VS518 ~T0 @X0 0 e@3770 ]
+"10985
+[s S521 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S521 . P2DCST P2DCSC1 P2DCSC2 P2DCSC3 P2DCSC4 . P2DCSIN ]
+"10984
+[u S520 `S521 1 ]
+[n S520 . . ]
+"10995
+[v _PSMC2DCSbits `VS520 ~T0 @X0 0 e@3771 ]
+"10483
+[v _PSMC2CON `Vuc ~T0 @X0 0 e@3761 ]
+"3374
+[s S167 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S167 . CCP2SEL RXSEL TXSEL SDISEL SCKSEL SDOSEL CCP1SEL C2OUTSEL ]
+"3373
+[u S166 `S167 1 ]
+[n S166 . . ]
+"3385
+[v _APFCON1bits `VS166 ~T0 @X0 0 e@285 ]
+"4838
+[s S246 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S246 . ABDEN WUE . BRG16 SCKP . RCIDL ABDOVF ]
+"4837
+[u S245 `S246 1 ]
+[n S245 . . ]
+"4849
+[v _BAUDCONbits `VS245 ~T0 @X0 0 e@415 ]
+"4446
+[s S232 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S232 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+"4445
+[u S231 `S232 1 ]
+[n S231 . . ]
+"4457
+[v _RCSTAbits `VS231 ~T0 @X0 0 e@413 ]
+"4626
+[s S238 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S238 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+"4625
+[u S237 `S238 1 ]
+[n S237 . . ]
+"4637
+[v _TXSTAbits `VS237 ~T0 @X0 0 e@414 ]
+"4203
+[v _SPBRG `Vuc ~T0 @X0 0 e@411 ]
+"10489
+[s S497 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S497 . P2MODE P2DBRE P2DBFE PSMC2LD PSMC2EN ]
+"10496
+[s S498 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S498 . P2MODE0 P2MODE1 P2MODE2 P2MODE3 ]
+"10488
+[u S496 `S497 1 `S498 1 ]
+[n S496 . . . ]
+"10503
+[v _PSMC2CONbits `VS496 ~T0 @X0 0 e@3761 ]
+"8754
+[s S431 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S431 . P1MODE P1DBRE P1DBFE PSMC1LD PSMC1EN ]
+"8761
+[s S432 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S432 . P1MODE0 P1MODE1 P1MODE2 P1MODE3 ]
+"8753
+[u S430 `S431 1 `S432 1 ]
+[n S430 . . . ]
+"8768
+[v _PSMC1CONbits `VS430 ~T0 @X0 0 e@3729 ]
+"13769
+[s S629 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S629 . P4MODE P4DBRE P4DBFE PSMC4LD PSMC4EN ]
+"13776
+[s S630 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S630 . P4MODE0 P4MODE1 P4MODE2 P4MODE3 ]
+"13768
+[u S628 `S629 1 `S630 1 ]
+[n S628 . . . ]
+"13783
+[v _PSMC4CONbits `VS628 ~T0 @X0 0 e@3857 ]
+"4088
+[v _RCREG `Vuc ~T0 @X0 0 e@409 ]
+"896
+[v _TMR1 `Vus ~T0 @X0 0 e@22 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+[p mainexit ]
+"12129
+[s S563 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S563 . P3MODE P3DBRE P3DBFE PSMC3LD PSMC3EN ]
+"12136
+[s S564 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S564 . P3MODE0 P3MODE1 P3MODE2 P3MODE3 ]
+"12128
+[u S562 `S563 1 `S564 1 ]
+[n S562 . . . ]
+"12143
+[v _PSMC3CONbits `VS562 ~T0 @X0 0 e@3793 ]
+"55 C:\Program Files\Microchip\xc8\v2.36\pic\include\proc/pic16f1788.h
+[; <" INDF0 equ 00h ;# ">
+"75
+[; <" INDF1 equ 01h ;# ">
+"95
+[; <" PCL equ 02h ;# ">
+"115
+[; <" STATUS equ 03h ;# ">
+"178
+[; <" FSR0L equ 04h ;# ">
+"198
+[; <" FSR0H equ 05h ;# ">
+"222
+[; <" FSR1L equ 06h ;# ">
+"242
+[; <" FSR1H equ 07h ;# ">
+"262
+[; <" BSR equ 08h ;# ">
+"314
+[; <" WREG equ 09h ;# ">
+"334
+[; <" PCLATH equ 0Ah ;# ">
+"354
+[; <" INTCON equ 0Bh ;# ">
+"432
+[; <" PORTA equ 0Ch ;# ">
+"502
+[; <" PORTB equ 0Dh ;# ">
+"572
+[; <" PORTC equ 0Eh ;# ">
+"642
+[; <" PORTE equ 010h ;# ">
+"671
+[; <" PIR1 equ 011h ;# ">
+"733
+[; <" PIR2 equ 012h ;# ">
+"795
+[; <" PIR3 equ 013h ;# ">
+"816
+[; <" PIR4 equ 014h ;# ">
+"878
+[; <" TMR0 equ 015h ;# ">
+"898
+[; <" TMR1 equ 016h ;# ">
+"905
+[; <" TMR1L equ 016h ;# ">
+"925
+[; <" TMR1H equ 017h ;# ">
+"945
+[; <" T1CON equ 018h ;# ">
+"1017
+[; <" T1GCON equ 019h ;# ">
+"1087
+[; <" TMR2 equ 01Ah ;# ">
+"1107
+[; <" PR2 equ 01Bh ;# ">
+"1127
+[; <" T2CON equ 01Ch ;# ">
+"1198
+[; <" TRISA equ 08Ch ;# ">
+"1268
+[; <" TRISB equ 08Dh ;# ">
+"1338
+[; <" TRISC equ 08Eh ;# ">
+"1408
+[; <" TRISE equ 090h ;# ">
+"1437
+[; <" PIE1 equ 091h ;# ">
+"1499
+[; <" PIE2 equ 092h ;# ">
+"1561
+[; <" PIE3 equ 093h ;# ">
+"1582
+[; <" PIE4 equ 094h ;# ">
+"1653
+[; <" OPTION_REG equ 095h ;# ">
+"1736
+[; <" PCON equ 096h ;# ">
+"1793
+[; <" WDTCON equ 097h ;# ">
+"1852
+[; <" OSCTUNE equ 098h ;# ">
+"1910
+[; <" OSCCON equ 099h ;# ">
+"1982
+[; <" OSCSTAT equ 09Ah ;# ">
+"2044
+[; <" ADRES equ 09Bh ;# ">
+"2051
+[; <" ADRESL equ 09Bh ;# ">
+"2071
+[; <" ADRESH equ 09Ch ;# ">
+"2091
+[; <" ADCON0 equ 09Dh ;# ">
+"2186
+[; <" ADCON1 equ 09Eh ;# ">
+"2258
+[; <" ADCON2 equ 09Fh ;# ">
+"2334
+[; <" LATA equ 010Ch ;# ">
+"2404
+[; <" LATB equ 010Dh ;# ">
+"2474
+[; <" LATC equ 010Eh ;# ">
+"2544
+[; <" CM1CON0 equ 0111h ;# ">
+"2606
+[; <" CM1CON1 equ 0112h ;# ">
+"2682
+[; <" CM2CON0 equ 0113h ;# ">
+"2744
+[; <" CM2CON1 equ 0114h ;# ">
+"2820
+[; <" CMOUT equ 0115h ;# ">
+"2858
+[; <" BORCON equ 0116h ;# ">
+"2891
+[; <" FVRCON equ 0117h ;# ">
+"2967
+[; <" DAC1CON0 equ 0118h ;# ">
+"3077
+[; <" DAC1CON1 equ 0119h ;# ">
+"3197
+[; <" CM4CON0 equ 011Ah ;# ">
+"3259
+[; <" CM4CON1 equ 011Bh ;# ">
+"3335
+[; <" APFCON2 equ 011Ch ;# ">
+"3361
+[; <" APFCON1 equ 011Dh ;# ">
+"3366
+[; <" APFCON0 equ 011Dh ;# ">
+"3370
+[; <" APFCON equ 011Dh ;# ">
+"3541
+[; <" CM3CON0 equ 011Eh ;# ">
+"3603
+[; <" CM3CON1 equ 011Fh ;# ">
+"3679
+[; <" ANSELA equ 018Ch ;# ">
+"3744
+[; <" ANSELB equ 018Dh ;# ">
+"3808
+[; <" ANSELC equ 018Eh ;# ">
+"3870
+[; <" EEADR equ 0191h ;# ">
+"3877
+[; <" EEADRL equ 0191h ;# ">
+"3897
+[; <" EEADRH equ 0192h ;# ">
+"3917
+[; <" EEDAT equ 0193h ;# ">
+"3924
+[; <" EEDATL equ 0193h ;# ">
+"3929
+[; <" EEDATA equ 0193h ;# ">
+"3962
+[; <" EEDATH equ 0194h ;# ">
+"3982
+[; <" EECON1 equ 0195h ;# ">
+"4044
+[; <" EECON2 equ 0196h ;# ">
+"4064
+[; <" VREGCON equ 0197h ;# ">
+"4085
+[; <" RC1REG equ 0199h ;# ">
+"4090
+[; <" RCREG equ 0199h ;# ">
+"4094
+[; <" RCREG1 equ 0199h ;# ">
+"4139
+[; <" TX1REG equ 019Ah ;# ">
+"4144
+[; <" TXREG1 equ 019Ah ;# ">
+"4148
+[; <" TXREG equ 019Ah ;# ">
+"4193
+[; <" SP1BRG equ 019Bh ;# ">
+"4200
+[; <" SP1BRGL equ 019Bh ;# ">
+"4205
+[; <" SPBRG equ 019Bh ;# ">
+"4209
+[; <" SPBRG1 equ 019Bh ;# ">
+"4213
+[; <" SPBRGL equ 019Bh ;# ">
+"4270
+[; <" SP1BRGH equ 019Ch ;# ">
+"4275
+[; <" SPBRGH equ 019Ch ;# ">
+"4279
+[; <" SPBRGH1 equ 019Ch ;# ">
+"4324
+[; <" RC1STA equ 019Dh ;# ">
+"4329
+[; <" RCSTA1 equ 019Dh ;# ">
+"4333
+[; <" RCSTA equ 019Dh ;# ">
+"4504
+[; <" TX1STA equ 019Eh ;# ">
+"4509
+[; <" TXSTA1 equ 019Eh ;# ">
+"4513
+[; <" TXSTA equ 019Eh ;# ">
+"4684
+[; <" BAUD1CON equ 019Fh ;# ">
+"4689
+[; <" BAUDCON1 equ 019Fh ;# ">
+"4693
+[; <" BAUDCTL1 equ 019Fh ;# ">
+"4697
+[; <" BAUDCON equ 019Fh ;# ">
+"4701
+[; <" BAUDCTL equ 019Fh ;# ">
+"4930
+[; <" WPUA equ 020Ch ;# ">
+"5000
+[; <" WPUB equ 020Dh ;# ">
+"5070
+[; <" WPUC equ 020Eh ;# ">
+"5140
+[; <" WPUE equ 0210h ;# ">
+"5169
+[; <" SSP1BUF equ 0211h ;# ">
+"5174
+[; <" SSPBUF equ 0211h ;# ">
+"5423
+[; <" SSP1ADD equ 0212h ;# ">
+"5428
+[; <" SSPADD equ 0212h ;# ">
+"5677
+[; <" SSP1MSK equ 0213h ;# ">
+"5682
+[; <" SSPMSK equ 0213h ;# ">
+"5931
+[; <" SSP1STAT equ 0214h ;# ">
+"5936
+[; <" SSPSTAT equ 0214h ;# ">
+"6053
+[; <" SSP1CON1 equ 0215h ;# ">
+"6058
+[; <" SSPCON equ 0215h ;# ">
+"6062
+[; <" SSPCON1 equ 0215h ;# ">
+"6066
+[; <" SSP1CON equ 0215h ;# ">
+"6323
+[; <" SSP1CON2 equ 0216h ;# ">
+"6328
+[; <" SSPCON2 equ 0216h ;# ">
+"6445
+[; <" SSP1CON3 equ 0217h ;# ">
+"6450
+[; <" SSPCON3 equ 0217h ;# ">
+"6567
+[; <" ODCONA equ 028Ch ;# ">
+"6637
+[; <" ODCONB equ 028Dh ;# ">
+"6707
+[; <" ODCONC equ 028Eh ;# ">
+"6777
+[; <" CCPR1 equ 0291h ;# ">
+"6784
+[; <" CCPR1L equ 0291h ;# ">
+"6804
+[; <" CCPR1H equ 0292h ;# ">
+"6824
+[; <" CCP1CON equ 0293h ;# ">
+"6888
+[; <" CCPR2 equ 0298h ;# ">
+"6895
+[; <" CCPR2L equ 0298h ;# ">
+"6915
+[; <" CCPR2H equ 0299h ;# ">
+"6935
+[; <" CCP2CON equ 029Ah ;# ">
+"6999
+[; <" SLRCONA equ 030Ch ;# ">
+"7069
+[; <" SLRCONB equ 030Dh ;# ">
+"7139
+[; <" SLRCONC equ 030Eh ;# ">
+"7209
+[; <" CCPR3 equ 0311h ;# ">
+"7216
+[; <" CCPR3L equ 0311h ;# ">
+"7236
+[; <" CCPR3H equ 0312h ;# ">
+"7256
+[; <" CCP3CON equ 0313h ;# ">
+"7320
+[; <" INLVLA equ 038Ch ;# ">
+"7390
+[; <" INLVLB equ 038Dh ;# ">
+"7460
+[; <" INLVLC equ 038Eh ;# ">
+"7530
+[; <" INLVLE equ 0390h ;# ">
+"7559
+[; <" IOCAP equ 0391h ;# ">
+"7629
+[; <" IOCAN equ 0392h ;# ">
+"7699
+[; <" IOCAF equ 0393h ;# ">
+"7769
+[; <" IOCBP equ 0394h ;# ">
+"7839
+[; <" IOCBN equ 0395h ;# ">
+"7909
+[; <" IOCBF equ 0396h ;# ">
+"7979
+[; <" IOCCP equ 0397h ;# ">
+"8049
+[; <" IOCCN equ 0398h ;# ">
+"8119
+[; <" IOCCF equ 0399h ;# ">
+"8189
+[; <" IOCEP equ 039Dh ;# ">
+"8210
+[; <" IOCEN equ 039Eh ;# ">
+"8231
+[; <" IOCEF equ 039Fh ;# ">
+"8252
+[; <" OPA1CON equ 0511h ;# ">
+"8346
+[; <" OPA2CON equ 0513h ;# ">
+"8440
+[; <" CLKRCON equ 051Ah ;# ">
+"8516
+[; <" DAC2CON0 equ 0591h ;# ">
+"8556
+[; <" DAC2REF equ 0592h ;# ">
+"8561
+[; <" DAC2CON1 equ 0592h ;# ">
+"8594
+[; <" DAC3CON0 equ 0593h ;# ">
+"8634
+[; <" DAC3REF equ 0594h ;# ">
+"8639
+[; <" DAC3CON1 equ 0594h ;# ">
+"8672
+[; <" DAC4CON0 equ 0595h ;# ">
+"8712
+[; <" DAC4REF equ 0596h ;# ">
+"8717
+[; <" DAC4CON1 equ 0596h ;# ">
+"8750
+[; <" PSMC1CON equ 0E91h ;# ">
+"8820
+[; <" PSMC1MDL equ 0E92h ;# ">
+"8885
+[; <" PSMC1SYNC equ 0E93h ;# ">
+"8936
+[; <" PSMC1CLK equ 0E94h ;# ">
+"8990
+[; <" PSMC1OEN equ 0E95h ;# ">
+"9040
+[; <" PSMC1POL equ 0E96h ;# ">
+"9096
+[; <" PSMC1BLNK equ 0E97h ;# ">
+"9150
+[; <" PSMC1REBS equ 0E98h ;# ">
+"9196
+[; <" PSMC1FEBS equ 0E99h ;# ">
+"9242
+[; <" PSMC1PHS equ 0E9Ah ;# ">
+"9293
+[; <" PSMC1DCS equ 0E9Bh ;# ">
+"9344
+[; <" PSMC1PRS equ 0E9Ch ;# ">
+"9395
+[; <" PSMC1ASDC equ 0E9Dh ;# ">
+"9434
+[; <" PSMC1ASDL equ 0E9Eh ;# ">
+"9484
+[; <" PSMC1ASDS equ 0E9Fh ;# ">
+"9530
+[; <" PSMC1INT equ 0EA0h ;# ">
+"9592
+[; <" PSMC1PH equ 0EA1h ;# ">
+"9599
+[; <" PSMC1PHL equ 0EA1h ;# ">
+"9661
+[; <" PSMC1PHH equ 0EA2h ;# ">
+"9723
+[; <" PSMC1DC equ 0EA3h ;# ">
+"9730
+[; <" PSMC1DCL equ 0EA3h ;# ">
+"9792
+[; <" PSMC1DCH equ 0EA4h ;# ">
+"9854
+[; <" PSMC1PR equ 0EA5h ;# ">
+"9861
+[; <" PSMC1PRL equ 0EA5h ;# ">
+"9923
+[; <" PSMC1PRH equ 0EA6h ;# ">
+"9985
+[; <" PSMC1TMR equ 0EA7h ;# ">
+"9992
+[; <" PSMC1TMRL equ 0EA7h ;# ">
+"10054
+[; <" PSMC1TMRH equ 0EA8h ;# ">
+"10116
+[; <" PSMC1DBR equ 0EA9h ;# ">
+"10178
+[; <" PSMC1DBF equ 0EAAh ;# ">
+"10240
+[; <" PSMC1BLKR equ 0EABh ;# ">
+"10302
+[; <" PSMC1BLKF equ 0EACh ;# ">
+"10364
+[; <" PSMC1FFA equ 0EADh ;# ">
+"10402
+[; <" PSMC1STR0 equ 0EAEh ;# ">
+"10452
+[; <" PSMC1STR1 equ 0EAFh ;# ">
+"10485
+[; <" PSMC2CON equ 0EB1h ;# ">
+"10555
+[; <" PSMC2MDL equ 0EB2h ;# ">
+"10620
+[; <" PSMC2SYNC equ 0EB3h ;# ">
+"10671
+[; <" PSMC2CLK equ 0EB4h ;# ">
+"10725
+[; <" PSMC2OEN equ 0EB5h ;# ">
+"10751
+[; <" PSMC2POL equ 0EB6h ;# ">
+"10784
+[; <" PSMC2BLNK equ 0EB7h ;# ">
+"10838
+[; <" PSMC2REBS equ 0EB8h ;# ">
+"10884
+[; <" PSMC2FEBS equ 0EB9h ;# ">
+"10930
+[; <" PSMC2PHS equ 0EBAh ;# ">
+"10981
+[; <" PSMC2DCS equ 0EBBh ;# ">
+"11032
+[; <" PSMC2PRS equ 0EBCh ;# ">
+"11083
+[; <" PSMC2ASDC equ 0EBDh ;# ">
+"11122
+[; <" PSMC2ASDL equ 0EBEh ;# ">
+"11148
+[; <" PSMC2ASDS equ 0EBFh ;# ">
+"11194
+[; <" PSMC2INT equ 0EC0h ;# ">
+"11256
+[; <" PSMC2PH equ 0EC1h ;# ">
+"11263
+[; <" PSMC2PHL equ 0EC1h ;# ">
+"11325
+[; <" PSMC2PHH equ 0EC2h ;# ">
+"11387
+[; <" PSMC2DC equ 0EC3h ;# ">
+"11394
+[; <" PSMC2DCL equ 0EC3h ;# ">
+"11456
+[; <" PSMC2DCH equ 0EC4h ;# ">
+"11518
+[; <" PSMC2PR equ 0EC5h ;# ">
+"11525
+[; <" PSMC2PRL equ 0EC5h ;# ">
+"11587
+[; <" PSMC2PRH equ 0EC6h ;# ">
+"11649
+[; <" PSMC2TMR equ 0EC7h ;# ">
+"11656
+[; <" PSMC2TMRL equ 0EC7h ;# ">
+"11718
+[; <" PSMC2TMRH equ 0EC8h ;# ">
+"11780
+[; <" PSMC2DBR equ 0EC9h ;# ">
+"11842
+[; <" PSMC2DBF equ 0ECAh ;# ">
+"11904
+[; <" PSMC2BLKR equ 0ECBh ;# ">
+"11966
+[; <" PSMC2BLKF equ 0ECCh ;# ">
+"12028
+[; <" PSMC2FFA equ 0ECDh ;# ">
+"12066
+[; <" PSMC2STR0 equ 0ECEh ;# ">
+"12092
+[; <" PSMC2STR1 equ 0ECFh ;# ">
+"12125
+[; <" PSMC3CON equ 0ED1h ;# ">
+"12195
+[; <" PSMC3MDL equ 0ED2h ;# ">
+"12260
+[; <" PSMC3SYNC equ 0ED3h ;# ">
+"12311
+[; <" PSMC3CLK equ 0ED4h ;# ">
+"12365
+[; <" PSMC3OEN equ 0ED5h ;# ">
+"12391
+[; <" PSMC3POL equ 0ED6h ;# ">
+"12424
+[; <" PSMC3BLNK equ 0ED7h ;# ">
+"12478
+[; <" PSMC3REBS equ 0ED8h ;# ">
+"12524
+[; <" PSMC3FEBS equ 0ED9h ;# ">
+"12570
+[; <" PSMC3PHS equ 0EDAh ;# ">
+"12621
+[; <" PSMC3DCS equ 0EDBh ;# ">
+"12672
+[; <" PSMC3PRS equ 0EDCh ;# ">
+"12723
+[; <" PSMC3ASDC equ 0EDDh ;# ">
+"12762
+[; <" PSMC3ASDL equ 0EDEh ;# ">
+"12788
+[; <" PSMC3ASDS equ 0EDFh ;# ">
+"12834
+[; <" PSMC3INT equ 0EE0h ;# ">
+"12896
+[; <" PSMC3PH equ 0EE1h ;# ">
+"12903
+[; <" PSMC3PHL equ 0EE1h ;# ">
+"12965
+[; <" PSMC3PHH equ 0EE2h ;# ">
+"13027
+[; <" PSMC3DC equ 0EE3h ;# ">
+"13034
+[; <" PSMC3DCL equ 0EE3h ;# ">
+"13096
+[; <" PSMC3DCH equ 0EE4h ;# ">
+"13158
+[; <" PSMC3PR equ 0EE5h ;# ">
+"13165
+[; <" PSMC3PRL equ 0EE5h ;# ">
+"13227
+[; <" PSMC3PRH equ 0EE6h ;# ">
+"13289
+[; <" PSMC3TMR equ 0EE7h ;# ">
+"13296
+[; <" PSMC3TMRL equ 0EE7h ;# ">
+"13358
+[; <" PSMC3TMRH equ 0EE8h ;# ">
+"13420
+[; <" PSMC3DBR equ 0EE9h ;# ">
+"13482
+[; <" PSMC3DBF equ 0EEAh ;# ">
+"13544
+[; <" PSMC3BLKR equ 0EEBh ;# ">
+"13606
+[; <" PSMC3BLKF equ 0EECh ;# ">
+"13668
+[; <" PSMC3FFA equ 0EEDh ;# ">
+"13706
+[; <" PSMC3STR0 equ 0EEEh ;# ">
+"13732
+[; <" PSMC3STR1 equ 0EEFh ;# ">
+"13765
+[; <" PSMC4CON equ 0F11h ;# ">
+"13835
+[; <" PSMC4MDL equ 0F12h ;# ">
+"13900
+[; <" PSMC4SYNC equ 0F13h ;# ">
+"13951
+[; <" PSMC4CLK equ 0F14h ;# ">
+"14005
+[; <" PSMC4OEN equ 0F15h ;# ">
+"14031
+[; <" PSMC4POL equ 0F16h ;# ">
+"14064
+[; <" PSMC4BLNK equ 0F17h ;# ">
+"14118
+[; <" PSMC4REBS equ 0F18h ;# ">
+"14164
+[; <" PSMC4FEBS equ 0F19h ;# ">
+"14210
+[; <" PSMC4PHS equ 0F1Ah ;# ">
+"14261
+[; <" PSMC4DCS equ 0F1Bh ;# ">
+"14312
+[; <" PSMC4PRS equ 0F1Ch ;# ">
+"14363
+[; <" PSMC4ASDC equ 0F1Dh ;# ">
+"14402
+[; <" PSMC4ASDL equ 0F1Eh ;# ">
+"14428
+[; <" PSMC4ASDS equ 0F1Fh ;# ">
+"14474
+[; <" PSMC4INT equ 0F20h ;# ">
+"14536
+[; <" PSMC4PH equ 0F21h ;# ">
+"14543
+[; <" PSMC4PHL equ 0F21h ;# ">
+"14605
+[; <" PSMC4PHH equ 0F22h ;# ">
+"14667
+[; <" PSMC4DC equ 0F23h ;# ">
+"14674
+[; <" PSMC4DCL equ 0F23h ;# ">
+"14736
+[; <" PSMC4DCH equ 0F24h ;# ">
+"14798
+[; <" PSMC4PR equ 0F25h ;# ">
+"14805
+[; <" PSMC4PRL equ 0F25h ;# ">
+"14867
+[; <" PSMC4PRH equ 0F26h ;# ">
+"14929
+[; <" PSMC4TMR equ 0F27h ;# ">
+"14936
+[; <" PSMC4TMRL equ 0F27h ;# ">
+"14998
+[; <" PSMC4TMRH equ 0F28h ;# ">
+"15060
+[; <" PSMC4DBR equ 0F29h ;# ">
+"15122
+[; <" PSMC4DBF equ 0F2Ah ;# ">
+"15184
+[; <" PSMC4BLKR equ 0F2Bh ;# ">
+"15246
+[; <" PSMC4BLKF equ 0F2Ch ;# ">
+"15308
+[; <" PSMC4FFA equ 0F2Dh ;# ">
+"15346
+[; <" PSMC4STR0 equ 0F2Eh ;# ">
+"15372
+[; <" PSMC4STR1 equ 0F2Fh ;# ">
+"15405
+[; <" STATUS_SHAD equ 0FE4h ;# ">
+"15437
+[; <" WREG_SHAD equ 0FE5h ;# ">
+"15457
+[; <" BSR_SHAD equ 0FE6h ;# ">
+"15477
+[; <" PCLATH_SHAD equ 0FE7h ;# ">
+"15497
+[; <" FSR0L_SHAD equ 0FE8h ;# ">
+"15517
+[; <" FSR0H_SHAD equ 0FE9h ;# ">
+"15537
+[; <" FSR1L_SHAD equ 0FEAh ;# ">
+"15557
+[; <" FSR1H_SHAD equ 0FEBh ;# ">
+"15577
+[; <" STKPTR equ 0FEDh ;# ">
+"15597
+[; <" TOSL equ 0FEEh ;# ">
+"15617
+[; <" TOSH equ 0FEFh ;# ">
+"53 Nerf Turret Project.c
+[; ;Nerf Turret Project.c: 53:     PIE1bits.TMR2IE = 1;
+[p x FOSC  =  INTOSC     ]
+"54
+[; ;Nerf Turret Project.c: 54: 
+[p x WDTE  =  OFF        ]
+"55
+[; ;Nerf Turret Project.c: 55:     T2CONbits.TMR2ON = 0;
+[p x PWRTE  =  OFF       ]
+"56
+[; ;Nerf Turret Project.c: 56: }
+[p x MCLRE  =  ON        ]
+"57
+[; ;Nerf Turret Project.c: 57: 
+[p x CP  =  OFF          ]
+"58
+[; ;Nerf Turret Project.c: 58: void configPorts(void)
+[p x CPD  =  OFF         ]
+"59
+[; ;Nerf Turret Project.c: 59: {
+[p x BOREN  =  OFF       ]
+"60
+[; ;Nerf Turret Project.c: 60:     LATB = 0x00;
+[p x CLKOUTEN  =  OFF    ]
+"61
+[; ;Nerf Turret Project.c: 61:     LATC = 0x00;
+[p x IESO  =  ON         ]
+"62
+[; ;Nerf Turret Project.c: 62: 
+[p x FCMEN  =  OFF       ]
+"65
+[; ;Nerf Turret Project.c: 65:     TRISC = 0x00;
+[p x WRT  =  OFF         ]
+"66
+[; ;Nerf Turret Project.c: 66:     ANSELC = 0x00;
+[p x VCAPEN  =  OFF      ]
+"67
+[; ;Nerf Turret Project.c: 67: }
+[p x PLLEN  =  OFF       ]
+"68
+[; ;Nerf Turret Project.c: 68: 
+[p x STVREN  =  ON       ]
+"69
+[; ;Nerf Turret Project.c: 69: void configInterrupts(void)
+[p x BORV  =  LO         ]
+"70
+[; ;Nerf Turret Project.c: 70: {
+[p x LPBOR  =  OFF       ]
+"71
+[; ;Nerf Turret Project.c: 71:     INTCONbits.PEIE = 1;
+[p x LVP  =  ON          ]
+"79
+[; ;Nerf Turret Project.c: 79: 
+[v _pFlag `uc ~T0 @X0 1 e ]
+[i _pFlag
+-> -> 0 `i `uc
+]
+"80
+[; ;Nerf Turret Project.c: 80: 
+[v _homeSequence `uc ~T0 @X0 1 e ]
+[i _homeSequence
+-> -> 0 `i `uc
+]
+"81
+[; ;Nerf Turret Project.c: 81: 
+[v _RCTemp `uc ~T0 @X0 1 e ]
+[i _RCTemp
+-> -> 0 `i `uc
+]
+"82
+[; ;Nerf Turret Project.c: 82:     PSMC1CLKbits.P1CSRC = 0b00;
+[v _RCIndex `uc ~T0 @X0 1 e ]
+[i _RCIndex
+-> -> 0 `i `uc
+]
+"84
+[; ;Nerf Turret Project.c: 84:     PSMC1PR = 40000;
+[v _Buttons1 `uc ~T0 @X0 1 e ]
+[v _Buttons2 `uc ~T0 @X0 1 e ]
+[v _XAxis `uc ~T0 @X0 1 e ]
+[v _YAxis `uc ~T0 @X0 1 e ]
+"85
+[; ;Nerf Turret Project.c: 85:     PSMC1DC = 3000;
+[v _YAxisReversed `uc ~T0 @X0 1 e ]
+[v _XAxisReversed `uc ~T0 @X0 1 e ]
+"87
+[; ;Nerf Turret Project.c: 87:     PSMC1POLbits.P1POLA = 0;
+[v _shootCount `i ~T0 @X0 1 e ]
+[i _shootCount
+-> 0 `i
+]
+"88
+[; ;Nerf Turret Project.c: 88:     PSMC1OENbits.P1OEA = 1;
+[v _shootPermission `uc ~T0 @X0 1 e ]
+[i _shootPermission
+-> -> 0 `i `uc
+]
+"92
+[; ;Nerf Turret Project.c: 92:     PSMC1CON = 0b11000000;
+[v _configOSC `(v ~T0 @X0 1 ef ]
+"93
+[; ;Nerf Turret Project.c: 93: 
+{
+[e :U _configOSC ]
+[f ]
+"96
+[; ;Nerf Turret Project.c: 96:     PSMC4CLKbits.P4CPRE = 0b11;
+[e = . . _OSCCONbits 0 3 -> -> 1 `i `uc ]
+"97
+[; ;Nerf Turret Project.c: 97:     PSMC4PR = 40000;
+[e = . . _OSCCONbits 0 4 -> -> 1 `i `uc ]
+"98
+[; ;Nerf Turret Project.c: 98:     PSMC4DC = 3000;
+[e = . . _OSCCONbits 0 5 -> -> 1 `i `uc ]
+"99
+[; ;Nerf Turret Project.c: 99:     PSMC4STR0bits.P4STRA = 1;
+[e = . . _OSCCONbits 0 6 -> -> 1 `i `uc ]
+"101
+[; ;Nerf Turret Project.c: 101:     PSMC4OENbits.P4OEA = 1;
+[e = . . _OSCCONbits 0 0 -> -> 0 `i `uc ]
+"102
+[; ;Nerf Turret Project.c: 102:     PSMC4PRSbits.P4PRST = 1;
+[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+"103
+[; ;Nerf Turret Project.c: 103:     PSMC4PHSbits.P4PHST = 1;
+[e :UE 716 ]
+}
+"105
+[; ;Nerf Turret Project.c: 105:     PSMC4CON = 0b11000000;
+[v _configTMR1 `(v ~T0 @X0 1 ef ]
+"106
+[; ;Nerf Turret Project.c: 106: 
+{
+[e :U _configTMR1 ]
+[f ]
+"108
+[; ;Nerf Turret Project.c: 108:     PSMC3CLKbits.P3CSRC = 0b00;
+[e = . . _T1CONbits 1 2 -> -> 0 `i `uc ]
+"109
+[; ;Nerf Turret Project.c: 109:     PSMC3CLKbits.P3CPRE = 0b11;
+[e = . . _T1CONbits 1 1 -> -> 1 `i `uc ]
+"110
+[; ;Nerf Turret Project.c: 110:     PSMC3PR = 40000;
+[e = . . _T1GCONbits 0 7 -> -> 0 `i `uc ]
+"112
+[; ;Nerf Turret Project.c: 112:     PSMC3STR0bits.P3STRA = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"113
+[; ;Nerf Turret Project.c: 113:     PSMC3POLbits.P3POLA = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"115
+[; ;Nerf Turret Project.c: 115:     PSMC3PRSbits.P3PRST = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"116
+[; ;Nerf Turret Project.c: 116:     PSMC3PHSbits.P3PHST = 1;
+[e :UE 717 ]
+}
+"118
+[; ;Nerf Turret Project.c: 118:     PSMC3CON = 0b11000000;
+[v _configTMR2 `(v ~T0 @X0 1 ef ]
+"119
+[; ;Nerf Turret Project.c: 119: 
+{
+[e :U _configTMR2 ]
+[f ]
+"121
+[; ;Nerf Turret Project.c: 121:     PSMC2CLKbits.P2CSRC = 0b00;
+[e = . . _T2CONbits 1 2 -> -> 9 `i `uc ]
+"122
+[; ;Nerf Turret Project.c: 122:     PSMC2CLKbits.P2CPRE = 0b11;
+[e = . . _T2CONbits 1 0 -> -> 2 `i `uc ]
+"123
+[; ;Nerf Turret Project.c: 123:     PSMC2PR = 40000;
+[e = _PR2 -> -> 250 `i `uc ]
+"125
+[; ;Nerf Turret Project.c: 125:     PSMC2STR0bits.P2STRA = 1;
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"126
+[; ;Nerf Turret Project.c: 126:     PSMC2POLbits.P2POLA = 0;
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+"128
+[; ;Nerf Turret Project.c: 128:     PSMC2PRSbits.P2PRST = 1;
+[e = . . _T2CONbits 0 2 -> -> 0 `i `uc ]
+"129
+[; ;Nerf Turret Project.c: 129:     PSMC2PHSbits.P2PHST = 1;
+[e :UE 718 ]
+}
+"131
+[; ;Nerf Turret Project.c: 131:     PSMC2CON = 0b11000000;
+[v _configPorts `(v ~T0 @X0 1 ef ]
+"132
+[; ;Nerf Turret Project.c: 132: }
+{
+[e :U _configPorts ]
+[f ]
+"133
+[; ;Nerf Turret Project.c: 133: 
+[e = _LATB -> -> 0 `i `uc ]
+"134
+[; ;Nerf Turret Project.c: 134: void configUART(void)
+[e = _LATC -> -> 0 `i `uc ]
+"136
+[; ;Nerf Turret Project.c: 136:     APFCON1bits.TXSEL = 1;
+[e = _TRISB -> -> 192 `i `uc ]
+"137
+[; ;Nerf Turret Project.c: 137:     APFCON1bits.RXSEL = 1;
+[e = _ANSELB -> -> 0 `i `uc ]
+"138
+[; ;Nerf Turret Project.c: 138: 
+[e = _TRISC -> -> 0 `i `uc ]
+"139
+[; ;Nerf Turret Project.c: 139:     BAUDCONbits.SCKP = 0;
+[e = _ANSELC -> -> 0 `i `uc ]
+"140
+[; ;Nerf Turret Project.c: 140:     BAUDCONbits.BRG16 = 1;
+[e :UE 719 ]
+}
+"142
+[; ;Nerf Turret Project.c: 142:     RCSTAbits.SPEN = 1;
+[v _configInterrupts `(v ~T0 @X0 1 ef ]
+"143
+[; ;Nerf Turret Project.c: 143:     RCSTAbits.CREN = 1;
+{
+[e :U _configInterrupts ]
+[f ]
+"144
+[; ;Nerf Turret Project.c: 144: 
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"145
+[; ;Nerf Turret Project.c: 145:     TXSTAbits.TXEN = 0;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"146
+[; ;Nerf Turret Project.c: 146:     TXSTAbits.SYNC = 0;
+[e :UE 720 ]
+}
+"148
+[; ;Nerf Turret Project.c: 148: 
+[v _configPWM `(v ~T0 @X0 1 ef ]
+"149
+[; ;Nerf Turret Project.c: 149:     SPBRG = 34;
+{
+[e :U _configPWM ]
+[f ]
+"155
+[; ;Nerf Turret Project.c: 155: 
+[e = . . _PSMC1CLKbits 1 0 -> -> 0 `i `uc ]
+"156
+[; ;Nerf Turret Project.c: 156: 
+[e = . . _PSMC1CLKbits 1 2 -> -> 3 `i `uc ]
+"157
+[; ;Nerf Turret Project.c: 157: 
+[e = _PSMC1PR -> -> 40000 `l `us ]
+"158
+[; ;Nerf Turret Project.c: 158: 
+[e = _PSMC1DC -> -> 3000 `i `us ]
+"159
+[; ;Nerf Turret Project.c: 159: 
+[e = . . _PSMC1STR0bits 0 0 -> -> 1 `i `uc ]
+"160
+[; ;Nerf Turret Project.c: 160: 
+[e = . . _PSMC1POLbits 0 0 -> -> 0 `i `uc ]
+"161
+[; ;Nerf Turret Project.c: 161: unsigned char reverseBits(unsigned char num)
+[e = . . _PSMC1OENbits 0 0 -> -> 1 `i `uc ]
+"162
+[; ;Nerf Turret Project.c: 162: {
+[e = . . _PSMC1PRSbits 0 0 -> -> 1 `i `uc ]
+"163
+[; ;Nerf Turret Project.c: 163:     unsigned char NO_OF_BITS = sizeof(num) * 8;
+[e = . . _PSMC1PHSbits 0 0 -> -> 1 `i `uc ]
+"164
+[; ;Nerf Turret Project.c: 164:     unsigned char reverse_num = 0, i, temp;
+[e = . . _PSMC1DCSbits 0 0 -> -> 1 `i `uc ]
+"165
+[; ;Nerf Turret Project.c: 165: 
+[e = _PSMC1CON -> -> 192 `i `uc ]
+"168
+[; ;Nerf Turret Project.c: 168:         temp = (num & (1 << i));
+[e = . . _PSMC4CLKbits 1 0 -> -> 0 `i `uc ]
+"169
+[; ;Nerf Turret Project.c: 169:         if(temp)
+[e = . . _PSMC4CLKbits 1 2 -> -> 3 `i `uc ]
+"170
+[; ;Nerf Turret Project.c: 170:             reverse_num |= (1 << ((NO_OF_BITS - 1) - i));
+[e = _PSMC4PR -> -> 40000 `l `us ]
+"171
+[; ;Nerf Turret Project.c: 171:     }
+[e = _PSMC4DC -> -> 3000 `i `us ]
+"172
+[; ;Nerf Turret Project.c: 172: 
+[e = . . _PSMC4STR0bits 0 0 -> -> 1 `i `uc ]
+"173
+[; ;Nerf Turret Project.c: 173:     return reverse_num;
+[e = . . _PSMC4POLbits 0 0 -> -> 0 `i `uc ]
+"174
+[; ;Nerf Turret Project.c: 174: }
+[e = . . _PSMC4OENbits 0 0 -> -> 1 `i `uc ]
+"175
+[; ;Nerf Turret Project.c: 175: 
+[e = . . _PSMC4PRSbits 0 0 -> -> 1 `i `uc ]
+"176
+[; ;Nerf Turret Project.c: 176: void ProcessUART(void)
+[e = . . _PSMC4PHSbits 0 0 -> -> 1 `i `uc ]
+"177
+[; ;Nerf Turret Project.c: 177: {
+[e = . . _PSMC4DCSbits 0 0 -> -> 1 `i `uc ]
+"178
+[; ;Nerf Turret Project.c: 178:     switch (RCIndex)
+[e = _PSMC4CON -> -> 192 `i `uc ]
+"181
+[; ;Nerf Turret Project.c: 181:             if(RCTemp == 0xFE) {RCIndex++;}
+[e = . . _PSMC3CLKbits 1 0 -> -> 0 `i `uc ]
+"182
+[; ;Nerf Turret Project.c: 182:             break;
+[e = . . _PSMC3CLKbits 1 2 -> -> 3 `i `uc ]
+"183
+[; ;Nerf Turret Project.c: 183:         case 1:
+[e = _PSMC3PR -> -> 40000 `l `us ]
+"184
+[; ;Nerf Turret Project.c: 184:             Buttons1 = RCTemp;
+[e = _PSMC3DC -> -> 3000 `i `us ]
+"185
+[; ;Nerf Turret Project.c: 185:             RCIndex++;
+[e = . . _PSMC3STR0bits 0 0 -> -> 1 `i `uc ]
+"186
+[; ;Nerf Turret Project.c: 186:             break;
+[e = . . _PSMC3POLbits 0 0 -> -> 0 `i `uc ]
+"187
+[; ;Nerf Turret Project.c: 187:         case 2:
+[e = . . _PSMC3OENbits 0 0 -> -> 1 `i `uc ]
+"188
+[; ;Nerf Turret Project.c: 188:             Buttons2 = RCTemp;
+[e = . . _PSMC3PRSbits 0 0 -> -> 1 `i `uc ]
+"189
+[; ;Nerf Turret Project.c: 189:             RCIndex++;
+[e = . . _PSMC3PHSbits 0 0 -> -> 1 `i `uc ]
+"190
+[; ;Nerf Turret Project.c: 190:             break;
+[e = . . _PSMC3DCSbits 0 0 -> -> 1 `i `uc ]
+"191
+[; ;Nerf Turret Project.c: 191:         case 3:
+[e = _PSMC3CON -> -> 192 `i `uc ]
+"194
+[; ;Nerf Turret Project.c: 194:             break;
+[e = . . _PSMC2CLKbits 1 0 -> -> 0 `i `uc ]
+"195
+[; ;Nerf Turret Project.c: 195:         case 4:
+[e = . . _PSMC2CLKbits 1 2 -> -> 3 `i `uc ]
+"196
+[; ;Nerf Turret Project.c: 196:             YAxis = RCTemp;
+[e = _PSMC2PR -> -> 40000 `l `us ]
+"197
+[; ;Nerf Turret Project.c: 197:             RCIndex = 0;
+[e = _PSMC2DC -> -> 3000 `i `us ]
+"198
+[; ;Nerf Turret Project.c: 198:             pFlag |= 0b00000010;
+[e = . . _PSMC2STR0bits 0 0 -> -> 1 `i `uc ]
+"199
+[; ;Nerf Turret Project.c: 199:             break;
+[e = . . _PSMC2POLbits 0 0 -> -> 0 `i `uc ]
+"200
+[; ;Nerf Turret Project.c: 200:     }
+[e = . . _PSMC2OENbits 0 0 -> -> 1 `i `uc ]
+"201
+[; ;Nerf Turret Project.c: 201: }
+[e = . . _PSMC2PRSbits 0 0 -> -> 1 `i `uc ]
+"202
+[; ;Nerf Turret Project.c: 202: 
+[e = . . _PSMC2PHSbits 0 0 -> -> 1 `i `uc ]
+"203
+[; ;Nerf Turret Project.c: 203: void DetermineAction(void)
+[e = . . _PSMC2DCSbits 0 0 -> -> 1 `i `uc ]
+"204
+[; ;Nerf Turret Project.c: 204: {
+[e = _PSMC2CON -> -> 192 `i `uc ]
+"205
+[; ;Nerf Turret Project.c: 205: 
+[e :UE 721 ]
+}
+"207
+[; ;Nerf Turret Project.c: 207: 
+[v _configUART `(v ~T0 @X0 1 ef ]
+"208
+[; ;Nerf Turret Project.c: 208:     if(Buttons1 & 0b00000100)
+{
+[e :U _configUART ]
+[f ]
+"209
+[; ;Nerf Turret Project.c: 209:     {
+[e = . . _APFCON1bits 0 2 -> -> 1 `i `uc ]
+"210
+[; ;Nerf Turret Project.c: 210:         if(shootCount != 65535) {shootCount++;}
+[e = . . _APFCON1bits 0 1 -> -> 1 `i `uc ]
+"212
+[; ;Nerf Turret Project.c: 212:     else
+[e = . . _BAUDCONbits 0 4 -> -> 0 `i `uc ]
+"213
+[; ;Nerf Turret Project.c: 213:     {
+[e = . . _BAUDCONbits 0 3 -> -> 1 `i `uc ]
+"215
+[; ;Nerf Turret Project.c: 215:     }
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+"216
+[; ;Nerf Turret Project.c: 216: 
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+"218
+[; ;Nerf Turret Project.c: 218:     {
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+"219
+[; ;Nerf Turret Project.c: 219:         PSMC2DC = 3900;
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+"220
+[; ;Nerf Turret Project.c: 220:         PSMC2CONbits.PSMC2LD = 1;
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+"222
+[; ;Nerf Turret Project.c: 222:     else
+[e = _SPBRG -> -> 34 `i `uc ]
+"224
+[; ;Nerf Turret Project.c: 224:         PSMC2DC = 3000;
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+"225
+[; ;Nerf Turret Project.c: 225:         PSMC2CONbits.PSMC2LD = 1;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"226
+[; ;Nerf Turret Project.c: 226:     }
+[e :UE 722 ]
+}
+"234
+[; ;Nerf Turret Project.c: 234: 
+[v _reverseBits `(uc ~T0 @X0 1 ef1`uc ]
+"235
+[; ;Nerf Turret Project.c: 235:         PSMC1DC = PSMC1DC + (((~XAxisReversed) & 0b00000111) << 1);
+{
+[e :U _reverseBits ]
+"234
+[; ;Nerf Turret Project.c: 234: 
+[v _num `uc ~T0 @X0 1 r1 ]
+"235
+[; ;Nerf Turret Project.c: 235:         PSMC1DC = PSMC1DC + (((~XAxisReversed) & 0b00000111) << 1);
+[f ]
+"236
+[; ;Nerf Turret Project.c: 236:     }
+[v _NO_OF_BITS `uc ~T0 @X0 1 a ]
+[e = _NO_OF_BITS -> * -> # _num `ui -> -> 8 `i `ui `uc ]
+"237
+[; ;Nerf Turret Project.c: 237:     else
+[v _reverse_num `uc ~T0 @X0 1 a ]
+[e = _reverse_num -> -> 0 `i `uc ]
+[v _i `uc ~T0 @X0 1 a ]
+[v _temp `uc ~T0 @X0 1 a ]
+"239
+[; ;Nerf Turret Project.c: 239: 
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 727  ]
+[e :U 724 ]
+"240
+[; ;Nerf Turret Project.c: 240: 
+{
+"241
+[; ;Nerf Turret Project.c: 241:         PSMC1DC = PSMC1DC - (XAxisReversed << 1);
+[e = _temp -> & -> _num `i << -> 1 `i -> _i `i `uc ]
+"242
+[; ;Nerf Turret Project.c: 242:     }
+[e $ ! != -> _temp `i -> 0 `i 728  ]
+"243
+[; ;Nerf Turret Project.c: 243: 
+[e =| _reverse_num -> << -> 1 `i - - -> _NO_OF_BITS `i -> 1 `i -> _i `i `uc ]
+[e :U 728 ]
+"244
+[; ;Nerf Turret Project.c: 244: 
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 727 ]
+[e $ < -> _i `i -> _NO_OF_BITS `i 724  ]
+[e :U 725 ]
+}
+"246
+[; ;Nerf Turret Project.c: 246:     if(PSMC1DC < 2000) {PSMC1DC = 2000;}
+[e ) _reverse_num ]
+[e $UE 723  ]
+"247
+[; ;Nerf Turret Project.c: 247: 
+[e :UE 723 ]
+}
+"249
+[; ;Nerf Turret Project.c: 249: 
+[v _ProcessUART `(v ~T0 @X0 1 ef ]
+"250
+[; ;Nerf Turret Project.c: 250: 
+{
+[e :U _ProcessUART ]
+[f ]
+"251
+[; ;Nerf Turret Project.c: 251:     YAxisReversed = reverseBits(YAxis) >> 4;
+[e $U 731  ]
+"252
+[; ;Nerf Turret Project.c: 252:     if(YAxisReversed & 0b00001000)
+{
+"253
+[; ;Nerf Turret Project.c: 253:     {
+[e :U 732 ]
+"254
+[; ;Nerf Turret Project.c: 254: 
+[e $ ! == -> _RCTemp `i -> 254 `i 733  ]
+{
+[e ++ _RCIndex -> -> 1 `i `uc ]
+}
+[e :U 733 ]
+"255
+[; ;Nerf Turret Project.c: 255: 
+[e $U 730  ]
+"256
+[; ;Nerf Turret Project.c: 256:         PSMC4DC = PSMC4DC + (((~YAxisReversed) & 0b00000111) << 1);
+[e :U 734 ]
+"257
+[; ;Nerf Turret Project.c: 257:     }
+[e = _Buttons1 _RCTemp ]
+"258
+[; ;Nerf Turret Project.c: 258:     else
+[e ++ _RCIndex -> -> 1 `i `uc ]
+"259
+[; ;Nerf Turret Project.c: 259:     {
+[e $U 730  ]
+"260
+[; ;Nerf Turret Project.c: 260: 
+[e :U 735 ]
+"261
+[; ;Nerf Turret Project.c: 261: 
+[e = _Buttons2 _RCTemp ]
+"262
+[; ;Nerf Turret Project.c: 262:         PSMC4DC = PSMC4DC - (YAxisReversed << 1);
+[e ++ _RCIndex -> -> 1 `i `uc ]
+"263
+[; ;Nerf Turret Project.c: 263:     }
+[e $U 730  ]
+"264
+[; ;Nerf Turret Project.c: 264: 
+[e :U 736 ]
+"265
+[; ;Nerf Turret Project.c: 265: 
+[e = _XAxis _RCTemp ]
+"266
+[; ;Nerf Turret Project.c: 266:     if(PSMC4DC > 4000) {PSMC4DC = 4000;}
+[e ++ _RCIndex -> -> 1 `i `uc ]
+"267
+[; ;Nerf Turret Project.c: 267:     if(PSMC4DC < 2000) {PSMC4DC = 2000;}
+[e $U 730  ]
+"268
+[; ;Nerf Turret Project.c: 268: 
+[e :U 737 ]
+"269
+[; ;Nerf Turret Project.c: 269:     PSMC4CONbits.PSMC4LD = 1;
+[e = _YAxis _RCTemp ]
+"270
+[; ;Nerf Turret Project.c: 270: 
+[e = _RCIndex -> -> 0 `i `uc ]
+"271
+[; ;Nerf Turret Project.c: 271: 
+[e =| _pFlag -> -> 2 `i `uc ]
+"272
+[; ;Nerf Turret Project.c: 272:     if(Buttons1 & 0b00001000)
+[e $U 730  ]
+"273
+[; ;Nerf Turret Project.c: 273:     {
+}
+[e $U 730  ]
+[e :U 731 ]
+[e [\ -> _RCIndex `i , $ -> 0 `i 732
+ , $ -> 1 `i 734
+ , $ -> 2 `i 735
+ , $ -> 3 `i 736
+ , $ -> 4 `i 737
+ 730 ]
+[e :U 730 ]
+"274
+[; ;Nerf Turret Project.c: 274:         homeSequence = 0xFF;
+[e :UE 729 ]
+}
+"276
+[; ;Nerf Turret Project.c: 276:         shootCount = 0;
+[v _DetermineAction `(v ~T0 @X0 1 ef ]
+"277
+[; ;Nerf Turret Project.c: 277:     }
+{
+[e :U _DetermineAction ]
+[f ]
+"281
+[; ;Nerf Turret Project.c: 281: 
+[e $ ! != & -> _Buttons1 `i -> 4 `i -> 0 `i 739  ]
+"282
+[; ;Nerf Turret Project.c: 282: void TMR2ISR(void)
+{
+"283
+[; ;Nerf Turret Project.c: 283: {
+[e $ ! != -> _shootCount `l -> 65535 `l 740  ]
+{
+[e ++ _shootCount -> 1 `i ]
+}
+[e :U 740 ]
+"284
+[; ;Nerf Turret Project.c: 284: 
+}
+[e $U 741  ]
+"285
+[; ;Nerf Turret Project.c: 285:     if(PSMC1DC > 3000) {PSMC1DC -= 10;}
+[e :U 739 ]
+"286
+[; ;Nerf Turret Project.c: 286:     if(PSMC1DC < 3000) {PSMC1DC += 10;}
+{
+"287
+[; ;Nerf Turret Project.c: 287:     if(PSMC4DC > 3000) {PSMC4DC -= 10;}
+[e = _shootCount -> 0 `i ]
+"288
+[; ;Nerf Turret Project.c: 288:     if(PSMC4DC < 3000) {PSMC4DC += 10;}
+}
+[e :U 741 ]
+"290
+[; ;Nerf Turret Project.c: 290: 
+[e $ ! && == -> _shootPermission `i -> 255 `i != & -> _Buttons1 `i -> 1 `i -> 0 `i 742  ]
+"291
+[; ;Nerf Turret Project.c: 291:     if(PSMC1DC > 2990 && PSMC1DC < 3010) {PSMC1DC = 3000;}
+{
+"292
+[; ;Nerf Turret Project.c: 292:     if(PSMC4DC > 2990 && PSMC4DC < 3010) {PSMC4DC = 3000;}
+[e = _PSMC2DC -> -> 3900 `i `us ]
+"293
+[; ;Nerf Turret Project.c: 293: 
+[e = . . _PSMC2CONbits 0 3 -> -> 1 `i `uc ]
+"294
+[; ;Nerf Turret Project.c: 294:     PSMC1CONbits.PSMC1LD = 1;
+}
+[e $U 743  ]
+"295
+[; ;Nerf Turret Project.c: 295:     PSMC4CONbits.PSMC4LD = 1;
+[e :U 742 ]
+"296
+[; ;Nerf Turret Project.c: 296: 
+{
+"297
+[; ;Nerf Turret Project.c: 297: 
+[e = _PSMC2DC -> -> 3000 `i `us ]
+"298
+[; ;Nerf Turret Project.c: 298:     if(PSMC1DC == 3000 && PSMC4DC == 3000) {homeSequence = 0x00; T2CONbits.TMR2ON = 0;}
+[e = . . _PSMC2CONbits 0 3 -> -> 1 `i `uc ]
+"299
+[; ;Nerf Turret Project.c: 299: 
+}
+[e :U 743 ]
+"302
+[; ;Nerf Turret Project.c: 302: 
+[e = _XAxisReversed -> >> -> ( _reverseBits (1 -> _XAxis `uc `i -> 4 `i `uc ]
+"304
+[; ;Nerf Turret Project.c: 304: {
+[e $ ! != & -> _XAxisReversed `i -> 8 `i -> 0 `i 744  ]
+"305
+[; ;Nerf Turret Project.c: 305:     RCTemp = RCREG;
+{
+"308
+[; ;Nerf Turret Project.c: 308:     LATB = 0x00;
+[e = _PSMC1DC -> + -> _PSMC1DC `ui -> << & ~ -> _XAxisReversed `i -> 7 `i -> 1 `i `ui `us ]
+"309
+[; ;Nerf Turret Project.c: 309: }
+}
+[e $U 745  ]
+"310
+[; ;Nerf Turret Project.c: 310: 
+[e :U 744 ]
+"311
+[; ;Nerf Turret Project.c: 311: void TMR1ISR(void)
+{
+"314
+[; ;Nerf Turret Project.c: 314:     LATB = 0xFF;
+[e = _PSMC1DC -> - -> _PSMC1DC `ui -> << -> _XAxisReversed `i -> 1 `i `ui `us ]
+"315
+[; ;Nerf Turret Project.c: 315: 
+}
+[e :U 745 ]
+"318
+[; ;Nerf Turret Project.c: 318:     Buttons1 = 0;
+[e $ ! > -> _PSMC1DC `ui -> -> 4000 `i `ui 746  ]
+{
+[e = _PSMC1DC -> -> 4000 `i `us ]
+}
+[e :U 746 ]
+"319
+[; ;Nerf Turret Project.c: 319:     Buttons2 = 0;
+[e $ ! < -> _PSMC1DC `ui -> -> 2000 `i `ui 747  ]
+{
+[e = _PSMC1DC -> -> 2000 `i `us ]
+}
+[e :U 747 ]
+"321
+[; ;Nerf Turret Project.c: 321:     YAxis = 0;
+[e = . . _PSMC1CONbits 0 3 -> -> 1 `i `uc ]
+"324
+[; ;Nerf Turret Project.c: 324: void __attribute__((picinterrupt(("")))) ISR(void)
+[e = _YAxisReversed -> >> -> ( _reverseBits (1 -> _YAxis `uc `i -> 4 `i `uc ]
+"325
+[; ;Nerf Turret Project.c: 325: {
+[e $ ! != & -> _YAxisReversed `i -> 8 `i -> 0 `i 748  ]
+"326
+[; ;Nerf Turret Project.c: 326:     if(PIR1bits.TMR2IF == 1) {TMR2ISR();}
+{
+"329
+[; ;Nerf Turret Project.c: 329: }
+[e = _PSMC4DC -> + -> _PSMC4DC `ui -> << & ~ -> _YAxisReversed `i -> 7 `i -> 1 `i `ui `us ]
+"330
+[; ;Nerf Turret Project.c: 330: 
+}
+[e $U 749  ]
+"331
+[; ;Nerf Turret Project.c: 331: 
+[e :U 748 ]
+"332
+[; ;Nerf Turret Project.c: 332: int main(void)
+{
+"335
+[; ;Nerf Turret Project.c: 335:     configOSC();
+[e = _PSMC4DC -> - -> _PSMC4DC `ui -> << -> _YAxisReversed `i -> 1 `i `ui `us ]
+"336
+[; ;Nerf Turret Project.c: 336:     configPorts();
+}
+[e :U 749 ]
+"339
+[; ;Nerf Turret Project.c: 339:     configTMR1();
+[e $ ! > -> _PSMC4DC `ui -> -> 4000 `i `ui 750  ]
+{
+[e = _PSMC4DC -> -> 4000 `i `us ]
+}
+[e :U 750 ]
+"340
+[; ;Nerf Turret Project.c: 340:     configTMR2();
+[e $ ! < -> _PSMC4DC `ui -> -> 2000 `i `ui 751  ]
+{
+[e = _PSMC4DC -> -> 2000 `i `us ]
+}
+[e :U 751 ]
+"342
+[; ;Nerf Turret Project.c: 342: 
+[e = . . _PSMC4CONbits 0 3 -> -> 1 `i `uc ]
+"345
+[; ;Nerf Turret Project.c: 345:         if(pFlag & 0b00000001)
+[e $ ! != & -> _Buttons1 `i -> 8 `i -> 0 `i 752  ]
+"346
+[; ;Nerf Turret Project.c: 346:         {
+{
+"347
+[; ;Nerf Turret Project.c: 347:             ProcessUART();
+[e = _homeSequence -> -> 255 `i `uc ]
+"348
+[; ;Nerf Turret Project.c: 348:             pFlag ^= 0b00000001;
+[e = . . _T2CONbits 0 2 -> -> 1 `i `uc ]
+"349
+[; ;Nerf Turret Project.c: 349:         }
+[e = _shootCount -> 0 `i ]
+"350
+[; ;Nerf Turret Project.c: 350: 
+}
+[e :U 752 ]
+"351
+[; ;Nerf Turret Project.c: 351: 
+[e :UE 738 ]
+}
+"355
+[; ;Nerf Turret Project.c: 355:             pFlag ^= 0b00000010;
+[v _TMR2ISR `(v ~T0 @X0 1 ef ]
+"356
+[; ;Nerf Turret Project.c: 356:         }
+{
+[e :U _TMR2ISR ]
+[f ]
+"358
+[; ;Nerf Turret Project.c: 358: 
+[e $ ! > -> _PSMC1DC `ui -> -> 3000 `i `ui 754  ]
+{
+[e =- _PSMC1DC -> -> 10 `i `Vus ]
+}
+[e :U 754 ]
+"359
+[; ;Nerf Turret Project.c: 359: 
+[e $ ! < -> _PSMC1DC `ui -> -> 3000 `i `ui 755  ]
+{
+[e =+ _PSMC1DC -> -> 10 `i `Vus ]
+}
+[e :U 755 ]
+"360
+[; ;Nerf Turret Project.c: 360: 
+[e $ ! > -> _PSMC4DC `ui -> -> 3000 `i `ui 756  ]
+{
+[e =- _PSMC4DC -> -> 10 `i `Vus ]
+}
+[e :U 756 ]
+"361
+[; ;Nerf Turret Project.c: 361: 
+[e $ ! < -> _PSMC4DC `ui -> -> 3000 `i `ui 757  ]
+{
+[e =+ _PSMC4DC -> -> 10 `i `Vus ]
+}
+[e :U 757 ]
+"364
+[; ;Nerf Turret Project.c: 364:         else {PSMC3DC = 3000; PSMC3CONbits.PSMC3LD = 1;}
+[e $ ! && > -> _PSMC1DC `ui -> -> 2990 `i `ui < -> _PSMC1DC `ui -> -> 3010 `i `ui 758  ]
+{
+[e = _PSMC1DC -> -> 3000 `i `us ]
+}
+[e :U 758 ]
+"365
+[; ;Nerf Turret Project.c: 365: 
+[e $ ! && > -> _PSMC4DC `ui -> -> 2990 `i `ui < -> _PSMC4DC `ui -> -> 3010 `i `ui 759  ]
+{
+[e = _PSMC4DC -> -> 3000 `i `us ]
+}
+[e :U 759 ]
+"367
+[; ;Nerf Turret Project.c: 367:         if(shootCount > 400) {shootPermission = 0xFF;}
+[e = . . _PSMC1CONbits 0 3 -> -> 1 `i `uc ]
+"368
+[; ;Nerf Turret Project.c: 368:         else {shootPermission = 0x00; PSMC2DC = 3000; PSMC2CONbits.PSMC2LD = 1;}
+[e = . . _PSMC4CONbits 0 3 -> -> 1 `i `uc ]
+"371
+[e $ ! && == -> _PSMC1DC `ui -> -> 3000 `i `ui == -> _PSMC4DC `ui -> -> 3000 `i `ui 760  ]
+{
+[e = _homeSequence -> -> 0 `i `uc ]
+[e = . . _T2CONbits 0 2 -> -> 0 `i `uc ]
+}
+[e :U 760 ]
+"373
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+"374
+[e :UE 753 ]
+}
+"376
+[v _RC1ISR `(v ~T0 @X0 1 ef ]
+"377
+{
+[e :U _RC1ISR ]
+[f ]
+"378
+[e = _RCTemp -> _RCREG `uc ]
+"379
+[e =| _pFlag -> -> 1 `i `uc ]
+"380
+[e = _TMR1 -> -> 0 `i `us ]
+"381
+[e = _LATB -> -> 0 `i `uc ]
+"382
+[e :UE 761 ]
+}
+"384
+[v _TMR1ISR `(v ~T0 @X0 1 ef ]
+"385
+{
+[e :U _TMR1ISR ]
+[f ]
+"386
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
+"387
+[e = _LATB -> -> 255 `i `uc ]
+"390
+[e = _shootCount -> 0 `i ]
+"391
+[e = _Buttons1 -> -> 0 `i `uc ]
+"392
+[e = _Buttons2 -> -> 0 `i `uc ]
+"393
+[e = _XAxis -> -> 0 `i `uc ]
+"394
+[e = _YAxis -> -> 0 `i `uc ]
+"395
+[e :UE 762 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"397
+[v _ISR `(v ~T1 @X0 1 ef ]
+"398
+{
+[e :U _ISR ]
+[f ]
+"399
+[e $ ! == -> . . _PIR1bits 0 1 `i -> 1 `i 764  ]
+{
+[e ( _TMR2ISR ..  ]
+}
+[e :U 764 ]
+"400
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 765  ]
+{
+[e ( _RC1ISR ..  ]
+}
+[e :U 765 ]
+"401
+[e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 766  ]
+{
+[e ( _TMR1ISR ..  ]
+}
+[e :U 766 ]
+"402
+[e :UE 763 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"405
+[v _main `(i ~T0 @X0 1 ef ]
+"406
+{
+[e :U _main ]
+[f ]
+"408
+[e ( _configOSC ..  ]
+"409
+[e ( _configPorts ..  ]
+"410
+[e ( _configUART ..  ]
+"411
+[e ( _configPWM ..  ]
+"412
+[e ( _configTMR1 ..  ]
+"413
+[e ( _configTMR2 ..  ]
+"414
+[e ( _configInterrupts ..  ]
+"416
+[e :U 769 ]
+"417
+{
+"418
+[e $ ! != & -> _pFlag `i -> 1 `i -> 0 `i 771  ]
+"419
+{
+"420
+[e ( _ProcessUART ..  ]
+"421
+[e =^ _pFlag -> -> 1 `i `uc ]
+"422
+}
+[e :U 771 ]
+"425
+[e $ ! && != & -> _pFlag `i -> 2 `i -> 0 `i == -> _homeSequence `i -> 0 `i 772  ]
+"426
+{
+"427
+[e ( _DetermineAction ..  ]
+"428
+[e =^ _pFlag -> -> 2 `i `uc ]
+"429
+}
+[e :U 772 ]
+"436
+[e $ ! > _shootCount -> 0 `i 773  ]
+{
+[e = _PSMC3DC -> -> 3900 `i `us ]
+[e = . . _PSMC3CONbits 0 3 -> -> 1 `i `uc ]
+}
+[e $U 774  ]
+"437
+[e :U 773 ]
+{
+[e = _PSMC3DC -> -> 3000 `i `us ]
+[e = . . _PSMC3CONbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 774 ]
+"440
+[e $ ! > _shootCount -> 400 `i 775  ]
+{
+[e = _shootPermission -> -> 255 `i `uc ]
+}
+[e $U 776  ]
+"441
+[e :U 775 ]
+{
+[e = _shootPermission -> -> 0 `i `uc ]
+[e = _PSMC2DC -> -> 3000 `i `us ]
+[e = . . _PSMC2CONbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 776 ]
+"442
+}
+[e :U 768 ]
+[e $U 769  ]
+[e :U 770 ]
+"443
+[e :UE 767 ]
+}
